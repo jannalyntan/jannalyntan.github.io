@@ -1,0 +1,58 @@
+* {
+  text-align: center;
+  background-color: beige;
+  color: black;
+  font-size: 1.1rem;
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h1 {
+  color: blue;
+  font-weight: bolder;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: red;
+}
+
+.blue-color {
+  color: blue;
+  font-style: italic;
+  font-weight: 1000;
+}
+
+#button1 {
+  color: pink;
+}
+
+button {
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+ul {
+  list-style-position: inside;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.boarder {
+  background-color: pink;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
