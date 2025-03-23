@@ -1,61 +1,79 @@
-.mainfont { font-family: "Bodoni Moda", serif;
+.mainfont {
+    font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
     font-weight: bold;
-    font-style: normal;}
+    font-style: normal;
+}
 
-.container{
+.container {
 
-  
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     position: relative;
     text-align: center;
-    color: rgb(255, 255, 255)}
-
-#homepage {background-image: url(concerthall.jpg);
-    height: 100%; }
-
-#question4 {background-image: url(concerthall.jpg);
-    height: 100%; }
-
-body, html { 
-    height: 100%; margin: ; 
+    color: rgb(255, 255, 255)
 }
 
-p  { font-family: "Nunito Sans", sans-serif;
+#homepage {
+    background-image: url(concerthall.jpg);
+    height: 100%;
+}
+
+#question4 {
+    background-image: url(concerthall.jpg);
+    height: 100%;
+}
+
+body,
+html {
+    height: 100%;
+    margin: ;
+}
+
+p {
+    font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
     font-variation-settings:
-      "wdth" 100,
-      "YTLC" 500;}
+        "wdth" 100,
+        "YTLC" 500;
+}
 
 
-.textcenter { 
+.textcenter {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    }
+}
 
 
-h1{text-align: center;}
+h1 {
+    text-align: center;
+}
 
-h3 {font-family: "Nunito Sans", sans-serif;
+h3 {
+    font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
     font-variation-settings:
-      "wdth" 100,
-      "YTLC" 500;}
+        "wdth" 100,
+        "YTLC" 500;
+}
 
-.centered { text-align: center;
-margin-left: 5%;
-margin-right: 5%;}
+.centered {
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
-button { font-family: "Bodoni Moda", serif;
+button {
+    font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
@@ -66,14 +84,16 @@ button { font-family: "Bodoni Moda", serif;
     padding: 15px 20px;
     text-align: center;
     text-decoration: none;
-    display:block;
-    font-size: 16px; }
-
-.centerbutton { 
     display: block;
-    margin: 0 auto;}
- 
-    
+    font-size: 16px;
+}
+
+.centerbutton {
+    display: block;
+    margin: 0 auto;
+}
+
+
 .scrollmenu {
     font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
@@ -83,67 +103,84 @@ button { font-family: "Bodoni Moda", serif;
     overflow: auto;
     white-space: nowrap;
 
-      }
-      
+}
+
 .scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-      }
-      
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
 .scrollmenu a:hover {
-        background-color: #777;
-      }    
+    background-color: #777;
+}
 
 
 .number {
     font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
     font-weight: bold;
-    font-style: bold; 
-    font-size: 3.5rem}
+    font-style: bold;
+    font-size: 3.5rem
+}
 
 
-.left {;
-  text-align: left;
-margin: 5%; }
+.left {
+    ;
+    text-align: left;
+    margin: 5%;
+}
 
-.right {;
-text-align: right;
-margin: 5%;}
+.right {
+    ;
+    text-align: right;
+    margin: 5%;
+}
 
 
-.sidebyside {display: flex;}
+.sidebyside {
+    display: flex;
+}
 
-.title { font-family: "Bodoni Moda", serif;
+.title {
+    font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
-line-height: 1rem;}
+    line-height: 1rem;
+}
 
-.wording {font-family: "Nunito Sans", sans-serif;
+.wording {
+    font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
     font-size: ;
     font-variation-settings:
-      "wdth" 100,
-      "YTLC" 500;}
+        "wdth" 100,
+        "YTLC" 500;
+}
 
-.backgroundblack {background-color: black;
-color: white;}
+.backgroundblack {
+    background-color: black;
+    color: white;
+}
 
-.second {background-color: #aaa;
+.second {
+    background-color: #aaa;
     color: rgb(255, 255, 255);
     padding: 20px;
     width: 200px;
     text-align: center;
     font-size: 18px;
-    font-weight: bold;}
+    font-weight: bold;
+}
 
-.second:hover {background-color: #777;}
+.second:hover {
+    background-color: #777;
+}
 
 .gridlayout {
     font-family: "Nunito Sans", sans-serif;
@@ -154,20 +191,29 @@ color: white;}
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;}
+    margin-top: 20px;
+}
 
-#hoverover { background-color: #aaa;
+#hoverover {
+    background-color: #aaa;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     padding: 20px;
     width: 200px;
     text-align: center;
-    text-transform:uppercase ;
+    text-transform: uppercase;
     font-size: 18px;
-    font-weight: bold;}
+    font-weight: bold;
+}
 
-#hoverover:hover {background-color: #777; font-size: 0px;}
+#hoverover:hover {
+    background-color: #777;
+    font-size: 0px;
+}
 
-#hoverover:hover:after {content: attr(data-hover); 
-    font-size: 1rem; text-transform: none; font-weight: lighter;
-   }
+#hoverover:hover:after {
+    content: attr(data-hover);
+    font-size: 1rem;
+    text-transform: none;
+    font-weight: lighter;
+}
