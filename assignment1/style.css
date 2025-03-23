@@ -1,0 +1,62 @@
+.container{background-image: url(concerthall.jpg);
+    height: 100%; 
+
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255)}
+
+
+body, html { 
+    height: 100%; margin: 0; }
+
+.textcenter { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+
+h1{text-align: center;}
+
+.centered { text-align: center;}
+
+button { 
+    background-color: black;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display:block;
+    font-size: 16px; }
+
+.centerbutton { 
+    display: block;
+    margin: 0 auto;}
+ 
+    
+.scrollmenu {
+        background-color: #000000;
+        overflow: auto;
+        white-space: nowrap;
+      }
+      
+div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+      }
+      
+div.scrollmenu a:hover {
+        background-color: #777;
+      }    
+    
