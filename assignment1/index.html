@@ -5,9 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jannalyn Assignment 1</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Tektur:wght@400..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 
@@ -17,10 +19,10 @@
   <!---container is an image plus text
   Using div as a section divider since I want to use 2 different tags--->
 
-  <div class="container">
+  <div class="container" id="homepage">
     <div class="textcenter">
-      <h1>Website Review</h1>
-      <p>s4056775 Jannalyn Tan</p>
+      <h1 class="mainfont">Website Review</h1>
+      <p class="mainfont">s4056775 Jannalyn Tan</p>
 
     </div>
   </div>
@@ -35,71 +37,107 @@
   <button class="centerbutton"> Gehry Getty's Website</button>
 
   <!--Creating a move to button to jump to the section you want to go-->
+
   <p>
   <div class="scrollmenu">
-    <a href="#question1">Question 1</a>
-    <a href="#question2">Question 2</a>
-    <a href="#question3">Question 3</a>
-    <a href="#question4">Question 4</a>
-    <a href="#question5">Question 5</a>
-    <a href="#question6">Question 6</a>
-    <a href="#question7">Question 7</a>
-    <a href="#question8">Question 8</a>
-    <a href="#question9">Question 9</a>
-    <a href="#question10">Question 10</a>
-    <a href="#question11">Question 11</a>
-    <a href="#question12">Question 12</a>
+    <a href="#question1">1.</a>
+    <a href="#question2">2.</a>
+    <a href="#question3">3.</a>
+    <a href="#question4">4.</a>
+    <a href="#question5">5.</a>
+    <a href="#question6">6.</a>
+    <a href="#question7">7.</a>
+    <a href="#question8">8.</a>
+    <a href="#question9">9.</a>
+    <a href="#question10">10.</a>
+    <a href="#question11">11.</a>
+    <a href="#question12">12.</a>
+  </div>
+  </p>
+
+
+  <div id="#question1">
+    <h2 class="number">1.</h2>
+    <div class="sidebyside">
+      <div class="left">
+        <p class="title">What was the first thing you paid attention to when interacting with the
+          experience?
+        </p>
+      </div>
+      <div class="right">
+        <p class="wording">
+          The first thing that caught my attention was how visually distinct and
+          bright the website was compared to other sites. The scribbled sketches and
+          bold colour choices immediately stood out, creating a playful and artistic
+          atmosphere. Despite the serious nature of the project, the design choices
+          made the experience feel more engaging and immersive. The juxtaposition of
+          fun, bold playful font with an architectural subject was particularly
+          striking. Additionally, the inclusion of background music was
+          unexpected—it contrasted with the visual style, adding an extra layer of
+          intrigue to the experience. The interactive elements, such as how
+          different parts of the site reacted to the mouse cursor and the
+          integration of sound, also set it apart from conventional websites, making
+          it feel more like an interactive exhibition than a typical webpage.
+        </p>
+      </div>
+    </div>
   </div>
 
-  </p>
-  <h2>Questions 1</h2>
-  <h3>
-    What was the first thing you paid attention to when interacting with the
-    experience?
-  </h3>
-  <p>
-    The first thing that caught my attention was how visually distinct and
-    bright the website was compared to other sites. The scribbled sketches and
-    bold colour choices immediately stood out, creating a playful and artistic
-    atmosphere. Despite the serious nature of the project, the design choices
-    made the experience feel more engaging and immersive. The juxtaposition of
-    fun, bold playful font with an architectural subject was particularly
-    striking. Additionally, the inclusion of background music was
-    unexpected—it contrasted with the visual style, adding an extra layer of
-    intrigue to the experience. The interactive elements, such as how
-    different parts of the site reacted to the mouse cursor and the
-    integration of sound, also set it apart from conventional websites, making
-    it feel more like an interactive exhibition than a typical webpage.
-  </p>
+  <!--hoverover id is created for the items that want to be hovered over used id tag instead of a class tag since initally thought i need to create it for each individual hover-->
+  <div id="#question2" class="backgroundblack">
+    <h2 class="number">2.</h2>
+    <div class="centered">
+      <p class="title">Spend two minutes with the experience and create a list of each of your
+        discrete actions.
+      </p>
+    </div>
+    <div class="gridlayout">
+      <div id="hoverover" data-hover="Scrolling vertically through the content">
+        Scrolling</div>
+      <div id="hoverover" data-hover="Clicking on buttons to navigate or trigger interactions ">Clicking</div>
+      <div id="hoverover" data-hover="Hovering over elements to see how they respond to the cursor ">Hovering</div>
+      <div id="hoverover" data-hover="Watching embedded videos to understand more about the project">Watching</div>
+      <div id="hoverover" data-hover="Listening to the background music and sound effects "> Listening</div>
+    </div>
+  </div>
 
-  <h2>Question 2</h2>
-  <h3>
-    Spend two minutes with the experience and create a list of each of your
-    discrete actions.
-  </h3>
 
-  <ul>
-    <li>Scrolling vertically through the content</li>
-    <li>Clicking on buttons to navigate or trigger interactions</li>
-    <li>Hovering over elements to see how they respond to the cursor</li>
-    <li>Watching embedded videos to understand more about the project</li>
-    <li>Listening to the background music and sound effects</li>
-  </ul>
-
-  <h2>Question 3</h2>
-  <h3>
-    What part of the experience did you spend the most time engaging with? I
-    spent the most time engaging with the videos.
-  </h3>
-
-  <p>
-    Initially, the website didn’t explicitly state what it was about, which
-    made me curious. Watching the videos and reading the accompanying text
-    provided insight into the purpose of the site and the creative process
-    behind the Walt Disney Concert Hall. The videos served as a key element in
-    giving an insight to the design and thinking behind the project, helping
-    me fully grasp the project’s significance.
-  </p>
+  <!--similar to question 1 I just needed to copy it and chnage the tags over-->
+  <div id="#question3">
+    <h2 class="number">3.</h2>
+    <div class="sidebyside">
+      <div class="left">
+        <p class="wording">
+          The first thing that caught my attention was how visually distinct and
+          bright the website was compared to other sites. The scribbled sketches and
+          bold colour choices immediately stood out, creating a playful and artistic
+          atmosphere. Despite the serious nature of the project, the design choices
+          made the experience feel more engaging and immersive. The juxtaposition of
+          fun, bold playful font with an architectural subject was particularly
+          striking. Additionally, the inclusion of background music was
+          unexpected—it contrasted with the visual style, adding an extra layer of
+          intrigue to the experience. The interactive elements, such as how
+          different parts of the site reacted to the mouse cursor and the
+          integration of sound, also set it apart from conventional websites, making
+          it feel more like an interactive exhibition than a typical webpage.
+        </p>
+      </div>
+      <div class="right">
+        <p class="title">What part of the experience did you spend the most time engaging with? I
+          spent the most time engaging with the videos.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--need to change the uppercase for questions
+ change the image also-->
+  <div class="container" id="question4">
+    <div class="textcenter">
+      <div id="hoverover"
+        data-hover="The most common action was vertical scrolling. The site is designed to be explored in a linear, flowing manner, guiding users through the content at their own pace.">
+        What was the most common action in your two minute interaction with the experience? </div>
+    </div>
+  </div>
 
   <h2>Question 4</h2>
   <h3>
