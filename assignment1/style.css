@@ -1,12 +1,9 @@
 .mainfont { font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: bold;
     font-style: normal;}
 
-
-
-.container{background-image: url(concerthall.jpg);
-    height: 100%; 
+.container{
 
   
     background-position: center;
@@ -17,9 +14,24 @@
     text-align: center;
     color: rgb(255, 255, 255)}
 
+#homepage {background-image: url(concerthall.jpg);
+    height: 100%; }
+
+#question4 {background-image: url(concerthall.jpg);
+    height: 100%; }
 
 body, html { 
-    height: 100%; margin: 0; }
+    height: 100%; margin: ; 
+}
+
+p  { font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;}
+
 
 .textcenter { 
     position: absolute;
@@ -31,7 +43,17 @@ body, html {
 
 h1{text-align: center;}
 
-.centered { text-align: center;}
+h3 {font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;}
+
+.centered { text-align: center;
+margin-left: 5%;
+margin-right: 5%;}
 
 button { font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
@@ -76,13 +98,76 @@ button { font-family: "Bodoni Moda", serif;
       }    
 
 
-
 .number {
     font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal; 
-    font-size: 300}
+    font-weight: bold;
+    font-style: bold; 
+    font-size: 3.5rem}
 
 
-    
+.left {;
+  text-align: left;
+margin: 5%; }
+
+.right {;
+text-align: right;
+margin: 5%;}
+
+
+.sidebyside {display: flex;}
+
+.title { font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+line-height: 1rem;}
+
+.wording {font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: ;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;}
+
+.backgroundblack {background-color: black;
+color: white;}
+
+.second {background-color: #aaa;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;}
+
+.second:hover {background-color: #777;}
+
+.gridlayout {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;}
+
+#hoverover { background-color: #aaa;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    text-transform:uppercase ;
+    font-size: 18px;
+    font-weight: bold;}
+
+#hoverover:hover {background-color: #777; font-size: 0px;}
+
+#hoverover:hover:after {content: attr(data-hover); 
+    font-size: 1rem; text-transform: none; font-weight: lighter;
+   }
