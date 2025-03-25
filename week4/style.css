@@ -16,7 +16,7 @@ h1 {
 p {
     border: 1px solid red;
     width: 400px;
-    min-height: 400px;
+    height: 400px;
     margin: 0 auto;
     margin-bottom: 20px;
     padding: 20px;
@@ -24,4 +24,8 @@ p {
 
 .vcenter {
     line-height: 400px;
+}
+
+span {
+    color: red
 }
