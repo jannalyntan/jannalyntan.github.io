@@ -122,12 +122,13 @@ and then tried to understand how to use the code and not copy blindly*/
     filter: grayscale(100%);
 }
 
-/* have to use rgba since i only want the box opacity to change and not the text
-added padding to make the box bigger and used a border-radius to make the edges curved*/
+/* have to use rgba since i only want the box opacity to change*/
 #box {
     background-color: rgba(0, 0, 0, 0.45);
-    padding: 60px;
-    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: center;
 }
 
 
