@@ -1,10 +1,16 @@
 /*
---brand-color: #DEB841;
---darkest-color: #37323E;
---dark-color: #6D6A75;
---mid-color: #A8A5B1;
---light-color: #DAD5E3;
---lightest-color: #FFFFFF;
+--brand-color: #F59E0B;
+--darkest-color: #18181B;
+--dark-color: #3A3A42;
+--mid-color: #A1A1AA;
+--light-color: #D2D2DF;
+--lightest-color: #F8F8F8;
+
+font
+"Nunito Sans", sans-serif;
+ "EB Garamond", serif;
+
+
   */
 
 body,
@@ -32,13 +38,10 @@ h3 {
 }
 
 p {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100,
-        "YTLC" 500;
 }
 
 a {
@@ -59,13 +62,47 @@ hr {
     font-style: normal;
 }
 
+.name {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #F59E0B;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Bodoni Moda" serif;
+    text-transform: uppercase;
+}
+
+/* for the starting page*/
+#homepage {
+    background-image: url(concerthall.jpg);
+    height: 100%;
+    /*used a filter to make everything more cohesive 
+    so i decided to go with a black and white filter*/
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(100%);
+}
+
+/* have to use rgba since i only want the box opacity to change
+done this so that the title will be more obvious since the image is a bit white*/
+#box {
+    background-color: rgba(0, 0, 0, 0.45);
+    /*wanted the image to fit the whole screen*/
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: center;
+}
+
 /*Created this button to link the actual website*/
 #button1 {
-    font-family: "Bodoni Moda", serif;
+    font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: bold;
     font-style: normal;
-    background-color: #37323E;
+    background-color: #3A3A42;
 
     /*Wanted the button in the middle of the webpage hence the margin tag*/
     margin: 0 auto;
@@ -80,66 +117,17 @@ hr {
 done just to create some movement in a way*/
 
 #button1:hover {
-    background-color: #DEB841;
-    padding: 25px 35px;
-    margin-bottom: 20px;
+    background-color: #F59E0B;
     color: black;
-    font-weight: bold;
-
+    font-weight: bold
 }
-
-/* this few tags are for text over image. I had to research how to do it 
-and then tried to understand how to use the code and not copy blindly*/
-
-.container {
-    /* this was done cause I wanted my image to take up the full screen since 
-    i didnt want it to constantly repeat and be the background for all the other 'sections' i added a no-repeat tag  */
-
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    /* This was to make sure that the text in the image will always be in the center */
-
-    position: relative;
-    text-align: center;
-    color: rgb(255, 255, 255)
-}
-
-.textcenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-#homepage {
-    background-image: url(concerthall.jpg);
-    height: 100%;
-    /*used a filter to make everything more cohesive 
-    so i decided to go with a black and white filter*/
-    -webkit-filter: grayscale(50%);
-    filter: grayscale(100%);
-}
-
-/* have to use rgba since i only want the box opacity to change*/
-#box {
-    background-color: rgba(0, 0, 0, 0.45);
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex: center;
-}
-
-
 
 /*done for the verticle tab menu*/
 .scrollmenu {
-    font-family: "Bodoni Moda", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    background-color: #37323E;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #18181B;
 
     /*creating some height to the design and also using the flexbox 
     to create it aligning it to the center with the justify content tag*/
@@ -155,30 +143,64 @@ and then tried to understand how to use the code and not copy blindly*/
 .scrollmenu a {
     color: white;
     text-align: center;
-    padding: 20px 30px;
+    /*to create a fix box size with a fixed font size, since i was going for the oversized text look*/
+    height: 50px;
+    width: 50px;
+    display: flex;
+    /*to make everything centered in the 'box'*/
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
+    /*So no underline*/
     text-decoration: none;
 }
 
 .scrollmenu a:hover {
-    background-color: #DEB841;
+    background-color: #F59E0B;
     color: black;
     font-weight: bold;
 }
 
-.number {
-    font-family: "Bodoni Moda", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: bold;
-    font-size: 3.5rem
+/*using flex box to create the side by side text*/
+.sidebyside {
+    display: flex;
 }
 
+/* General class styles*/
+.number {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-style: bold;
+    font-size: 4.5rem
+}
 
-/* to create more of a spacing in between each section*/
-.sidebysidetext {
-    margin-top: 50px;
-    margin-bottom: 70px;
+.title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: larger;
+}
+
+.wording {
+    font-family: "EB Garamond", serif;
+}
+
+.left {
+    text-align: left;
+    align-items: left;
+    /* to keep the margin consistant i used percentage instead of px*/
+    margin: 5%;
+    /* to ensure the text can 'grow' with browser size change*/
+    min-width: 25%;
+    max-width: 70%;
+}
+
+.right {
+    align-items: right;
+    text-align: right;
+    margin: 5%;
+    min-width: 25%;
+    max-width: 70%;
 }
 
 
@@ -187,75 +209,174 @@ and then tried to understand how to use the code and not copy blindly*/
     display: flex;
 }
 
-.backgroundblack {
-    background-color: #6D6A75;
+.backgroundcolour {
+    background-color: #18181B;
     color: #FFFFFF;
     padding-bottom: 30px;
+    padding-top: 30px;
 }
 
-
-.gridlayout {
+.buttonlayout {
     font-family: "Nunito Sans", sans-serif;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 10px;
     margin-top: 20px;
     padding: 10px 30px;
 }
 
+/* Reduce opacity of other images when hovering on one */
+.buttonlayout:hover .hoverover {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
 
+/* Keep hovered image at full opacity */
+.buttonlayout .hoverover:hover {
+    opacity: 1;
+}
 
-#hoverover {
+/* For Hover Animations*/
+.hoverover {
+    font-family: "Nunito Sans", sans-serif;
     color: rgb(255, 255, 255);
-    border: rgb(255, 255, 255) 2px solid;
+
     border-radius: 5px;
-    padding: 70px 120px;
-    width: 200px;
-    height: 40px;
+    width: 280px;
+    height: 170px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 18px;
-    font-weight: bold;
+
+    /* for the the text that will be shown afterwards*/
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
-    overflow: hidden;
 }
 
-#hoverover:hover {
-    background-color: #DEB841;
-    font-size: 0;
+.hoverover:hover {
+    background-color: #F59E0B;
+    border: #D2D2DF 2px solid;
+
 }
 
-/* Keep original text hidden without affecting size */
-#hoverover:hover span {
-    opacity: 0;
+/* done to hide the image*/
+.hoverover:hover img {
     position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
 }
+
 
 /* Show new hover text */
-#hoverover:after {
+.hoverover:after {
+    font-family: "EB Garamond", serif;
     content: attr(data-hover);
-    font-size: 1rem;
+    font-size: 20px;
     padding: 20px;
     text-transform: none;
-    font-weight: lighter;
     position: absolute;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
 }
 
-#hoverover:hover:after {
+/*to return the img to original state*/
+.hoverover:hover:after {
+    opacity: 1;
+}
+
+
+#question3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+/* this few tags are for text over image. I had to research how to do it 
+and then tried to understand how to use the code and not copy blindly*/
+
+.container {
+    /* this was done cause I wanted my image to take up the full screen since 
+    i didnt want it to constantly repeat and be the background for all the other 'sections' i added a no-repeat tag  */
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* This was to make sure that the text in the image will always be in the center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255)
+}
+
+/* this is for the number*/
+.textleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+
+/* For Hover Animations*/
+.hoverover2 {
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 20px;
+
+    background-color: #37323E;
+    border-radius: 5px;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* for the the text that will be shown afterwards*/
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hoverover2:hover {
+    background-color: #F59E0B;
+    border: #D2D2DF 2px solid;
+    font-size: 0px;
+
+}
+
+/* Show new hover text */
+.hoverover2:after {
+    font-family: "EB Garamond", serif;
+    font-weight: lighter;
+    content: attr(data-hover);
+    font-size: 20px;
+    padding: 20px;
+    text-transform: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.hoverover2:hover:after {
     opacity: 1;
 }
 
 
 
 
-
-
+/*this is for the text*/
+.centered {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
 
 
@@ -266,22 +387,21 @@ and then tried to understand how to use the code and not copy blindly*/
 
 
 
-.textleft {
-    position: absolute;
-    top: 8px;
-    left: 16px;
+
+
+
+
+
+
+
+
+/* to create more of a spacing in between each section*/
+.sidebysidetext {
+    margin-top: 50px;
+    margin-bottom: 70px;
 }
 
 
-
-
-.centered {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
-}
 
 button {
     font-family: "Bodoni Moda", serif;
@@ -320,76 +440,6 @@ button {
 
 
 
-
-
-
-.left {
-    text-align: left;
-    align-items: left;
-    margin: 5%;
-    min-width: 25%;
-    max-width: 70%;
-}
-
-.right {
-    align-items: right;
-    text-align: right;
-    margin: 5%;
-    min-width: 25%;
-    max-width: 70%;
-}
-
-
-
-
-.title {
-    font-family: "Bodoni Moda", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 1.2rem;
-    font-size: larger;
-}
-
-.wording {
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100,
-        "YTLC" 500;
-}
-
-
-
-
-
-
-
-#hoverover2 {
-    background-color: #aaa;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
-    padding: 30px 100px;
-    height: auto;
-    width: 200px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-#hoverover2:hover {
-    background-color: #777;
-    font-size: 0px;
-}
-
-#hoverover2:hover:after {
-    content: attr(data-hover);
-    font-size: 1rem;
-    text-transform: none;
-    font-weight: lighter;
-}
 
 
 

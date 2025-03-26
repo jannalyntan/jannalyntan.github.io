@@ -19,14 +19,14 @@
   <!---container is an image plus text tag
   Using div as a section divider since I want to use 2 different tags--->
 
-  <div class="container" id="homepage">
-    <div class="textcenter" id="box">
-      <img src="maintitle.png" alt="title">
+  <div id="homepage">
+    <div id="box">
+      <img src="maintitle.png" alt="maintitle">
     </div>
   </div>
 
   <div class="name">
-    <p>s4056775 <br>Jannalyn Tan</p>
+    <p>s4056775 Jannalyn Tan</p>
   </div>
 
   <hr style="margin-top: 40px; margin: 5%;">
@@ -93,21 +93,32 @@
     </div>
   </div>
 
-  <!--hoverover id is created for the items that want to be hovered over used id tag instead of a class tag since initally thought i need to create it for each individual hover-->
-  <div id="question2" class="backgroundblack">
+
+  <div id="question2" class="backgroundcolour">
     <h2 class="number">2.</h2>
     <div class="centered">
       <p class="title">Spend two minutes with the experience and create a list of each of your
         discrete actions.
       </p>
     </div>
-    <div class="gridlayout">
-      <div id="hoverover" data-hover="Scrolling vertically through the content">
-        Scrolling</div>
-      <div id="hoverover" data-hover="Clicking on buttons to navigate or trigger interactions ">Clicking</div>
-      <div id="hoverover" data-hover="Hovering over elements to see how they respond to the cursor ">Hovering</div>
-      <div id="hoverover" data-hover="Watching embedded videos to understand more about the project">Watching</div>
-      <div id="hoverover" data-hover="Listening to the background music and sound effects "> Listening</div>
+    <!--created a new class as this layout needed more tags compared to the other class-->
+
+    <div class="buttonlayout">
+      <!--Learnt to use the data-hover tag for items i wanted to hoever over for-->
+
+      <div class="hoverover" data-hover="Scrolling vertically through the content"> <img src="scrolling.png"
+          alt="scrolling" style="height: 160px;" class="icontext">
+      </div>
+      <div class="hoverover" data-hover="Clicking on buttons to navigate or trigger interactions "> <img
+          src="clicking.png" alt="clicking" style="height: 160px;" class="icontext">
+      </div>
+      <div class="hoverover" data-hover="Hovering over elements to see how they respond to the cursor "> <img
+          src="hovering.png" alt="hovering" style="height: 160px;" class="icontext">
+      </div>
+      <div class="hoverover" data-hover="Watching embedded videos to understand more about the project"><img
+          src="watching.png" alt="watching" style="height: 160px;" class="icontext"></div>
+      <div class="hoverover" data-hover="Listening to the background music and sound effects "><img src="listening.png"
+          alt="listening" style="height: 160px;" class="icontext"></div>
     </div>
   </div>
 
@@ -140,17 +151,15 @@
     </div>
   </div>
 
-  <!--created a new hoverover since i wanted the box to be longer-->
 
+  <!--container is for an image plus text-->
   <div class="container" id="question4">
-    <div class="textleft" id="#question4">
+    <div class="textleft">
       <h2 class="number">4.</h2>
     </div>
-    <div class="textcenter">
-      <div id="hoverover2"
-        data-hover="The most common action was vertical scrolling. The site is designed to be explored in a linear, flowing manner, guiding users through the content at their own pace.">
-        What was the most common action in your two minute interaction with the experience? </div>
-    </div>
+    <div class="hoverover2"
+      data-hover="The most common action was vertical scrolling. The site is designed to be explored in a linear, flowing manner, guiding users through the content at their own pace.">
+      What was the most common action in your two minute interaction with the experience? </div>
   </div>
 
   <div id="question5">
