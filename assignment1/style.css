@@ -15,6 +15,7 @@ and then tried to understand how to use the code and not copy blindly*/
 .container {
     /* this was done cause I wanted my image to take up the full screen since 
     i didnt want it to constantly repeat and be the background for all the other 'sections' i added a no-repeat tag  */
+
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -35,6 +36,12 @@ and then tried to understand how to use the code and not copy blindly*/
 #homepage {
     background-image: url(concerthall.jpg);
     height: 100%;
+}
+
+
+.sidebysidetext {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #question4 {
