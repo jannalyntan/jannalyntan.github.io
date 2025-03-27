@@ -42,6 +42,7 @@ p {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+    font-size: 1rem;
 }
 
 a {
@@ -193,6 +194,7 @@ done just to create some movement in a way*/
     /* to ensure the text can 'grow' with browser size change*/
     min-width: 25%;
     max-width: 70%;
+    flex: 1;
 }
 
 .right {
@@ -201,12 +203,14 @@ done just to create some movement in a way*/
     margin: 5%;
     min-width: 25%;
     max-width: 70%;
+    flex: 1;
 }
 
 
 /*using flex box to create the side by side text*/
 .sidebyside {
     display: flex;
+    align-items: center;
 }
 
 .backgroundcolour {
@@ -322,7 +326,7 @@ and then tried to understand how to use the code and not copy blindly*/
 }
 
 
-/* For Hover Animations*/
+/* For Hover Animations- just copied the previous animation but changed some settings*/
 .hoverover2 {
     font-family: "Nunito Sans", sans-serif;
     color: rgb(255, 255, 255);
@@ -368,6 +372,32 @@ and then tried to understand how to use the code and not copy blindly*/
 
 
 
+#question4 {
+    position: relative;
+    height: 100%;
+    color: white;
+    /* Ensure text remains visible */
+}
+
+/* to make the background behing the content of #question4 acting as a background layer*/
+#question4::before {
+    content: attr(data-hover);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* Sets the grayscale background image */
+    background-image: url(https://drupal-prod.visitcalifornia.com/sites/default/files/styles/fluid_1920/public/WaltDisneyConceertHall_attraction_sized.jpg.webp?itok=pH3jXu1C);
+
+    /*ensures image does not repeat*/
+    background-size: cover;
+
+    /* Applies grayscale effect to the background image only */
+    filter: grayscale(100%);
+
+
+}
+
 
 /*this is for the text*/
 .centered {
@@ -379,20 +409,200 @@ and then tried to understand how to use the code and not copy blindly*/
 }
 
 
+/* creating some spacing in btw text*/
+#question5 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
-#question4 {
-    background-image: url(concerthall.jpg);
-    height: 100%;
+
+/* done for the side by side that want a yellow border at the back*/
+.sidebyside2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -50px;
+    gap: 20px;
+    align-items: center;
+
+
+    background-color: #F59E0B;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #18181B;
+    border-radius: 5px;
+}
+
+#concerthallimg {
+    /*ensure that the image scales with the size of the browser*/
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+/*ensure some interaction*/
+#concerthallimg:hover {
+    filter: grayscale(50%);
+}
+
+
+/*ust copied the previous button layout class but changed some settings*/
+
+.buttonlayout2 {
+    font-family: "Nunito Sans", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px 30px;
+}
+
+/* Reduce opacity of other images when hovering on one */
+.buttonlayout2:hover .hoverover3 {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Keep hovered image at full opacity */
+.buttonlayout2 .hoverover3:hover {
+    opacity: 1;
+}
+
+/* For Hover Animations - just copied the previous animation but changed some settings*/
+.hoverover3 {
+    font-family: "Nunito Sans", sans-serif;
+    color: rgb(255, 255, 255);
+
+    border-radius: 5px;
+    width: 280px;
+    height: 210px;
+    text-align: center;
+    text-transform: uppercase;
+
+    /* for the the text that will be shown afterwards*/
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hoverover3:hover {
+    background-color: #F59E0B;
+    border: #D2D2DF 2px solid;
+
+}
+
+/* done to hide the image*/
+.hoverover3:hover img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+
+/* Show new hover text */
+.hoverover3:after {
+    font-family: "EB Garamond", serif;
+    content: attr(data-hover);
+    font-size: 20px;
+    padding: 20px;
+    text-transform: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+/*to return the img to original state*/
+.hoverover3:hover:after {
+    opacity: 1;
+}
+
+
+#question7 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#question8 {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 
 
+.buttonlayout3 {
+    font-family: "Nunito Sans", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px 30px;
+}
+
+/* Reduce opacity of other images when hovering on one */
+.buttonlayout3:hover #answerbox {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+/* Keep hovered image at full opacity and increase the size of 
+the text box you hover over used this tag to increase the size uniformly */
+.buttonlayout3 #answerbox:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
 
 
+#answerbox {
+    color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255) 2px solid;
+    border-radius: 5px;
+    padding: 100px 35px;
+    width: 200px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#answerbox:hover {
+    background-color: #F59E0B;
+    color: #18181B;
+}
+
+/*make the heading of the font bigger without creating another tag like h1/h2*/
+span {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#question10img {
+    /*the image scale with the browser size*/
+    width: 100%;
+    /* Forces square dimensions */
+    aspect-ratio: 1 / 1;
+    /* Ensures the image fills the square without stretching */
+    object-fit: cover;
+
+    filter: grayscale(100%);
+}
+
+#question10img:hover {
+    filter: grayscale(0%);
+}
 
 
+#question11 {
+    background-image: url(drawing.jpg);
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
-
+.sidebyside3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* to create more of a spacing in between each section*/
@@ -436,32 +646,4 @@ button {
     justify-content: center;
     position: relative;
 
-}
-
-
-
-
-
-
-#answerbox {
-    color: rgb(255, 255, 255);
-    border: rgb(255, 255, 255) 2px solid;
-    border-radius: 5px;
-    padding: 100px 30px;
-    width: 200px;
-    text-align: left;
-    font-size: 18px;
-}
-
-
-
-#ten {
-    color: rgb(255, 255, 255);
-
-    background-color: #aaa;
-    border-radius: 5px;
-    padding: 100px 30px;
-
-    text-align: center;
-    font-size: 18px;
 }
