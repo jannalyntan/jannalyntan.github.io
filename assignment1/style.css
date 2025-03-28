@@ -9,13 +9,12 @@
 font
 "Nunito Sans", sans-serif;
  "EB Garamond", serif;
-
-
   */
 
 body,
 html {
     height: 100%;
+    background-color: #F8F8F8;
 }
 
 h1 {
@@ -56,6 +55,23 @@ hr {
     color: #37323E;
     background-color: #37323E
 }
+
+button {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color: black;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
 
 .mainfont {
     font-family: "Bodoni Moda", serif;
@@ -596,54 +612,75 @@ span {
     height: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
+    color: #18181B;
 }
 
 .sidebyside3 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* to create more of a spacing in between each section*/
-.sidebysidetext {
-    margin-top: 50px;
-    margin-bottom: 70px;
-}
-
-
-
-button {
-    font-family: "Bodoni Moda", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    background-color: black;
-    border-radius: 5px;
-    border: none;
+    justify-content: right;
+    margin-right: 5%;
+    margin-left: 5%;
     color: white;
-    padding: 15px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
 
-}
-
-.centerbutton {
-    color: black;
-    border: 2px black solid;
+    background-color: rgba(24, 24, 27, .75);
     border-radius: 5px;
     padding: 30px;
-    width: 200px;
-    height: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
 
+}
+
+#button2 {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    background-color: #3A3A42;
+
+    /*Wanted the button in the middle of the webpage hence the margin tag*/
+    margin: 0 auto;
+    padding: 20px 40px;
+
+    /*Added the margin to make there be more line spacing between each section*/
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+#button2:hover {
+    background-color: #F59E0B;
+    color: black;
+    font-weight: bold
+}
+
+.conclusion {
+    padding: 30px 30px;
+    color: #18181B;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: -20px;
+
+
+}
+
+
+#button3 {
+    background-color: #18181B;
+    font-family: "Nunito Sans", sans-serif;
+    ;
+    color: ;
+    font-weight: bold;
+    padding: 20px 50px;
+}
+
+#button3:hover {
+    background-color: #F59E0B;
+    color: #18181B;
+}
+
+.buttoncontainer {
+    margin: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
