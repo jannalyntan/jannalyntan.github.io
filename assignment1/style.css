@@ -345,7 +345,7 @@ and then tried to understand how to use the code and not copy blindly*/
 /* For Hover Animations- just copied the previous animation but changed some settings*/
 .hoverover2 {
     font-family: "Nunito Sans", sans-serif;
-    color: rgb(255, 255, 255);
+    color: #F8F8F8;
     font-weight: bold;
     padding: 20px;
 
@@ -364,7 +364,8 @@ and then tried to understand how to use the code and not copy blindly*/
 
 .hoverover2:hover {
     background-color: #F59E0B;
-    border: #D2D2DF 2px solid;
+    border: #F8F8F8 2px solid;
+    color: #F8F8F8;
     font-size: 0px;
 
 }
@@ -668,7 +669,6 @@ span {
     background-color: #18181B;
     font-family: "Nunito Sans", sans-serif;
     ;
-    color: ;
     font-weight: bold;
     padding: 20px 50px;
 }
