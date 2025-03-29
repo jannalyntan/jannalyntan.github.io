@@ -92,6 +92,10 @@ button {
     text-transform: uppercase;
 }
 
+#question1 {
+    margin-bottom: 30px;
+}
+
 /* for the starting page*/
 #homepage {
     background-image: url(concerthall.jpg);
