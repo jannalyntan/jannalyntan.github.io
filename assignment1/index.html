@@ -5,33 +5,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jannalyn Assignment 1</title>
+
+  <!--Connecting the google fonts to the website-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Tektur:wght@400..900&display=swap"
     rel="stylesheet">
+
+  <!--connecting the css file to the html file-->
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
 
 </head>
 
-<!--to mimic the website i created a one page scrolling website-->
+<!--to mimic the website I created a one page scrolling website-->
 
 <body>
-
-
+  <!--Using a div box so that i can tag add more tags.-->
   <div id="homepage">
+
+    <!--this was added as a 'filter' as i thought the image was too white and wanted it to be darker hence adding this darker box to make the top text more visible-->
     <div id="box">
+
+      <!--since this is layering 2 images i need to use the homepage id to put one 
+      background image and layer another on top using this tag below. I didnt want to create another tag since 
+      this is kind of the kid of the box tag hence it is placed in the middle-->
       <img src="maintitle.png" alt="maintitle">
     </div>
   </div>
 
+
+  <!--adding a name class to add my name to the website-->
   <div class="name">
-    <p>s4056775 Jannalyn Tan</p>
+    <!--using h3 as a way to make my name bigger-->
+    <h3>s4056775 Jannalyn Tan</h3>
   </div>
 
+  <!--adding some elements and style to the line didnt use css since it is only one element and it is easier to just use the style tag-->
   <hr style="margin-top: 40px; margin: 5%;">
 
+  <!--centered class used for a center aligned text-->
   <p class="centered">This review analyses Getty Present's Frank Gehry: The Walt Disney Concert Hall Story, an
     interactive website that
     showcases Frank
@@ -40,12 +54,14 @@
     storytelling. This analysis evaluates its design, user experience, and effectiveness in conveying the creative
     journey behind the concert hall.</p>
 
+  <!--adding some elements and style to the line didnt use css since it is only one element and it is easier to just use the style tag-->
   <hr style="margin-bottom: 40px; margin: 5%; ">
 
 
 
   <!--created button to link it to the actual website that im reviewing opening it in a new tab-->
-  <a href="https://gehry.getty.edu/" target="_blank"><button id="button1"> Frank Gehry’s Website</button></a>
+  <div class="middlebutton"><a href="https://gehry.getty.edu/" target="_blank"><button id="button1"> Frank Gehry’s
+        Website</button></a></div>
 
   <!--Creating a move to button to jump to the section you want to go-->
 

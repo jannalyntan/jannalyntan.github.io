@@ -17,23 +17,12 @@ html {
     background-color: #F8F8F8;
 }
 
-h1 {
-    font-weight: bold;
-    font-size: 3rem;
-    text-align: center;
-
-}
-
 
 
 h3 {
     font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: bold;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100,
-        "YTLC" 500;
 }
 
 p {
@@ -49,27 +38,37 @@ a {
     color: black;
 }
 
+/*generic hr styles*/
 hr {
     height: 2px;
     border-width: 0;
     color: #37323E;
+    /*had to use background colour since after increasing the height it became a hollow box, 
+    since I wanted the line to be a solid black line had to add a background colour tag*/
     background-color: #37323E
 }
 
+
+/*used as a way to just create my button style*/
 button {
-    font-family: "Bodoni Moda", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    background-color: black;
-    border-radius: 5px;
-    border: none;
+    /*font style */
     color: white;
+
+
+    /*button style */
+    background-color: black;
+    border: none;
+
+    /*adding a softer edge to the border */
+    border-radius: 5px;
     padding: 15px 20px;
+
+    /* making the text in the center of the button*/
     text-align: center;
+    /* so that there is no underline */
     text-decoration: none;
-    display: block;
-    font-size: 16px;
+    /* so that there is no underline */
+
 }
 
 
@@ -79,30 +78,15 @@ button {
     font-style: normal;
 }
 
-.name {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-    background-color: #F59E0B;
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: "Bodoni Moda" serif;
-    text-transform: uppercase;
-}
 
-#question1 {
-    margin-bottom: 30px;
-}
 
 /* for the starting page*/
 #homepage {
     background-image: url(concerthall.jpg);
+    /* iamge will be on the full webpage and will always in full height*/
     height: 100%;
     /*used a filter to make everything more cohesive 
     so i decided to go with a black and white filter*/
-    -webkit-filter: grayscale(50%);
     filter: grayscale(100%);
 }
 
@@ -113,25 +97,52 @@ done this so that the title will be more obvious since the image is a bit white*
     /*wanted the image to fit the whole screen*/
     height: 100%;
     width: 100%;
+    /* had to include this otherwise my image would not sit in the whole scene*/
     display: flex;
-    flex: center;
+    /* had to this so that my image will be in the middle of the page*/
+    justify-content: center;
 }
+
+/*since i wanted my name to be in the middle of the screen* I added a flex box */
+.name {
+    display: flex;
+    /*used to make items in the center of the box*/
+    justify-content: center;
+    align-items: center;
+    /*used padding to create some spacing at the top and bottom */
+    padding: 50px;
+    background-color: #F59E0B;
+
+    /*used for the font text adjusting the color and font style*/
+    color: white;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+
+/* to make the button go in the middle of the webpage*/
+.middlebutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Added the margin to make there be more line spacing between each section*/
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+
 
 /*Created this button to link the actual website*/
 #button1 {
     font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
     background-color: #3A3A42;
 
     /*Wanted the button in the middle of the webpage hence the margin tag*/
-    margin: 0 auto;
     padding: 20px 30px;
 
-    /*Added the margin to make there be more line spacing between each section*/
-    margin-bottom: 30px;
-    margin-top: 10px;
 }
 
 /* added a hover function to make it change colour when hovered over this was 
@@ -142,6 +153,8 @@ done just to create some movement in a way*/
     color: black;
     font-weight: bold
 }
+
+
 
 /*done for the verticle tab menu*/
 .scrollmenu {
@@ -180,6 +193,10 @@ done just to create some movement in a way*/
     background-color: #F59E0B;
     color: black;
     font-weight: bold;
+}
+
+#question1 {
+    margin-bottom: 30px;
 }
 
 /*using flex box to create the side by side text*/
