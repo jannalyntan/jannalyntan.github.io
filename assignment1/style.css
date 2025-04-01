@@ -174,14 +174,17 @@ done just to create some movement in a way*/
 
 }
 
+/* verticle task bar*/
 .scrollmenu a {
     color: white;
+    /*make the text be in the center of each 'box'*/
     text-align: center;
     /*to create a fix box size with a fixed font size, since i was going for the oversized text look*/
     height: 50px;
     width: 50px;
+    /*using a flex display to create the verticle task bar*/
     display: flex;
-    /*to make everything centered in the 'box'*/
+    /*to make everything centered in the ' big box'*/
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -189,22 +192,23 @@ done just to create some movement in a way*/
     text-decoration: none;
 }
 
+
+/*creating some response when user hover over the button*/
 .scrollmenu a:hover {
+    /*creating the background colour of the small box and the font colour*/
     background-color: #F59E0B;
     color: black;
     font-weight: bold;
 }
 
+
+/* creating some spacing between the sections*/
 #question1 {
     margin-bottom: 30px;
 }
 
-/*using flex box to create the side by side text*/
-.sidebyside {
-    display: flex;
-}
 
-/* General class styles*/
+/* General font  style for the numbers*/
 .number {
     font-family: "Nunito Sans", sans-serif;
     font-weight: bold;
@@ -223,32 +227,38 @@ done just to create some movement in a way*/
     font-family: "EB Garamond", serif;
 }
 
-.left {
-    text-align: left;
-    align-items: left;
-    /* to keep the margin consistant i used percentage instead of px*/
-    margin: 5%;
-    /* to ensure the text can 'grow' with browser size change*/
-    min-width: 25%;
-    max-width: 70%;
-    flex: 1;
-}
-
-.right {
-    align-items: right;
-    text-align: right;
-    margin: 5%;
-    min-width: 25%;
-    max-width: 70%;
-    flex: 1;
-}
-
 
 /*using flex box to create the side by side text*/
 .sidebyside {
     display: flex;
     align-items: center;
 }
+
+/*for the items I want to be on the left of the page*/
+.left {
+    /*making the text to the left of the page*/
+    text-align: left;
+    /*making any items like photos to be on the left of the page*/
+    align-items: left;
+    /* to keep the margin consistant i used percentage instead of px*/
+    margin: 5%;
+    /* to ensure the text can 'grow' with browser size change*/
+    flex: 1;
+}
+
+.right {
+    /*making the text to the right of the page*/
+    align-items: right;
+    /*making any items like photos to be on the right of the page*/
+    text-align: right;
+    /* to keep the margin consistant i used percentage instead of px*/
+    margin: 5%;
+    /* to ensure the text can 'grow' with browser size change*/
+    flex: 1;
+}
+
+
+
 
 .backgroundcolour {
     background-color: #18181B;
