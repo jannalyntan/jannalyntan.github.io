@@ -1,4 +1,3 @@
-
 // no variables 0-infinity dont use quotes
 let a=100;
 let b =parseInt("20");
@@ -19,12 +18,6 @@ let weather = "rain";
 if(weather === "sunny") {
     console.log ("what a nice pleasent sunny weather");}
     else { console.log ("no sun tdy");}
-
-
-
-
-
-
 
 
 
@@ -79,7 +72,11 @@ console.log (myStudentRecord.course)
 //do this instead
 // counting starts from 0
 let sNames=[ "Jann", "Jin", "Sarah"] ;
-console.log(sNames[0]);
+for(let i=0; i< students.length;i++)
+{console.log ("hello", students[i])}
+
+console.log(sNames[i]);
+
 
 
 // counting start from 0 so 8 will be number 3
