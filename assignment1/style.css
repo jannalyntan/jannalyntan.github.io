@@ -261,18 +261,26 @@ done just to create some movement in a way*/
 
 
 .backgroundcolour {
+    /* for the background colour of the parts where I want the background to be darker*/
     background-color: #18181B;
+    /* font colour for the sections where it is a darker background colour*/
     color: #FFFFFF;
+    /* creating some padding for this section just to create some spacing*/
     padding-bottom: 30px;
     padding-top: 30px;
 }
 
+
+/* for the parts where the buttons are side by side to each other*/
 .buttonlayout {
     font-family: "Nunito Sans", sans-serif;
+    /*used a flex box to make the buttons lay side by side to each other*/
     display: flex;
+    /* allowing the buttons to wrap around if the browser gets too small*/
     flex-wrap: wrap;
+    /* allowing the buttons to be equally spaced*/
     justify-content: space-around;
-    gap: 10px;
+    /* Creating some spacing between question and the buttons*/
     margin-top: 20px;
     padding: 10px 30px;
 }
