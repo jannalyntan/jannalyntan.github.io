@@ -317,12 +317,14 @@ done just to create some movement in a way*/
     text-align: center;
     text-transform: uppercase;
 
-    /* for the the text that will be shown afterwards*/
+    /* for the the text that will be shown afterwards to make 
+    sure it is at the center of the box on the screen*/
     display: flex;
     align-items: center;
     position: relative;
 }
 
+/*changing the background colour of the box when there is a hover animation*/
 .hoverover:hover {
     background-color: #F59E0B;
     border: #D2D2DF 2px solid;
@@ -331,9 +333,7 @@ done just to create some movement in a way*/
 
 /* done to hide the image*/
 .hoverover:hover img {
-    position: absolute;
-    left: 0;
-    top: 0;
+
     display: none;
 }
 
@@ -341,12 +341,14 @@ done just to create some movement in a way*/
 /* Show new hover text */
 .hoverover:after {
     font-family: "EB Garamond", serif;
+    /*to show the text*/
     content: attr(data-hover);
     font-size: 20px;
     padding: 20px;
     text-transform: none;
     position: absolute;
     opacity: 0;
+    /*creating an animation for the animation*/
     transition: opacity 0.15s ease-in-out;
 }
 
