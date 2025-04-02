@@ -282,7 +282,9 @@ done just to create some movement in a way*/
     justify-content: space-around;
     /* Creating some spacing between question and the buttons*/
     margin-top: 20px;
-    padding: 10px 30px;
+    /* creating a margin keep the side margin standard*/
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* Reduce opacity of other images when hovering on one */
@@ -296,12 +298,20 @@ done just to create some movement in a way*/
     opacity: 1;
 }
 
+
 /* For Hover Animations*/
 .hoverover {
+
+    /*font family and color for the hoverover text*/
     font-family: "Nunito Sans", sans-serif;
     color: rgb(255, 255, 255);
 
+    /*creating a curved corner*/
     border-radius: 5px;
+
+    /*to make sure the text box doesnt change size when the hoverover 
+    animation occurs and this is to also standardised the box size to
+     avoid the background from increasing in size when hoverover animation occurs*/
     width: 280px;
     height: 170px;
     text-align: center;
