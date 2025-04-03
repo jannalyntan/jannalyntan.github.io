@@ -387,7 +387,10 @@ was utilise a flex box for items that will be put inside*/
     /*for the 'box' in the middle of the page since I wanted it to be in the middle of the image*/
     justify-content: center;
     align-items: center;
+    /*item postion will be relative to the section it is in*/
+    position: relative;
 }
+
 
 /* this is for the number*/
 .textleft {
@@ -681,6 +684,7 @@ span {
     background-color: rgba(24, 24, 27, .75);
     border-radius: 5px;
     padding: 30px;
+    position:absolute;
 
 }
 
