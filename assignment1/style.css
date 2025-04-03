@@ -216,6 +216,8 @@ done just to create some movement in a way*/
     font-size: 4.5rem
 }
 
+/* so that it is easier for people to differentiate between the question and the answer.
+Using a bigger and bolder font for the question*/
 .title {
     font-family: "Nunito Sans", sans-serif;
     font-weight: bold;
@@ -223,6 +225,8 @@ done just to create some movement in a way*/
     font-size: larger;
 }
 
+/*Using a serif font for the answer to replicate the original website 
+and so that it is different from the website*/
 .wording {
     font-family: "EB Garamond", serif;
 }
@@ -315,7 +319,6 @@ done just to create some movement in a way*/
     width: 280px;
     height: 170px;
     text-align: center;
-    text-transform: uppercase;
 
     /* for the the text that will be shown afterwards to make 
     sure it is at the center of the box on the screen*/
@@ -341,12 +344,13 @@ done just to create some movement in a way*/
 /* Show new hover text */
 .hoverover:after {
     font-family: "EB Garamond", serif;
-    /*to show the text*/
+    /*to show the text after the hover*/
     content: attr(data-hover);
     font-size: 20px;
     padding: 20px;
-    text-transform: none;
+    /*Making sure the text doesn't move */
     position: absolute;
+    /*so that the text disappoer after the hover is completed*/
     opacity: 0;
     /*creating an animation for the animation*/
     transition: opacity 0.15s ease-in-out;
@@ -357,7 +361,7 @@ done just to create some movement in a way*/
     opacity: 1;
 }
 
-
+/*creating some spacing between the sections*/
 #question3 {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -369,6 +373,8 @@ done just to create some movement in a way*/
 /* this few tags are for text over image. I had to research how to do it 
 and then tried to understand how to use the code and not copy blindly*/
 
+/*after analysising it I realised this tag was to make sure the image took up the whole section page and 
+was utilise a flex box for items that will be put inside*/
 .container {
     /* this was done cause I wanted my image to take up the full screen since 
     i didnt want it to constantly repeat and be the background for all the other 'sections' i added a no-repeat tag  */
@@ -378,11 +384,9 @@ and then tried to understand how to use the code and not copy blindly*/
 
     /* This was to make sure that the text in the image will always be in the center */
     display: flex;
+    /*for the 'box' in the middle of the page since I wanted it to be in the middle of the image*/
     justify-content: center;
     align-items: center;
-    position: relative;
-    text-align: center;
-    color: rgb(255, 255, 255)
 }
 
 /* this is for the number*/
