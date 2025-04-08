@@ -1,37 +1,33 @@
 // no variables 0-infinity dont use quotes
-let a=100;
-let b =parseInt("20");
-console.log (a,b);
+let a = 100;
+let b = parseInt("20");
+console.log(a, b);
 
-let c =a-b;
+let c = a - b;
 console.log(c);
 
-
 // if and else. If got smt then smt will happen
-let grade= 20;
-if (grade>70)
-{console.log("yey you got HD");}
-else {console.log("oppies you just pass");}
-
+let grade = 20;
+if (grade > 70) {
+  console.log("yey you got HD");
+} else {
+  console.log("oppies you just pass");
+}
 
 let weather = "rain";
-if(weather === "sunny") {
-    console.log ("what a nice pleasent sunny weather");}
-    else { console.log ("no sun tdy");}
-
-
+if (weather === "sunny") {
+  console.log("what a nice pleasent sunny weather");
+} else {
+  console.log("no sun tdy");
+}
 
 // +addition as well as joining
 // -subtract
 //*muliplication
 // / division
 
-
-
-
-
 //string variables
-const myName= "Jannalyn";
+const myName = "Jannalyn";
 console.log(myName);
 const myCity = "melbourne";
 
@@ -42,24 +38,22 @@ const msg = `
 
 `;
 
-console.log (msg);
-
+console.log(msg);
 
 // boolen variable TRUE FALSE
-let isThisSunday= false;
-let isItAfternoon= true;
-
+let isThisSunday = false;
+let isItAfternoon = true;
 
 // objects {name:vale, name:value}
-const myStudentRecord = { 
-    name: "Same", 
-    id: 1234,
-    course : "OART1013" ,
-    isLocal : false,
-}
+const myStudentRecord = {
+  name: "Same",
+  id: 1234,
+  course: "OART1013",
+  isLocal: false,
+};
 
-console.log (myStudentRecord)
-console.log (myStudentRecord.course)
+console.log(myStudentRecord);
+console.log(myStudentRecord.course);
 
 // arrays
 
@@ -68,17 +62,15 @@ console.log (myStudentRecord.course)
 // let sName2 = "Jin" ;
 // let sName3= "Sarah" ;
 
-
 //do this instead
 // counting starts from 0
-let sNames=[ "Jann", "Jin", "Sarah"] ;
-for(let i=0; i< students.length;i++)
-{console.log ("hello", students[i])}
+let sNames = ["Jann", "Jin", "Sarah"];
+for (let i = 0; i < students.length; i++) {
+  console.log("hello", students[i]);
+}
 
 console.log(sNames[i]);
 
-
-
 // counting start from 0 so 8 will be number 3
-let numbers = [2,4,6,8,10];
-console.log (numbers[3]);
+let numbers = [2, 4, 6, 8, 10];
+console.log(numbers[3]);
