@@ -1,21 +1,27 @@
 const myButton = document.querySelector("#my-button");
 console.log(myButton);
-myButton.addEventListener("click", handleClick);
+myButton.addEventListener ("click", handleClick);
 const topHeading = document.querySelector("h1");
 
-function handleClick() {
+const myCat = document.querySelector("#my-cat");
+console.log(myCat);
+
+function handleClick( ) {
   console.log("hey did you just click me?");
-  topHeading.textContent = "This is my new top heading";
-  topHeading.style.color = "red";
+  myCat.classList.toggle("round");
 }
 
+
+
+//topHeading.textContent = "This is my new top heading";
+//topHeading.style.color = "red";
 //console.log(topHeading);
 //console.log(topHeading.textContent);
 
 const header = document.querySelector("header");
 console.log(header);
 console.log(header.textContent);
-//console.log(header.innerHTML);
+console.log(header.innerHTML);
 //let course = "OART1013";
 //header.innerHTML += `<h1>my course is ${course}</h1>`;
 
