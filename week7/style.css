@@ -1,3 +1,10 @@
+/*to make it easier to change the style*/
+:root {
+  --bg-color: rgba(197, 180, 139, 0.5);
+  --my-padding: 10px;
+  --my-borders: 24px;
+}
+
 audio,
 video {
   display: block;
@@ -10,11 +17,12 @@ video {
 }
 
 button {
-  padding: 20px;
+  padding: var(--my-padding);
   font-size: 1.2rem;
-  border-radius: 12px;
+  border-radius: var(--my-borders);
   margin: 10px;
   cursor: pointer;
+  background-color: var(--bg-color);
 }
 
 button:hover {
