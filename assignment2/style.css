@@ -1,0 +1,77 @@
+/* 
+Colour 
+
+White : 
+#F6F4EB rgb(246, 244, 235)
+Light Blue: 
+#91C8E4 rgb(145, 200, 228)
+Mid Blue: 
+#749BC2 rgb(116, 155, 194)
+Darkest Blue: 
+#4682A9rgb(70, 130, 169)
+
+(Choose blue casue it is known to have a calming effects which is good for studying and relaxation)
+*/
+
+/*
+Font
+    font-family: "Lexend", sans-serif;
+*/
+
+button {
+  font-family: "Lexend", sans-serif;
+  background-color: #f6f4eb;
+  color: #4682a9;
+  border-color: #f6f4eb;
+}
+
+#top-btn {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+
+  gap: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 5%;
+}
+
+.top-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#info-btn {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+}
+
+#theme-btn {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#vertical-menu-group {
+  display: flex;
+  justify-content: right;
+}
+
+.vertical-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  margin-right: 5%;
+
+  background-color: #f6f4eb;
+  border-radius: 10px;
+}
+
+
+
