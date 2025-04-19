@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jannalyn's Assingment 2</title>
+    <title>Jannalyn's Assignment 2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,35 +15,49 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    
-  <div id="top-btn">
-    <div class="top-btn-group">
-    <button id="info-btn"> i </button>
-    <button id="theme-btn"> Change Theme </button>
-  </div>
-  </div>
+    <div class="container">
+      <video src="Gradient.mp4" autoplay></video>
 
-  <div id="vertical-menu-group">
-    <div class="vertical-menu">
-      <a class="menu-btn" id="timer"><img src="Timer.svg" alt="timer" style="height: 35px;"></button>
-      <a class="menu-btn" id="task-list"><img src="Tasklist.svg" alt="task-list " style="height: 35px;"></button>
-      <a class="menu-btn" id="focus-mode"> <p style="margin-bottom: 5px;">Focus</p> <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </button>
-      <a class="menu-btn" id="play-music"><img src="https://img.icons8.com/ios-glyphs/30/play--v2.png" alt="play-btn"></button>
+      <div id="top-btn">
+        <div class="top-btn-group">
+          <button id="info-btn">i</button>
+          <button id="theme-btn">Change Theme</button>
+        </div>
+      </div>
+
+      <div id="vertical-menu-group">
+        <div class="vertical-menu">
+          <a class="menu-btn" id="timer"
+            ><img src="Timer.svg" alt="timer" style="height: 35px"
+          /></a>
+          <a class="menu-btn" id="task-list"
+            ><img
+              src="Tasklist.svg"
+              alt="task-list"
+              id="tasklist-btn"
+              style="height: 35px"
+          /></a>
+          <a class="menu-btn" id="focus-mode">
+            <p style="margin-bottom: 5px">Focus</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </a>
+          <a class="menu-btn" id="play-music"
+            ><img
+              src="https://img.icons8.com/ios-glyphs/30/play--v2.png"
+              alt="play-btn"
+          /></a>
+        </div>
+      </div>
+
+      <section id="media-player">
+        <audio controls>
+          <source src="erokia_ambient-wave-56-msfxp7-78.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
     </div>
-  </div>
-
-    <section id="media-player">
-      <audio controls>
-        <source src="erokia_ambient-wave-56-msfxp7-78.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
-    </section>
-
-
-  </div>
   </body>
 </html>

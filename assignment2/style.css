@@ -18,8 +18,10 @@ Font
     font-family: "Lexend", sans-serif;
 */
 
+/* for the change theme and information button*/
 button {
   font-family: "Lexend", sans-serif;
+  font-size: larger;
   background-color: #f6f4eb;
   color: #4682a9;
   border-color: #f6f4eb;
@@ -31,9 +33,8 @@ button {
   align-items: right;
 
   gap: 50px;
-  margin-top: 30px;
   margin-bottom: 30px;
-  margin-right: 5%;
+  margin-right: 3%;
 }
 
 .top-btn-group {
@@ -42,6 +43,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
+  margin-top: 15px;
 }
 
 #info-btn {
@@ -52,9 +54,13 @@ button {
 }
 
 #theme-btn {
-  padding: 20px;
+  padding: 25px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 10px;
 }
+
+/*------------------------------------*/
 
 #vertical-menu-group {
   display: flex;
@@ -71,12 +77,16 @@ button {
   padding-bottom: 30px;
   padding-right: 10px;
   padding-left: 10px;
-  margin-right: 5%;
+  margin-right: 3%;
 
   background-color: #f6f4eb;
   border-radius: 10px;
   text-align: center;
-  font-family:"Lexend", sans-serif;
+  font-family: "Lexend", sans-serif;
+}
+
+#timer-btn {
+  filter: sepia(1) saturate(5) hue-rotate(180deg);
 }
 
 /* The switch - the box around the slider */
@@ -102,8 +112,8 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color:#91C8E4;
-  transition: .4s;
+  background-color: #91c8e4;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -114,16 +124,16 @@ button {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -141,3 +151,28 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/* Ensure body and html take full height */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full viewport height */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Make the video fill the entire webpage */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Ensures the video fills the screen without distortion */
+  z-index: -1; /* Make sure the video is behind other elements */
+}
+
+/* General container settings to overlay UI elements */
+.container {
+  position: relative;
+  z-index: 1;
+}
