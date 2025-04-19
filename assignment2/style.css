@@ -171,6 +171,15 @@ video {
   z-index: -1; /* Make sure the video is behind other elements */
 }
 
+video#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
 /* General container settings to overlay UI elements */
 .container {
   position: relative;
