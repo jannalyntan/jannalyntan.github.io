@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannalyn's Assignment 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+<body>
+    
+    <button id="open-popup-btn"> 
+        <img src="Timer.svg" alt="Timer" style="height: 70px;" id="timer-btn">
+    </button>
+
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+          <span class="close-btn" id="close-popup">&times;</span>
+          <h2>Set Your Timer</h2>
+          <p>How long do you want to focus?</p>
+          <!-- Example of a timer input (optional now) -->
+          <input type="number" placeholder="Minutes" id="timer-input" />
+          <button id="start-timer">Start</button>
+        </div>
+      </div>
+
+
+</body>
+</html>

@@ -30,9 +30,26 @@
 
       <div id="vertical-menu-group">
         <div class="vertical-menu">
-          <a class="menu-btn" id="timer"
-            ><img src="Timer.svg" alt="timer" style="height: 35px"
-          /></a>
+          <div class="popup" onclick="myFunction()">
+            <a class="menu-btn" id="timer">
+              <img src="Timer.svg" alt="timer" style="height: 35px" />
+            </a>
+            <!-- This is the hidden popup -->
+            <span class="popuptext" id="myPopup">
+              How long do you want to set your timer for?<br /><br />
+              <label for="minutes">Minutes:</label>
+              <input
+                type="number"
+                id="minutes"
+                name="minutes"
+                min="1"
+                max="120"
+              />
+              <button onclick="startTimer()">Start Timer</button>
+              <p id="countdown-display" style="margin-top: 10px"></p>
+            </span>
+          </div>
+
           <a class="menu-btn" id="task-list"
             ><img
               src="Tasklist.svg"
@@ -52,6 +69,7 @@
               src="https://img.icons8.com/ios-glyphs/30/play--v2.png"
               alt="play-btn"
           /></a>
+          <button>mute</button>
         </div>
       </div>
 
