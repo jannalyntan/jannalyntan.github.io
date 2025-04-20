@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <div class="container">
       <video autoplay muted loop playsinline id="bg-video">
@@ -21,64 +22,108 @@
         Your browser does not support the video tag.
       </video>
 
-      <div id="top-btn">
-        <div class="top-btn-group">
-          <button id="info-btn">i</button>
-          <button id="theme-btn">Change Theme</button>
+      <div id="top-btn_2">
+        <div class="top-btn-group_2">
+          <button id="focus-btn">Focus Mode: On</button>
         </div>
       </div>
 
-      <div id="vertical-menu-group">
-        <div class="vertical-menu">
-          <div class="popup" onclick="myFunction()">
-            <a class="menu-btn" id="timer">
-              <img src="Timer.svg" alt="timer" style="height: 35px" />
-            </a>
-            <!-- This is the hidden popup -->
-            <span class="popuptext" id="myPopup">
-              How long do you want to set your timer for?<br /><br />
-              <label for="minutes">Minutes:</label>
-              <input
-                type="number"
-                id="minutes"
-                name="minutes"
-                min="1"
-                max="120"
-              />
-              <button onclick="startTimer()">Start Timer</button>
-              <p id="countdown-display" style="margin-top: 10px"></p>
-            </span>
+      <div class="focus-mood-hide">
+        <div id="top-btn">
+          <div class="top-btn-group">
+            <button id="info-btn">i</button>
+            <button id="theme-btn">Change Theme</button>
           </div>
 
-          <a class="menu-btn" id="task-list"
-            ><img
-              src="Tasklist.svg"
-              alt="task-list"
-              id="tasklist-btn"
-              style="height: 35px"
-          /></a>
-          <a class="menu-btn" id="focus-mode">
-            <p style="margin-bottom: 5px">Focus</p>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </a>
-          <a class="menu-btn" id="play-music"
-            ><img
-              src="https://img.icons8.com/ios-glyphs/30/play--v2.png"
-              alt="play-btn"
-          /></a>
-          <button>mute</button>
+          <div id="vertical-menu-group">
+            <div class="vertical-menu">
+              <a class="menu-btn" id="timer-btn"
+                ><img
+                  src="Timer.svg"
+                  alt="timer"
+                  id="timer-btn"
+                  style="height: 40px"
+              /></a>
+              <a class="menu-btn" id="task-list"
+                ><img
+                  src="Tasklist.svg"
+                  alt="task-list"
+                  id="tasklist-btn"
+                  style="height: 40px"
+              /></a>
+              <a class="menu-btn" id="play-music"
+                ><img
+                  src="play.svg"
+                  alt="task-list"
+                  id="tasklist-btn"
+                  style="height: 40px"
+              /></a>
+              <a class="menu-btn" id="mute-music"
+                ><img
+                  src="Sound On.svg"
+                  alt="sound-on"
+                  id="sound-on-btn"
+                  style="height: 40px"
+              /></a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <section id="media-player">
-        <audio controls>
-          <source src="erokia_ambient-wave-56-msfxp7-78.mp3" type="audio/mp3" />
-          Your browser does not support the audio element.
-        </audio>
-      </section>
+      <div class="bottom-left-group">
+        <div class="task-list-group" id="time-group">
+          <div class="task-list">
+            <p id="task-list">Add task</p>
+
+            <button class="plus-btn" id="add-task-btn">+</button>
+          </div>
+          <ul id="task-items"></ul>
+        </div>
+
+        <div class="timer-group">
+          <p id="countdown-display">00:00</p>
+          <div class="focus-mood-hide">
+            <div class="timer">
+              <button id="reset-btn">Reset</button>
+              <button id="start-btn">Start</button>
+            </div>
+            <div class="timer">
+              <button id="pomodoro-btn">Pomodoro</button>
+              <button id="custom-btn">Custom</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-popup hidden" id="custom-popup">
+      <div class="popup-content">
+        <h1>Set Custom Timer</h1>
+        <label for="custom-minutes">Minutes:</label>
+        <input type="number" id="custom-minutes" min="1" value="10" />
+        <div class="popup-buttons">
+          <button id="set-custom-timer">Set</button>
+          <button id="cancel-custom">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-popup hidden" id="task-popup">
+      <div class="task-content">
+        <h1>Add a task</h1>
+        <label for="task-list">What do I have to complete?</label>
+        <p>
+          <input
+            type="text"
+            id="task-input"
+            placeholder="e.g. Finish homework"
+          />
+        </p>
+        <div class="popup-buttons">
+          <button id="add-tasklist">Add</button>
+          <button id="cancel-tasklist">Cancel</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
