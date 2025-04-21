@@ -40,18 +40,25 @@ video#bg-video {
   object-fit: cover;
   z-index: -1;
 }
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
 
 /* ------------------ */
 /* Buttons            */
 /* ------------------ */
 button {
   font-size: 1.2rem;
-  background-color: #f6f4eb;
+  background-color: white;
   color: #4682a9;
   border: none;
   cursor: pointer;
   padding: 0.8em 1.5em;
   border-radius: 0.8em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
@@ -109,9 +116,10 @@ button:hover {
   padding: 7vh 2vw;
   margin-right: 3%;
   margin-top: 20px;
-  background-color: #f6f4eb;
+  background-color: white;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .menu-btn:hover {
@@ -195,7 +203,7 @@ button:hover {
 }
 
 /* ------------------ */
-/* Custom Popup       */
+/* Custom Timer Popup */
 /* ------------------ */
 .custom-popup {
   position: fixed;
@@ -250,7 +258,6 @@ button:hover {
   border-radius: 5px;
   margin-bottom: 5px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 #task-items li:hover {
@@ -294,16 +301,70 @@ button:hover {
   gap: 10px;
 }
 
-/* When 'focused' class is added to the timer group, hide buttons and show only the countdown */
-.timer-group.focused .timer {
-  display: none; /* Hide the buttons */
+/* ------------------ */
+/* Infomation Popup   */
+/* ------------------ */
+
+.information-popup {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  z-index: 1;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: block;
 }
 
-.timer-group.focused #countdown-display {
-  font-size: 4rem;
+.information-popup-content {
+  background-color: white;
+
+  border-radius: 12px;
   text-align: center;
-  margin: auto; /* Center the countdown timer */
+  font-family: "Lexend", sans-serif;
 }
+
+.information-popup h1 {
+  margin-bottom: 20px;
+
+  font-size: 2rem;
+}
+
+#name {
+  margin-top: 20px;
+  font-size: small;
+}
+
+#close-btn {
+  background-color: #4682a9;
+  color: white;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+#close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+}
+#closing-tag {
+  color: #183b4e;
+}
+
+/* ------------------ */
+/* Others             */
+/* ------------------ */
 
 .hidden {
   visibility: hidden;

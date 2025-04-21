@@ -269,32 +269,126 @@ const focusModeHideElements = document.querySelectorAll(".focus-mood-hide");
 console.log(focusModeHideElements);
 
 const timerGroup = document.querySelector(".timer-group");
+console.log(timerGroup);
+
 const countdownDisplay2 = document.querySelector("#countdown-display");
+console.log(countdownDisplay2);
+
+const timerButtons = document.querySelectorAll(".timer");
+console.log(timerButtons);
+
+const timerParent = document.querySelector(".timer-group");
+console.log(timerParent);
+
+// this is to define the state of the og focusmode so that it can keep track what is the og state
+let focusMode = false;
 
 focusBtn.addEventListener("click", function () {
-  focusModeHideElements.forEach((el) => {
-    const isHidden = el.classList.contains("hidden");
+  // so that the state will change when the button is pressed
 
-    if (isHidden) {
-      // Show focus elements
-      el.classList.remove("hidden");
+  focusMode = !focusMode;
 
-      // Update focus button text
-      focusBtn.textContent = "Focus Mode: On";
+  if (focusMode) {
+    // since there is multiple things i want to hide in the script i need to use a 'foreach' to make sure it looks for all the 'focus-mood-hide'
+    // Turn ON focus mode
+    focusModeHideElements.forEach((el) => el.classList.add("hidden"));
 
-      // Hide timer buttons and center the countdown
-      timerGroup.classList.add("focused"); // Adds focused class
-      countdownDisplay2.style.display = "block"; // Ensure countdown is visible
-    } else {
-      // Hide focus elements
-      el.classList.add("hidden");
+    // I needed to delete the elements instead of just hiding it since I wanted the box to be adjusted to the size of the timer
+    // Learnt to use .remove()
 
-      // Update focus button text
-      focusBtn.textContent = "Focus Mode:";
+    // Wanted to do this since it was a focus mode I thought of having as little elements in the page as possible
+    timerButtons.forEach((el) => el.remove());
 
-      // Remove the focused class and show all timer elements
-      timerGroup.classList.remove("focused");
-      countdownDisplay2.style.display = "block"; // Show countdown display
-    }
-  });
+    // changing the text
+    focusBtn.textContent = "Focus Mode: On";
+  } else {
+    // Turn OFF focus mode
+    focusModeHideElements.forEach((el) => el.classList.remove("hidden"));
+
+    // to restore the elements to the og place i had to add where i found it otherwise it will go to another group
+
+    timerButtons.forEach((el) => {
+      timerParent.appendChild(el);
+    });
+
+    // changing the text
+    focusBtn.textContent = "Focus Mode: Off";
+  }
+});
+
+//--------------------------------------------------------------------
+// Infomation Popup
+//--------------------------------------------------------------------
+
+const infoPopup = document.querySelector("#information-popup");
+console.log(infoPopup);
+
+const closeBtn = document.querySelector("#close-btn");
+console.log(closeBtn);
+
+const infoBtn = document.querySelector("#info-btn");
+console.log(infoBtn);
+
+infoBtn.addEventListener("click", function () {
+  infoPopup.classList.remove("hidden");
+});
+
+closeBtn.addEventListener("click", function () {
+  infoPopup.classList.add("hidden");
+});
+
+//--------------------------------------------------------------------
+// Sound
+//--------------------------------------------------------------------
+
+//here is my logic for playing the sound
+// first I am detching the right play button
+const muteButton = document.querySelector("#mute-music");
+console.log(muteButton);
+
+const gradsound = document.querySelector("#gradient-sound");
+console.log(gradsound);
+
+const muteImg = muteButton.querySelector("#sound-off-btn");
+
+// to loop the audio
+gradsound.loop = true;
+
+//pausing with click
+muteButton.addEventListener("click", toggleAudio);
+
+//my pauce logic
+function toggleAudio() {
+  if (gradsound.paused || gradsound.ended) {
+    gradsound.play();
+    // changing the icon based on whether the video is playing or pausing
+    muteImg.src = "sound on.svg";
+  } else {
+    gradsound.pause();
+    muteImg.src = "sound off.svg";
+  }
+}
+
+//--------------------------------------------------------------------
+// Visual
+//--------------------------------------------------------------------
+
+const myVideo = document.querySelector("#bg-video");
+console.log(myVideo);
+
+const playButton = document.querySelector("#play-pause-music");
+console.log(playButton);
+
+const playpauseImg = playButton.querySelector("#play-pause-btn");
+console.log(playpauseImg);
+
+playButton.addEventListener("click", function () {
+  if (myVideo.paused) {
+    myVideo.play();
+    // changing the icon based on whether the video is playing or pausing
+    playpauseImg.src = "play.svg";
+  } else {
+    myVideo.pause();
+    playpauseImg.src = "sound off.svg";
+  }
 });

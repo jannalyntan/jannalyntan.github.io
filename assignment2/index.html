@@ -51,18 +51,18 @@
                   id="tasklist-btn"
                   style="height: 40px"
               /></a>
-              <a class="menu-btn" id="play-music"
+              <a class="menu-btn" id="play-pause-music"
                 ><img
                   src="play.svg"
                   alt="task-list"
-                  id="tasklist-btn"
+                  id="play-pause-btn"
                   style="height: 40px"
               /></a>
               <a class="menu-btn" id="mute-music"
                 ><img
-                  src="Sound On.svg"
-                  alt="sound-on"
-                  id="sound-on-btn"
+                  src="Sound Off.svg"
+                  alt="sound-off"
+                  id="sound-off-btn"
                   style="height: 40px"
               /></a>
             </div>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="bottom-left-group">
-        <div class="task-list-group" id="time-group">
+        <div class="task-list-group hidden" id="time-group">
           <div class="task-list">
             <p id="task-list">Add task</p>
 
@@ -80,12 +80,12 @@
           <ul id="task-items"></ul>
         </div>
 
-        <div class="timer-group">
+        <div class="timer-group hidden">
           <p id="countdown-display">00:00</p>
           <div class="focus-mood-hide">
             <div class="timer">
-              <button id="reset-btn">Reset</button>
               <button id="start-btn">Start</button>
+              <button id="reset-btn">Reset</button>
             </div>
             <div class="timer">
               <button id="pomodoro-btn">Pomodoro</button>
@@ -125,5 +125,33 @@
         </div>
       </div>
     </div>
+
+    <div class="information-popup" id="information-popup">
+      <div class="information-popup-content">
+        <div id="close-btn-container">
+          <button id="close-btn">x</button>
+        </div>
+        <h1>Welcome to Stay Focus</h1>
+        <p>
+          Over here we will help you
+          <span style="font-weight: bold">stay focused </span>and
+          <span style="font-weight: bold">lock in</span>, helping you get work
+          done.
+        </p>
+        <br />
+        <p id="closing-tag">All the best and start working!</p>
+
+        <p id="name">
+          Created by <span style="font-style: italic">Jannalyn Tan</span>.
+        </p>
+      </div>
+    </div>
+
+    <audio
+      src="erokia_ambient-wave-56-msfxp7-78.mp3"
+      controls
+      id="gradient-sound"
+      loop
+    ></audio>
   </body>
 </html>
