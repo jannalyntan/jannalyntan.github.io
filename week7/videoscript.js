@@ -39,6 +39,7 @@ function pauseAudio() {
 const playpauseButton = document.querySelector("#play-pause-button");
 console.log(playpauseButton);
 
+
 //pausing with click
 playpauseButton.addEventListener("click", toggleVideo);
 
