@@ -363,6 +363,114 @@ button:hover {
 }
 
 /* ------------------ */
+/* Theme Popup        */
+/* ------------------ */
+
+.theme-popup {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  z-index: 1;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.theme-popup-content {
+  background-color: white;
+
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+}
+
+.theme-popup h1 {
+  margin-bottom: 20px;
+
+  font-size: 2rem;
+}
+
+#name {
+  margin-top: 20px;
+  font-size: small;
+}
+
+#close-btn {
+  background-color: #4682a9;
+  color: white;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+#close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+}
+#closing-tag {
+  color: #183b4e;
+}
+
+/* ------------------ */
+/* Timer Done Popup   */
+/* ------------------ */
+
+.timer-done-popup {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  z-index: 1;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.timer-done-popup-content {
+  background-color: white;
+
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+}
+
+.timer-done-popup h1 {
+  margin-bottom: 20px;
+
+  font-size: 2rem;
+}
+
+#close-timer-btn {
+  background-color: #4682a9;
+  color: white;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+/* ------------------ */
 /* Others             */
 /* ------------------ */
 

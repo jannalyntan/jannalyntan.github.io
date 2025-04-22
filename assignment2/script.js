@@ -41,7 +41,7 @@ function toggleTimerVisibility() {
 timerBtn.addEventListener("click", toggleTimerVisibility);
 
 //--------------------------------------------------------------------
-// Timer Popup Button
+// Timer
 //--------------------------------------------------------------------
 
 //linking the html to the js
@@ -61,7 +61,7 @@ const startBtn = document.querySelector("#start-btn");
 console.log(startBtn);
 
 var timer; // holds the setInterval reference
-var timeLeft = 30 * 60; // default 25 minutes
+var timeLeft = 30 * 60; // default 30 minutes
 var isRunning = false; // prevent double-starts
 
 // Helper to format seconds into MM:SS
@@ -78,18 +78,26 @@ function updateDisplay() {
 
 // Start timer
 function startTimer() {
-  if (isRunning) return; // avoid multiple intervals
-  isRunning = true;
-  timer = setInterval(function () {
-    if (timeLeft > 0) {
-      timeLeft--;
-      updateDisplay();
-    } else {
-      clearInterval(timer);
-      isRunning = false;
-      alert("Time's up!");
-    }
-  }, 1000);
+  if (isRunning) {
+    // Pause timer
+    clearInterval(timer);
+    isRunning = false;
+    startBtn.textContent = "Start";
+  } else {
+    // Start timer
+    isRunning = true;
+    startBtn.textContent = "Pause";
+    timer = setInterval(function () {
+      if (timeLeft > 0) {
+        timeLeft--;
+        updateDisplay();
+      } else {
+        clearInterval(timer);
+        isRunning = false;
+        timerDone();
+      }
+    }, 1000);
+  }
 }
 
 // Reset timer
@@ -100,6 +108,7 @@ function resetTimer() {
   isRunning = false;
   //this is to set the timer for the pomodoro study method which is a 25 minute study time before a break
   timeLeft = 30 * 60;
+  startBtn.textContent = "Start";
   updateDisplay();
 }
 
@@ -123,6 +132,31 @@ pomodoroBtn.addEventListener("click", setPomodoro);
 
 updateDisplay();
 
+//--------------------------------------------------------------------
+// Timer Done Popup
+//--------------------------------------------------------------------
+
+const timerDonePopUp = document.querySelector("#timer-done-popup");
+console.log(timerDonePopUp);
+
+const timerDonePopUpClose = document.querySelectorAll("#close-timer-btn");
+console.log(timerDonePopUpClose);
+
+const timerDoneSound = document.querySelector("#timer-done-sound");
+console.log(timerDoneSound);
+
+function timerDone() {
+  if (!isRunning) {
+    timerDonePopUp.classList.remove("hidden");
+    timerDoneSound.play(); // Play the sound when the timer ends
+  } else {
+    timerDonePopUp.classList.add("hidden");
+  }
+}
+
+timerDonePopUp.addEventListener("click", function () {
+  timerDonePopUp.classList.add("hidden");
+});
 //--------------------------------------------------------------------
 // Timer Popup for Custom Time
 //--------------------------------------------------------------------
@@ -363,9 +397,11 @@ function toggleAudio() {
     gradsound.play();
     // changing the icon based on whether the video is playing or pausing
     muteImg.src = "sound on.svg";
+    timerDoneSound.muted = false;
   } else {
     gradsound.pause();
     muteImg.src = "sound off.svg";
+    timerDoneSound.muted = true;
   }
 }
 
@@ -389,6 +425,6 @@ playButton.addEventListener("click", function () {
     playpauseImg.src = "play.svg";
   } else {
     myVideo.pause();
-    playpauseImg.src = "sound off.svg";
+    playpauseImg.src = "pause.svg";
   }
 });
