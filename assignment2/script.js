@@ -428,3 +428,45 @@ playButton.addEventListener("click", function () {
     playpauseImg.src = "pause.svg";
   }
 });
+
+//--------------------------------------------------------------------
+// Theme Popup
+//--------------------------------------------------------------------
+
+const themePopup = document.querySelector("#theme-popup");
+console.log(themePopup);
+
+const closeBtn2 = document.querySelector("#close-btn_2");
+console.log(closeBtn2);
+
+const themeBtn = document.querySelector("#theme-btn");
+console.log(themeBtn);
+
+const gradTheme = document.querySelector("#grad-btn");
+console.log(gradTheme);
+
+const dotsTheme = document.querySelector("#dots-btn");
+console.log(dotsTheme);
+
+const myVideoSource = myVideo.querySelector("source");
+
+themeBtn.addEventListener("click", function () {
+  themePopup.classList.remove("hidden");
+});
+
+closeBtn2.addEventListener("click", function () {
+  themePopup.classList.add("hidden");
+});
+
+function changeThemeVideo(newVideoSrc) {
+  myVideoSource.src = newVideoSrc; // Set a new video file
+  myVideo.load(); // Reload the video with the new source
+}
+
+gradTheme.addEventListener("click", function () {
+  changeThemeVideo("gradient.mp4");
+});
+
+dotsTheme.addEventListener("click", function () {
+  changeThemeVideo("Dots.mp4");
+});

@@ -51,7 +51,7 @@ video#bg-video {
 /* Buttons            */
 /* ------------------ */
 button {
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: white;
   color: #4682a9;
   border: none;
@@ -97,6 +97,11 @@ button:hover {
   position: absolute;
   top: 8px;
   left: 16px;
+}
+
+#theme-btn,
+#focus-btn {
+  font-size: 1.4rem;
 }
 
 /* ------------------ */
@@ -368,7 +373,7 @@ button:hover {
 
 .theme-popup {
   position: fixed;
-  top: 35%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   background: white;
@@ -392,13 +397,16 @@ button:hover {
 
 .theme-popup h1 {
   margin-bottom: 20px;
-
   font-size: 2rem;
 }
 
 #name {
   margin-top: 20px;
   font-size: small;
+}
+
+#theme-popup button {
+  margin: 10px;
 }
 
 #close-btn {
@@ -421,6 +429,24 @@ button:hover {
 }
 #closing-tag {
   color: #183b4e;
+}
+
+#close-btn_2 {
+  background-color: #4682a9;
+  color: white;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+#grad-btn,
+#dots-btn {
+  color: black;
 }
 
 /* ------------------ */
@@ -458,6 +484,7 @@ button:hover {
 }
 
 #close-timer-btn {
+  font-family: "Lexend", sans-serif;
   background-color: #4682a9;
   color: white;
   border-radius: 50%;
