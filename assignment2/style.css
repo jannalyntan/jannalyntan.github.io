@@ -31,6 +31,9 @@ body {
 /* ------------------ */
 /* Background Video   */
 /* ------------------ */
+
+/* I want the background video to be in full screen hence using vw to ensure it takes up the entire webpage,
+using z-index to ensure it is behind all the other elements*/
 video#bg-video {
   position: fixed;
   top: 0;

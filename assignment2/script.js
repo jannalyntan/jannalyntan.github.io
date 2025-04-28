@@ -448,6 +448,9 @@ console.log(gradTheme);
 const dotsTheme = document.querySelector("#dots-btn");
 console.log(dotsTheme);
 
+const circleTheme = document.querySelector("#circles-btn");
+console.log(circleTheme);
+
 const myVideoSource = myVideo.querySelector("source");
 
 themeBtn.addEventListener("click", function () {
@@ -468,5 +471,9 @@ gradTheme.addEventListener("click", function () {
 });
 
 dotsTheme.addEventListener("click", function () {
-  changeThemeVideo("Dots.mp4");
+  changeThemeVideo("dots.mp4");
+});
+
+circleTheme.addEventListener("click", function () {
+  changeThemeVideo("circles.mp4");
 });
