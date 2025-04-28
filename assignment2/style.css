@@ -32,7 +32,7 @@ body {
 /* Background Video   */
 /* ------------------ */
 
-/* I want the background video to be in full screen hence using vw to ensure it takes up the entire webpage,
+/* I want the background video to be in full screen hence using vw & vh to ensure it takes up the entire webpage,
 using z-index to ensure it is behind all the other elements*/
 video#bg-video {
   position: fixed;
@@ -43,65 +43,78 @@ video#bg-video {
   object-fit: cover;
   z-index: -1;
 }
-#bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
 
 /* ------------------ */
 /* Buttons            */
 /* ------------------ */
+/* This was done for the generic styling of the buttons */
+
 button {
   font-size: 1rem;
   background-color: white;
   color: #4682a9;
   border: none;
   cursor: pointer;
-  padding: 0.8em 1.5em;
-  border-radius: 0.8em;
+  padding: 20px 30px;
+  border-radius: 15px;
+  /*this was done to ensure that the elements will stand out more from the background and not blend in too much into it*/
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+/* creating some animation when the button is hovered over so that users will know to press them*/
 button:hover {
   background-color: #dda853;
   color: #f6f4eb;
+  /* to further help users know to press the button*/
+  cursor: pointer;
 }
 
+/*for all the button I wanted to be a circle*/
 #info-btn,
 .plus-btn {
   border-radius: 50%;
-  height: 2.5em;
-  width: 2.5em;
+  height: 40px;
+  width: 40px;
   text-align: center;
   font-size: 1rem;
+  /*to have the word in the middle of the circle*/
   padding: 0;
+}
+
+.plus-btn {
   margin-top: 10px;
 }
 
+/*this is for the right row of buttons including the verticle row*/
 #top-btn {
   position: absolute;
-  top: 8px;
+  top: 20px;
+  /*used this to ensure that the buttons are on the right side of the screen*/
   right: 16px;
 }
 
+/*for all the top buttons at the top of the screen*/
 .top-btn-group,
 .top-btn-group_2 {
+  /*used flex to create box to arrange the buttons*/
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  /*used to spaced the info button and the change theme button*/
   gap: 15px;
-  margin-top: 15px;
 }
 
+/*this is for the left side buttons*/
 #top-btn_2 {
   position: absolute;
-  top: 8px;
+  top: 20px;
+  /*used this to ensure that the buttons are on the left side of the screen*/
   left: 16px;
 }
 
+/*wanted the buttons at the top of the screen to be bigger then other buttons since they were button that were constantly visible 
+and there adn they were important features to the purpose of the website*/
 #theme-btn,
 #focus-btn {
   font-size: 1.4rem;
@@ -110,66 +123,62 @@ button:hover {
 /* ------------------ */
 /* Vertical Menu      */
 /* ------------------ */
+
 #vertical-menu-group {
+  /*using a flex box to ensure that the verticle menu has it own 'container'*/
   display: flex;
+  /*making the verticel group to the right of the page to make the video space look bigger and create a cleaner layout*/
   justify-content: right;
 }
 
 .vertical-menu {
   display: flex;
+  /*so that it is verticle- i wanted a cleaner look and i thought this was a bettter way of presenting the information*/
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  /*spacing btw the 'button'*/
   gap: 40px;
-  padding: 7vh 2vw;
-  margin-right: 3%;
+  padding: 40px 20px;
   margin-top: 20px;
   background-color: white;
   border-radius: 10px;
-  text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+/*creating some type of animation*/
 .menu-btn:hover {
-  scale: 110%;
-}
-
-/* ------------------ */
-/* Container Layout   */
-/* ------------------ */
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: 0 1%;
-  min-height: 100vh;
-  box-sizing: border-box;
+  scale: 80%;
+  cursor: pointer;
 }
 
 /* ------------------ */
 /* Bottom Left Group  */
 /* ------------------ */
+
+/*this is for the bottom group of elemetnts*/
+
 .bottom-left-group {
   display: flex;
+  /*since i wanted them to stack vertically above each other*/
   flex-direction: column;
-  gap: 2vh;
+  gap: 10px;
   position: absolute;
-  bottom: 2vh;
-  left: 2vw;
+  /*keeping it similar to the other layout of the top button*/
+  bottom: 20px;
+  left: 16px;
 }
 
 /* ------------------ */
 /* Task List          */
 /* ------------------ */
+
 .task-list-group {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #f6f4eb;
   background-color: rgba(24, 59, 78, 0.75);
   border-radius: 10px;
-  padding: 2vw;
-  width: 100%; /* Or any fixed % you're happy with */
+  padding: 10px;
+  width: 100%;
   max-width: 200vw;
 }
 
@@ -448,7 +457,8 @@ button:hover {
 }
 
 #grad-btn,
-#dots-btn {
+#dots-btn,
+#circles-btn {
   color: black;
 }
 

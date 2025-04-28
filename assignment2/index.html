@@ -16,85 +16,83 @@
   </head>
 
   <body>
-    <div class="container">
-      <video autoplay muted loop playsinline id="bg-video">
-        <source src="Gradient.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="Gradient.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
-      <div id="top-btn_2">
-        <div class="top-btn-group_2">
-          <button id="focus-btn">Focus Mode: Off</button>
-        </div>
+    <div id="top-btn_2">
+      <div class="top-btn-group_2">
+        <button id="focus-btn">Focus Mode: Off</button>
       </div>
-
-      <div class="focus-mood-hide">
-        <div id="top-btn">
-          <section class="top-btn-group">
-            <button id="info-btn">i</button>
-            <button id="theme-btn">Change Theme</button>
-          </section>
-
-          <section id="vertical-menu-group">
-            <div class="vertical-menu">
-              <a class="menu-btn" id="timer-btn"
-                ><img
-                  src="Timer.svg"
-                  alt="timer"
-                  id="timer-btn"
-                  style="height: 40px"
-              /></a>
-              <a class="menu-btn" id="task-list"
-                ><img
-                  src="Tasklist.svg"
-                  alt="task-list"
-                  id="tasklist-btn"
-                  style="height: 40px"
-              /></a>
-              <a class="menu-btn" id="play-pause-music"
-                ><img
-                  src="play.svg"
-                  alt="play-pause-btn"
-                  id="play-pause-btn"
-                  style="height: 40px"
-              /></a>
-              <a class="menu-btn" id="mute-music"
-                ><img
-                  src="Sound Off.svg"
-                  alt="sound-off"
-                  id="sound-off-btn"
-                  style="height: 40px"
-              /></a>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <section class="bottom-left-group">
-        <div class="task-list-group hidden" id="time-group">
-          <div class="task-list">
-            <p id="task-list">Add task</p>
-
-            <button class="plus-btn" id="add-task-btn">+</button>
-          </div>
-          <ul id="task-items"></ul>
-        </div>
-
-        <div class="timer-group hidden">
-          <p id="countdown-display">00:00</p>
-          <div class="focus-mood-hide">
-            <div class="timer">
-              <button id="start-btn">Start</button>
-              <button id="reset-btn">Reset</button>
-            </div>
-            <div class="timer">
-              <button id="pomodoro-btn">Pomodoro</button>
-              <button id="custom-btn">Custom</button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
+
+    <div class="focus-mood-hide">
+      <div id="top-btn">
+        <section class="top-btn-group">
+          <button id="info-btn">i</button>
+          <button id="theme-btn">Change Theme</button>
+        </section>
+
+        <section id="vertical-menu-group">
+          <div class="vertical-menu">
+            <a class="menu-btn" id="timer-btn"
+              ><img
+                src="Timer.svg"
+                alt="timer"
+                id="timer-btn"
+                style="height: 40px"
+            /></a>
+            <a class="menu-btn" id="task-list"
+              ><img
+                src="Tasklist.svg"
+                alt="task-list"
+                id="tasklist-btn"
+                style="height: 40px"
+            /></a>
+            <a class="menu-btn" id="play-pause-music"
+              ><img
+                src="play.svg"
+                alt="play-pause-btn"
+                id="play-pause-btn"
+                style="height: 40px"
+            /></a>
+            <a class="menu-btn" id="mute-music"
+              ><img
+                src="Sound Off.svg"
+                alt="sound-off"
+                id="sound-off-btn"
+                style="height: 40px"
+            /></a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="bottom-left-group">
+      <div class="task-list-group hidden" id="time-group">
+        <div class="task-list">
+          <p id="task-list">Add task</p>
+
+          <button class="plus-btn" id="add-task-btn">+</button>
+        </div>
+        <ul id="task-items"></ul>
+      </div>
+
+      <div class="timer-group hidden">
+        <p id="countdown-display">00:00</p>
+        <div class="focus-mood-hide">
+          <div class="timer">
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+          </div>
+          <div class="timer">
+            <button id="pomodoro-btn">Pomodoro</button>
+            <button id="custom-btn">Custom</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="custom-popup hidden" id="custom-popup">
       <div class="popup-content">
@@ -160,7 +158,7 @@
       </div>
     </div>
 
-    <div class="theme-popup hidden" id="theme-popup">
+    <section class="theme-popup hidden" id="theme-popup">
       <div class="theme-popup-content">
         <div id="close-btn-container">
           <button id="close-btn_2">x</button>
@@ -190,16 +188,17 @@
           </button>
         </p>
       </div>
-    </div>
+    </section>
 
     <audio
+      hidden
       src="erokia_ambient-wave-56-msfxp7-78.mp3"
       controls
       id="gradient-sound"
       loop
     ></audio>
 
-    <audio src="TaskDone.wav" id="task-done-sound"></audio>
-    <audio src="Timer.wav" id="timer-done-sound"></audio>
+    <audio hidden src="TaskDone.wav" id="task-done-sound"></audio>
+    <audio hidden src="Timer.wav" id="timer-done-sound"></audio>
   </body>
 </html>

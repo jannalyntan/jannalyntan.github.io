@@ -475,5 +475,5 @@ dotsTheme.addEventListener("click", function () {
 });
 
 circleTheme.addEventListener("click", function () {
-  changeThemeVideo("circles.mp4");
+  changeThemeVideo("circles_final.mp4");
 });
