@@ -467,13 +467,13 @@ function changeThemeVideo(newVideoSrc) {
 }
 
 gradTheme.addEventListener("click", function () {
-  changeThemeVideo("gradient.mp4");
+  changeThemeVideo("video/gradient.mp4");
 });
 
 dotsTheme.addEventListener("click", function () {
-  changeThemeVideo("dots.mp4");
+  changeThemeVideo("video/dots.mp4");
 });
 
 circleTheme.addEventListener("click", function () {
-  changeThemeVideo("circles_final.mp4");
+  changeThemeVideo("video/circles_final.mp4");
 });
