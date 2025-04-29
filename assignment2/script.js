@@ -396,11 +396,11 @@ function toggleAudio() {
   if (gradsound.paused || gradsound.ended) {
     gradsound.play();
     // changing the icon based on whether the video is playing or pausing
-    muteImg.src = "Sound On.svg";
+    muteImg.src = "sound-on.svg";
     timerDoneSound.muted = false;
   } else {
     gradsound.pause();
-    muteImg.src = "Sound Off.svg";
+    muteImg.src = "sound-off.svg";
     timerDoneSound.muted = true;
   }
 }

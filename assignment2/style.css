@@ -171,7 +171,7 @@ and there adn they were important features to the purpose of the website*/
 /* ------------------ */
 /* Task List          */
 /* ------------------ */
-
+/*the design for the tasklist */
 .task-list-group {
   font-size: 1.4rem;
   color: #f6f4eb;
@@ -179,7 +179,7 @@ and there adn they were important features to the purpose of the website*/
   border-radius: 10px;
   padding: 10px;
   width: 100%;
-  max-width: 200vw;
+  max-width: 500px;
 }
 
 .task-list {
@@ -279,6 +279,7 @@ and there adn they were important features to the purpose of the website*/
 
 #task-items li:hover {
   background: rgba(255, 255, 255, 0.2);
+  content: "remove";
 }
 
 .task-popup {
