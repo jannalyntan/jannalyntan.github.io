@@ -396,11 +396,11 @@ function toggleAudio() {
   if (gradsound.paused || gradsound.ended) {
     gradsound.play();
     // changing the icon based on whether the video is playing or pausing
-    muteImg.src = "sound on.svg";
+    muteImg.src = "Sound On.svg";
     timerDoneSound.muted = false;
   } else {
     gradsound.pause();
-    muteImg.src = "sound off.svg";
+    muteImg.src = "Sound Off.svg";
     timerDoneSound.muted = true;
   }
 }
@@ -422,10 +422,10 @@ playButton.addEventListener("click", function () {
   if (myVideo.paused) {
     myVideo.play();
     // changing the icon based on whether the video is playing or pausing
-    playpauseImg.src = "play.svg";
+    playpauseImg.src = "Play.svg";
   } else {
     myVideo.pause();
-    playpauseImg.src = "pause.svg";
+    playpauseImg.src = "Pause.svg";
   }
 });
 
@@ -467,13 +467,13 @@ function changeThemeVideo(newVideoSrc) {
 }
 
 gradTheme.addEventListener("click", function () {
-  changeThemeVideo("video/gradient.mp4");
+  changeThemeVideo("video/Gradient.mp4");
 });
 
 dotsTheme.addEventListener("click", function () {
-  changeThemeVideo("video/dots.mp4");
+  changeThemeVideo("video/Dots.mp4");
 });
 
 circleTheme.addEventListener("click", function () {
-  changeThemeVideo("video/circles_final.mp4");
+  changeThemeVideo("video/Circles_final.mp4");
 });
