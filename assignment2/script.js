@@ -241,6 +241,9 @@ console.log(setCustomBtn);
 const cancelTasklistBtn = document.querySelector("#cancel-tasklist");
 console.log(cancelTasklistBtn);
 
+const taskDoneSound = document.querySelector("#task-done-sound");
+console.log(taskDoneSound);
+
 //setting the max number of task
 const maxTask = 4;
 
@@ -261,8 +264,6 @@ cancelTasklistBtn.addEventListener("click", function () {
 addTasklistBtn.addEventListener("click", function () {
   // puts down what the user written and removes the extra spaces
   const taskText = addTaskInput.value.trim();
-
-  // makes sure something is typed
 
   // converting the word users key in into li elemts
 
@@ -406,7 +407,7 @@ function toggleAudio() {
 }
 
 //--------------------------------------------------------------------
-// Visual
+// Play Video
 //--------------------------------------------------------------------
 
 const myVideo = document.querySelector("#bg-video");
