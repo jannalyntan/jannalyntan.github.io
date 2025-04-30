@@ -60,14 +60,21 @@ console.log(customBtn);
 const startBtn = document.querySelector("#start-btn");
 console.log(startBtn);
 
-var timer; // holds the setInterval reference
-var timeLeft = 30 * 60; // default 30 minutes
-var isRunning = false; // prevent double-starts
+// Setting the timer first
+let timer; // holds the setInterval reference
+let timeLeft = 30 * 60; // default 30 minutes
+let isRunning = false;
 
 // Helper to format seconds into MM:SS
 function formatTime(seconds) {
-  var mins = Math.floor(seconds / 60);
-  var secs = seconds % 60;
+  //Making the minutes
+  // (MATH.floor) is helping to round down the number to the nearest whole number
+  // seconds/60 it converts the seconds into minutes
+  let mins = Math.floor(seconds / 60);
+  // Making the seconds
+  //Getting the remainer of the previous division to make it to the seconds
+  let secs = seconds % 60;
+  //so that if the minutes or seconds are single digit it will add a zero at the beginning
   return (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
 }
 
@@ -76,25 +83,38 @@ function updateDisplay() {
   countdownDisplay.textContent = formatTime(timeLeft);
 }
 
+// to toggle btw starting and stopping the timer
 function startTimer() {
+  // meaning that if the timer is running
   if (isRunning) {
-    // If timer is running, pause it
-    clearInterval(timer); // Stop the countdown
-    isRunning = false; // Update the state
-    startBtn.textContent = "Start"; // Update button label
+    //stop the countdown
+    clearInterval(timer);
+    // updates the code saying 'now the timer is not running'
+    isRunning = false;
+    // Update button label
+    startBtn.textContent = "Start";
   } else {
     // If timer is not running, start it
+    // updates the code saying 'now the timer is running'
     isRunning = true;
+    //Updating the label
     startBtn.textContent = "Pause";
 
-    timer = setInterval(() => {
+    // To continue the timer
+    let timer = setInterval(() => {
+      // if the timer is not at 0, it will continue the timer
       if (timeLeft > 0) {
+        // This mean timeleft-1, this is to make the timer continue
         timeLeft--;
-        updateDisplay(); // Update the countdown display
+        // Update the countdown display
+        updateDisplay();
       } else {
-        clearInterval(timer); // Stop timer when countdown reaches zero
+        // Stop timer when countdown if the timeleft<0
+        clearInterval(timer);
+        // updates the code saying 'now the timer is not running'
         isRunning = false;
-        timerDone(); // Run what happens after timer ends
+        // Run what happens after timer ends
+        timerDone();
       }
     }, 1000); // Interval is 1 second
   }
