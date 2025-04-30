@@ -76,27 +76,27 @@ function updateDisplay() {
   countdownDisplay.textContent = formatTime(timeLeft);
 }
 
-// Start timer
 function startTimer() {
   if (isRunning) {
-    // Pause timer
-    clearInterval(timer);
-    isRunning = false;
-    startBtn.textContent = "Start";
+    // If timer is running, pause it
+    clearInterval(timer); // Stop the countdown
+    isRunning = false; // Update the state
+    startBtn.textContent = "Start"; // Update button label
   } else {
-    // Start timer
+    // If timer is not running, start it
     isRunning = true;
     startBtn.textContent = "Pause";
-    timer = setInterval(function () {
+
+    timer = setInterval(() => {
       if (timeLeft > 0) {
         timeLeft--;
-        updateDisplay();
+        updateDisplay(); // Update the countdown display
       } else {
-        clearInterval(timer);
+        clearInterval(timer); // Stop timer when countdown reaches zero
         isRunning = false;
-        timerDone();
+        timerDone(); // Run what happens after timer ends
       }
-    }, 1000);
+    }, 1000); // Interval is 1 second
   }
 }
 
