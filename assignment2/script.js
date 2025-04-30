@@ -266,7 +266,6 @@ addTasklistBtn.addEventListener("click", function () {
   const taskText = addTaskInput.value.trim();
 
   // converting the word users key in into li elemts
-
   if (taskText.trim()) {
     if (taskItems.children.length < maxTask) {
       const li = document.createElement("li");
@@ -277,6 +276,7 @@ addTasklistBtn.addEventListener("click", function () {
       // Click to remove the li
       li.addEventListener("click", function () {
         li.remove();
+        taskDoneSound.play();
       });
 
       // adding it to the html using appendChild which will add it to the end of the li in the html
