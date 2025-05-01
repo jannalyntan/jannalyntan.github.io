@@ -100,7 +100,7 @@ function startTimer() {
 
     // To continue the timer
     // Start the countdown using setInterval, which runs the function every 1 second
-    let timer = setInterval(
+    timer = setInterval(
       () => {
         // if the timer is not at 0, it will continue the timer
         if (timeLeft > 0) {
@@ -146,6 +146,8 @@ function setPomodoro() {
   isRunning = false;
   //this is to set the timer for the pomodoro study method which is a 25 minute study time before a break
   timeLeft = 25 * 60;
+  //update the button to say start again
+  startBtn.textContent = "Start";
 
   //to update the display
   updateDisplay();
@@ -246,6 +248,8 @@ setCustomBtn.addEventListener("click", function () {
 
     //hides the popup after start or cancel is press
     customPopup.classList.add("hidden");
+    //update the button to say start again
+    startBtn.textContent = "Start";
   } else {
     alert("Please enter a valid number greater than 0.");
   }
