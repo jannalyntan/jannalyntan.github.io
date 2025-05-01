@@ -13,362 +13,331 @@ font
 
 body,
 html {
-    height: 100%;
-    background-color: #F8F8F8;
+  height: 100%;
+  background-color: #f8f8f8;
 }
 
-
-
 h3 {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
 
 p {
-    font-family: "EB Garamond", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-size: 1rem;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 1rem;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 /*generic hr styles*/
 hr {
-    height: 2px;
-    border-width: 0;
-    color: #37323E;
-    /*had to use background colour since after increasing the height it became a hollow box, 
+  height: 2px;
+  border-width: 0;
+  color: #37323e;
+  /*had to use background colour since after increasing the height it became a hollow box, 
     since I wanted the line to be a solid black line had to add a background colour tag*/
-    background-color: #37323E
+  background-color: #37323e;
 }
-
 
 /*used as a way to just create my button style*/
 button {
-    /*font style */
-    color: white;
+  /*font style */
+  color: white;
 
+  /*button style */
+  background-color: black;
+  border: none;
 
-    /*button style */
-    background-color: black;
-    border: none;
+  /*adding a softer edge to the border */
+  border-radius: 5px;
+  padding: 15px 20px;
 
-    /*adding a softer edge to the border */
-    border-radius: 5px;
-    padding: 15px 20px;
-
-    /* making the text in the center of the button*/
-    text-align: center;
-    /* so that there is no underline */
-    text-decoration: none;
-    /* so that there is no underline */
-
+  /* making the text in the center of the button*/
+  text-align: center;
+  /* so that there is no underline */
+  text-decoration: none;
+  /* so that there is no underline */
 }
-
 
 .mainfont {
-    font-family: "Bodoni Moda", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-
-
 
 /* for the starting page*/
 #homepage {
-    background-image: url(concerthall.jpg);
-    /* iamge will be on the full webpage and will always in full height*/
-    height: 100%;
-    /*used a filter to make everything more cohesive 
+  background-image: url(concerthall.jpg);
+  /* iamge will be on the full webpage and will always in full height*/
+  height: 100%;
+  /*used a filter to make everything more cohesive 
     so i decided to go with a black and white filter*/
-    filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 /* have to use rgba since i only want the box opacity to change
 done this so that the title will be more obvious since the image is a bit white*/
 #box {
-    background-color: rgba(0, 0, 0, 0.45);
-    /*wanted the image to fit the whole screen*/
-    height: 100%;
-    width: 100%;
-    /* had to include this otherwise my image would not sit in the whole scene*/
-    display: flex;
-    /* had to this so that my image will be in the middle of the page*/
-    justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  /*wanted the image to fit the whole screen*/
+  height: 100%;
+  width: 100%;
+  /* had to include this otherwise my image would not sit in the whole scene*/
+  display: flex;
+  /* had to this so that my image will be in the middle of the page*/
+  justify-content: center;
 }
 
 /*since i wanted my name to be in the middle of the screen* I added a flex box */
 .name {
-    display: flex;
-    /*used to make items in the center of the box*/
-    justify-content: center;
-    align-items: center;
-    /*used padding to create some spacing at the top and bottom */
-    padding: 50px;
-    background-color: #F59E0B;
+  display: flex;
+  /*used to make items in the center of the box*/
+  justify-content: center;
+  align-items: center;
+  /*used padding to create some spacing at the top and bottom */
+  padding: 50px;
+  background-color: #f59e0b;
 
-    /*used for the font text adjusting the color and font style*/
-    color: white;
-    font-size: 1.3rem;
-    text-transform: uppercase;
+  /*used for the font text adjusting the color and font style*/
+  color: white;
+  font-size: 1.3rem;
+  text-transform: uppercase;
 }
-
 
 /* to make the button go in the middle of the webpage*/
 .middlebutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    /*Added the margin to make there be more line spacing between each section*/
-    margin-bottom: 30px;
-    margin-top: 10px;
+  /*Added the margin to make there be more line spacing between each section*/
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
-
-
 
 /*Created this button to link the actual website*/
 #button1 {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    font-style: normal;
-    background-color: #3A3A42;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: #3a3a42;
 
-    /*Wanted the button in the middle of the webpage hence the margin tag*/
-    padding: 20px 30px;
-
+  /*Wanted the button in the middle of the webpage hence the margin tag*/
+  padding: 20px 30px;
 }
 
 /* added a hover function to make it change colour when hovered over this was 
 done just to create some movement in a way*/
 
 #button1:hover {
-    background-color: #F59E0B;
-    color: black;
-    font-weight: bold
+  background-color: #f59e0b;
+  color: black;
+  font-weight: bold;
 }
-
-
 
 /*done for the verticle tab menu*/
 .scrollmenu {
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    background-color: #18181B;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #18181b;
 
-    /*creating some height to the design and also using the flexbox 
+  /*creating some height to the design and also using the flexbox 
     to create it aligning it to the center with the justify content tag*/
-    padding: 15px;
-    align-items: center;
-    display: flex;
-    /*using flexwrap to make sure the elements dont disappear when the browser is smaller */
-    flex-wrap: wrap;
-    justify-content: center;
-
+  padding: 15px;
+  align-items: center;
+  display: flex;
+  /*using flexwrap to make sure the elements dont disappear when the browser is smaller */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* verticle task bar*/
 .scrollmenu a {
-    color: white;
-    /*make the text be in the center of each 'box'*/
-    text-align: center;
-    /*to create a fix box size with a fixed font size, since i was going for the oversized text look*/
-    height: 50px;
-    width: 50px;
-    /*using a flex display to create the verticle task bar*/
-    display: flex;
-    /*to make everything centered in the ' big box'*/
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    /*So no underline*/
-    text-decoration: none;
+  color: white;
+  /*make the text be in the center of each 'box'*/
+  text-align: center;
+  /*to create a fix box size with a fixed font size, since i was going for the oversized text look*/
+  height: 50px;
+  width: 50px;
+  /*using a flex display to create the verticle task bar*/
+  display: flex;
+  /*to make everything centered in the ' big box'*/
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  /*So no underline*/
+  text-decoration: none;
 }
-
 
 /*creating some response when user hover over the button*/
 .scrollmenu a:hover {
-    /*creating the background colour of the small box and the font colour*/
-    background-color: #F59E0B;
-    color: black;
-    font-weight: bold;
+  /*creating the background colour of the small box and the font colour*/
+  background-color: #f59e0b;
+  color: black;
+  font-weight: bold;
 }
-
 
 /* creating some spacing between the sections*/
 #question1 {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-
 
 /* General font  style for the numbers*/
 .number {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    font-style: bold;
-    font-size: 4.5rem
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  font-style: bold;
+  font-size: 4.5rem;
 }
 
 /* so that it is easier for people to differentiate between the question and the answer.
 Using a bigger and bolder font for the question*/
 .title {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: bold;
-    font-style: normal;
-    font-size: larger;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: larger;
 }
 
 /*Using a serif font for the answer to replicate the original website 
 and so that it is different from the website*/
 .wording {
-    font-family: "EB Garamond", serif;
+  font-family: "EB Garamond", serif;
 }
-
 
 /*using flex box to create the side by side text*/
 .sidebyside {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /*for the items I want to be on the left of the page*/
 .left {
-    /*making the text to the left of the page*/
-    text-align: left;
-    /*making any items like photos to be on the left of the page*/
-    align-items: left;
-    /* to keep the margin consistant i used percentage instead of px*/
-    margin: 5%;
-    /* to ensure the text can 'grow' with browser size change*/
-    flex: 1;
+  /*making the text to the left of the page*/
+  text-align: left;
+  /*making any items like photos to be on the left of the page*/
+  align-items: left;
+  /* to keep the margin consistant i used percentage instead of px*/
+  margin: 5%;
+  /* to ensure the text can 'grow' with browser size change*/
+  flex: 1;
 }
 
 .right {
-    /*making the text to the right of the page*/
-    align-items: right;
-    /*making any items like photos to be on the right of the page*/
-    text-align: right;
-    /* to keep the margin consistant i used percentage instead of px*/
-    margin: 5%;
-    /* to ensure the text can 'grow' with browser size change*/
-    flex: 1;
+  /*making the text to the right of the page*/
+  align-items: right;
+  /*making any items like photos to be on the right of the page*/
+  text-align: right;
+  /* to keep the margin consistant i used percentage instead of px*/
+  margin: 5%;
+  /* to ensure the text can 'grow' with browser size change*/
+  flex: 1;
 }
-
-
-
 
 .backgroundcolour {
-    /* for the background colour of the parts where I want the background to be darker*/
-    background-color: #18181B;
-    /* font colour for the sections where it is a darker background colour*/
-    color: #FFFFFF;
-    /* creating some padding for this section just to create some spacing*/
-    padding-bottom: 30px;
-    padding-top: 30px;
+  /* for the background colour of the parts where I want the background to be darker*/
+  background-color: #18181b;
+  /* font colour for the sections where it is a darker background colour*/
+  color: #ffffff;
+  /* creating some padding for this section just to create some spacing*/
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
-
 
 /* for the parts where the buttons are side by side to each other*/
 .buttonlayout {
-    font-family: "Nunito Sans", sans-serif;
-    /*used a flex box to make the buttons lay side by side to each other*/
-    display: flex;
-    /* allowing the buttons to wrap around if the browser gets too small*/
-    flex-wrap: wrap;
-    /* allowing the buttons to be equally spaced*/
-    justify-content: space-around;
-    /* Creating some spacing between question and the buttons*/
-    margin-top: 20px;
-    /* creating a margin keep the side margin standard*/
-    margin-left: 5%;
-    margin-right: 5%;
+  font-family: "Nunito Sans", sans-serif;
+  /*used a flex box to make the buttons lay side by side to each other*/
+  display: flex;
+  /* allowing the buttons to wrap around if the browser gets too small*/
+  flex-wrap: wrap;
+  /* allowing the buttons to be equally spaced*/
+  justify-content: space-around;
+  /* Creating some spacing between question and the buttons*/
+  margin-top: 20px;
+  /* creating a margin keep the side margin standard*/
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* Reduce opacity of other images when hovering on one */
 .buttonlayout:hover .hoverover {
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Keep hovered image at full opacity */
 .buttonlayout .hoverover:hover {
-    opacity: 1;
+  opacity: 1;
 }
-
 
 /* For Hover Animations*/
 .hoverover {
+  /*font family and color for the hoverover text*/
+  font-family: "Nunito Sans", sans-serif;
+  color: rgb(255, 255, 255);
 
-    /*font family and color for the hoverover text*/
-    font-family: "Nunito Sans", sans-serif;
-    color: rgb(255, 255, 255);
+  /*creating a curved corner*/
+  border-radius: 5px;
 
-    /*creating a curved corner*/
-    border-radius: 5px;
-
-    /*to make sure the text box doesnt change size when the hoverover 
+  /*to make sure the text box doesnt change size when the hoverover 
     animation occurs and this is to also standardised the box size to
      avoid the background from increasing in size when hoverover animation occurs*/
-    width: 280px;
-    height: 170px;
-    text-align: center;
+  width: 280px;
+  height: 170px;
+  text-align: center;
 
-    /* for the the text that will be shown afterwards to make 
+  /* for the the text that will be shown afterwards to make 
     sure it is at the center of the box on the screen*/
-    display: flex;
-    align-items: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 /*changing the background colour of the box when there is a hover animation*/
 .hoverover:hover {
-    background-color: #F59E0B;
-    border: #D2D2DF 2px solid;
-
+  background-color: #f59e0b;
+  border: #d2d2df 2px solid;
 }
 
 /* done to hide the image*/
 .hoverover:hover img {
-
-    display: none;
+  display: none;
 }
-
 
 /* Show new hover text */
 .hoverover:after {
-    font-family: "EB Garamond", serif;
-    /*to show the text after the hover*/
-    content: attr(data-hover);
-    font-size: 20px;
-    padding: 20px;
-    /*Making sure the text doesn't move */
-    position: absolute;
-    /*so that the text disappoer after the hover is completed*/
-    opacity: 0;
-    /*creating an animation for the animation*/
-    transition: opacity 0.15s ease-in-out;
+  font-family: "EB Garamond", serif;
+  /*to show the text after the hover*/
+  content: attr(data-hover);
+  font-size: 20px;
+  padding: 20px;
+  /*Making sure the text doesn't move */
+  position: absolute;
+  /*so that the text disappoer after the hover is completed*/
+  opacity: 0;
+  /*creating an animation for the animation*/
+  transition: opacity 0.15s ease-in-out;
 }
 
 /*to return the img to original state*/
 .hoverover:hover:after {
-    opacity: 1;
+  opacity: 1;
 }
 
 /*creating some spacing between the sections*/
 #question3 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-
-
-
 
 /* this few tags are for text over image. I had to research how to do it 
 and then tried to understand how to use the code and not copy blindly*/
@@ -376,370 +345,345 @@ and then tried to understand how to use the code and not copy blindly*/
 /*after analysising it I realised this tag was to make sure the image took up the whole section page and 
 was utilise a flex box for items that will be put inside*/
 .container {
-    /* this was done cause I wanted my image to take up the full screen since 
+  /* this was done cause I wanted my image to take up the full screen since 
     i didnt want it to constantly repeat and be the background for all the other 'sections' i added a no-repeat tag  */
 
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    /* This was to make sure that the text in the image will always be in the center */
-    display: flex;
-    /*for the 'box' in the middle of the page since I wanted it to be in the middle of the image*/
-    justify-content: center;
-    align-items: center;
-    /*item postion will be relative to the section it is in*/
-    position: relative;
+  /* This was to make sure that the text in the image will always be in the center */
+  display: flex;
+  /*for the 'box' in the middle of the page since I wanted it to be in the middle of the image*/
+  justify-content: center;
+  align-items: center;
+  /*item postion will be relative to the section it is in*/
+  position: relative;
 }
-
 
 /* this is for the number*/
 .textleft {
-    position: absolute;
-    top: 8px;
-    left: 16px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
 }
-
 
 /* For Hover Animations- just copied the previous animation but changed some settings*/
 .hoverover2 {
-    font-family: "Nunito Sans", sans-serif;
-    color: #F8F8F8;
-    font-weight: bold;
-    padding: 20px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #f8f8f8;
+  font-weight: bold;
+  padding: 20px;
 
-    background-color: #37323E;
-    border-radius: 5px;
-    width: 400px;
-    height: 200px;
-    text-align: center;
-    text-transform: uppercase;
+  background-color: #37323e;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  text-transform: uppercase;
 
-    /* for the the text that will be shown afterwards*/
-    display: flex;
-    align-items: center;
-    position: relative;
+  /* for the the text that will be shown afterwards*/
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .hoverover2:hover {
-    background-color: #F59E0B;
-    border: #F8F8F8 2px solid;
-    color: #F8F8F8;
-    font-size: 0px;
-
+  background-color: #f59e0b;
+  border: #f8f8f8 2px solid;
+  color: #f8f8f8;
+  font-size: 0px;
 }
 
 /* Show new hover text */
 .hoverover2:after {
-    font-family: "EB Garamond", serif;
-    font-weight: lighter;
-    content: attr(data-hover);
-    font-size: 20px;
-    padding: 20px;
-    text-transform: none;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out;
+  font-family: "EB Garamond", serif;
+  font-weight: lighter;
+  content: attr(data-hover);
+  font-size: 20px;
+  padding: 20px;
+  text-transform: none;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
 }
 
 .hoverover2:hover:after {
-    opacity: 1;
+  opacity: 1;
 }
 
-
-
 #question4 {
-    position: relative;
-    height: 100%;
-    color: white;
-    /* Ensure text remains visible */
+  position: relative;
+  height: 100%;
+  color: white;
+  /* Ensure text remains visible */
 }
 
 /* to make the background behing the content of #question4 acting as a background layer*/
 #question4::before {
-    content: attr(data-hover);
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  content: attr(data-hover);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-    /* Sets the grayscale background image */
-    background-image: url(https://drupal-prod.visitcalifornia.com/sites/default/files/styles/fluid_1920/public/WaltDisneyConceertHall_attraction_sized.jpg.webp?itok=pH3jXu1C);
+  /* Sets the grayscale background image */
+  background-image: url(https://drupal-prod.visitcalifornia.com/sites/default/files/styles/fluid_1920/public/WaltDisneyConceertHall_attraction_sized.jpg.webp?itok=pH3jXu1C);
 
-    /*ensures image does not repeat*/
-    background-size: cover;
+  /*ensures image does not repeat*/
+  background-size: cover;
 
-    /* Applies grayscale effect to the background image only */
-    filter: grayscale(100%);
-
-
+  /* Applies grayscale effect to the background image only */
+  filter: grayscale(100%);
 }
-
 
 /*this is for the text*/
 .centered {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
-
 
 /* creating some spacing in btw text*/
 #question5 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-
 
 /* done for the side by side that want a yellow border at the back*/
 .sidebyside2 {
-    display: flex;
-    justify-content: space-between;
-    margin-top: -50px;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -50px;
+  gap: 20px;
+  align-items: center;
 
-
-    background-color: #F59E0B;
-    margin-left: 5%;
-    margin-right: 5%;
-    color: #18181B;
-    border-radius: 5px;
+  background-color: #f59e0b;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #18181b;
+  border-radius: 5px;
 }
 
 #concerthallimg {
-    /*ensure that the image scales with the size of the browser*/
-    width: 100%;
-    filter: grayscale(100%);
+  /*ensure that the image scales with the size of the browser*/
+  width: 100%;
+  filter: grayscale(100%);
 }
 
 /*ensure some interaction*/
 #concerthallimg:hover {
-    filter: grayscale(50%);
+  filter: grayscale(50%);
 }
-
 
 /*ust copied the previous button layout class but changed some settings*/
 
 .buttonlayout2 {
-    font-family: "Nunito Sans", sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    padding: 10px 30px;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px 30px;
 }
 
 /* Reduce opacity of other images when hovering on one */
 .buttonlayout2:hover .hoverover3 {
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Keep hovered image at full opacity */
 .buttonlayout2 .hoverover3:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* For Hover Animations - just copied the previous animation but changed some settings*/
 .hoverover3 {
-    font-family: "Nunito Sans", sans-serif;
-    color: rgb(255, 255, 255);
+  font-family: "Nunito Sans", sans-serif;
+  color: rgb(255, 255, 255);
 
-    border-radius: 5px;
-    width: 280px;
-    height: 210px;
-    text-align: center;
-    text-transform: uppercase;
+  border-radius: 5px;
+  width: 280px;
+  height: 210px;
+  text-align: center;
+  text-transform: uppercase;
 
-    /* for the the text that will be shown afterwards*/
-    display: flex;
-    align-items: center;
-    position: relative;
+  /* for the the text that will be shown afterwards*/
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .hoverover3:hover {
-    background-color: #F59E0B;
-    border: #D2D2DF 2px solid;
-
+  background-color: #f59e0b;
+  border: #d2d2df 2px solid;
 }
 
 /* done to hide the image*/
 .hoverover3:hover img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
 }
-
 
 /* Show new hover text */
 .hoverover3:after {
-    font-family: "EB Garamond", serif;
-    content: attr(data-hover);
-    font-size: 20px;
-    padding: 20px;
-    text-transform: none;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.15s ease-in-out;
+  font-family: "EB Garamond", serif;
+  content: attr(data-hover);
+  font-size: 20px;
+  padding: 20px;
+  text-transform: none;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
 }
 
 /*to return the img to original state*/
 .hoverover3:hover:after {
-    opacity: 1;
+  opacity: 1;
 }
 
-
 #question7 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #question8 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-
-
 .buttonlayout3 {
-    font-family: "Nunito Sans", sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    padding: 10px 30px;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px 30px;
 }
 
 /* Reduce opacity of other images when hovering on one */
 .buttonlayout3:hover #answerbox {
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
-
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Keep hovered image at full opacity and increase the size of 
 the text box you hover over used this tag to increase the size uniformly */
 .buttonlayout3 #answerbox:hover {
-    opacity: 1;
-    transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-
 #answerbox {
-    color: rgb(255, 255, 255);
-    border: rgb(255, 255, 255) 2px solid;
-    border-radius: 5px;
-    padding: 100px 35px;
-    width: 200px;
-    text-align: left;
-    font-size: 18px;
+  color: rgb(255, 255, 255);
+  border: rgb(255, 255, 255) 2px solid;
+  border-radius: 5px;
+  padding: 100px 35px;
+  width: 200px;
+  text-align: left;
+  font-size: 18px;
 }
 
 #answerbox:hover {
-    background-color: #F59E0B;
-    color: #18181B;
+  background-color: #f59e0b;
+  color: #18181b;
 }
 
 /*make the heading of the font bigger without creating another tag like h1/h2*/
 span {
-    font-weight: bolder;
-    font-size: larger;
+  font-weight: bolder;
+  font-size: larger;
 }
 
 #question10img {
-    /*the image scale with the browser size*/
-    width: 100%;
-    /* Forces square dimensions */
-    aspect-ratio: 1 / 1;
-    /* Ensures the image fills the square without stretching */
-    object-fit: cover;
+  /*the image scale with the browser size*/
+  width: 100%;
+  /* Forces square dimensions */
+  aspect-ratio: 1 / 1;
+  /* Ensures the image fills the square without stretching */
+  object-fit: cover;
 
-    filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #question10img:hover {
-    filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
-
 #question11 {
-    background-image: url(drawing.jpg);
-    height: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #18181B;
+  background-image: url(drawing.jpg);
+  height: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #18181b;
 }
 
 .sidebyside3 {
-    display: flex;
-    justify-content: right;
-    margin-right: 5%;
-    margin-left: 5%;
-    color: white;
+  display: flex;
+  justify-content: right;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: white;
 
-    background-color: rgba(24, 24, 27, .75);
-    border-radius: 5px;
-    padding: 30px;
-    position:absolute;
-
+  background-color: rgba(24, 24, 27, 0.75);
+  border-radius: 5px;
+  padding: 30px;
+  position: absolute;
 }
 
 #button2 {
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
-    background-color: #3A3A42;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  background-color: #3a3a42;
 
-    /*Wanted the button in the middle of the webpage hence the margin tag*/
-    margin: 0 auto;
-    padding: 20px 40px;
+  /*Wanted the button in the middle of the webpage hence the margin tag*/
+  margin: 0 auto;
+  padding: 20px 40px;
 
-    /*Added the margin to make there be more line spacing between each section*/
-    margin-bottom: 20px;
-    margin-top: -20px;
+  /*Added the margin to make there be more line spacing between each section*/
+  margin-bottom: 20px;
+  margin-top: -20px;
 }
 
 #button2:hover {
-    background-color: #F59E0B;
-    color: black;
-    font-weight: bold
+  background-color: #f59e0b;
+  color: black;
+  font-weight: bold;
 }
 
 .conclusion {
-    padding: 30px 30px;
-    color: #18181B;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: -20px;
-
-
+  padding: 30px 30px;
+  color: #18181b;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: -20px;
 }
 
-
 #button3 {
-    background-color: #18181B;
-    font-family: "Nunito Sans", sans-serif;
-    ;
-    font-weight: bold;
-    padding: 20px 50px;
+  background-color: #18181b;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  padding: 20px 50px;
 }
 
 #button3:hover {
-    background-color: #F59E0B;
-    color: #18181B;
+  background-color: #f59e0b;
+  color: #18181b;
 }
 
 .buttoncontainer {
-    margin: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+  margin: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }

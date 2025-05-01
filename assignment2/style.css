@@ -114,7 +114,7 @@ button:hover {
 }
 
 /*wanted the buttons at the top of the screen to be bigger then other buttons since they were button that were constantly visible 
-and there adn they were important features to the purpose of the website*/
+and there and they were important features to the purpose of the website*/
 #theme-btn,
 #focus-btn {
   font-size: 1.4rem;
@@ -171,6 +171,7 @@ and there adn they were important features to the purpose of the website*/
 /* ------------------ */
 /* Task List          */
 /* ------------------ */
+
 /*the design for the tasklist */
 .task-list-group {
   font-size: 1.4rem;
@@ -189,7 +190,13 @@ and there adn they were important features to the purpose of the website*/
 /* ------------------ */
 /* Timer              */
 /* ------------------ */
+
+/*this was for designing how I wanted the timer box to look like, having the timer 
+scale accroding to browser size and making the box translucent since I wanted the 
+user to still be able to see the background*/
+
 .timer-group {
+  /*using vw as i wanted it to scale according to window size*/
   font-size: 8vw;
   color: #f6f4eb;
   background-color: rgba(24, 59, 78, 0.95);
@@ -207,21 +214,28 @@ and there adn they were important features to the purpose of the website*/
   margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 1vw;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
+/*designing how the button look like*/
 #pomodoro-btn,
 #reset-btn,
 #start-btn,
 #custom-btn {
   font-size: 1rem;
-  padding: 0.8em 1.5em;
+  padding: 15px 30px;
 }
 
 /* ------------------ */
 /* Custom Timer Popup */
 /* ------------------ */
+
+/*this is for the design of the pop up that appears when the user clicks on the custom timer.
+I wanted it to appear right in the middle of the screen, just like the other popups. So I made a full-screen container 
+with a dark see-through background and used flex to center everything. The hidden class just
+ hides it when it is not needed.*/
+
 .custom-popup {
   position: fixed;
   top: 0;
@@ -246,12 +260,14 @@ and there adn they were important features to the purpose of the website*/
   font-family: "Lexend", sans-serif;
 }
 
+/*styling how i want the input section to look like*/
 .popup-content input {
   padding: 5px;
   margin-top: 10px;
   width: 80px;
 }
 
+/*ensuring the button are in a flex box to ensure that it is in the */
 .popup-buttons {
   margin-top: 15px;
   display: flex;
@@ -263,12 +279,21 @@ and there adn they were important features to the purpose of the website*/
 /* Task Popup       */
 /* ------------------ */
 
+/* This bit is for styling the task list and the popup that shows up when you wanna add a task. 
+  I kept the list clean and simple — no bullet points or anything messy. I added a soft background and hover effect so it feels nicer to click on. 
+
+  For the popup, I made it full screen with a dark overlay, kinda like the custom timer one, just to keep the style matching. 
+  Used flexbox to center everything in the middle (cos it just works), added some padding and rounded corners so it doesn’t feel too sharp. 
+  Fonts and spacing are just kept consistent with the rest of the app so it all looks put together.*/
+
 #task-items {
   margin-top: 10px;
   list-style: none;
+  /* resets the spacing */
   padding: 0;
 }
 
+/*for the li items that will be added in js*/
 #task-items li {
   background: rgba(255, 255, 255, 0.1);
   padding: 8px;
@@ -277,11 +302,14 @@ and there adn they were important features to the purpose of the website*/
   cursor: pointer;
 }
 
+/*adding some animation*/
 #task-items li:hover {
   background: rgba(221, 168, 83, 0.75);
+  cursor: pointer;
 }
 
 .task-popup {
+  /* keeps it stuck in place */
   position: fixed;
   top: 0;
   left: 0;
@@ -294,6 +322,7 @@ and there adn they were important features to the purpose of the website*/
 }
 
 .task-popup.hidden {
+  /* hides it when we don't need it */
   display: none;
 }
 
@@ -305,6 +334,7 @@ and there adn they were important features to the purpose of the website*/
   font-family: "Lexend", sans-serif;
 }
 
+/*for the input box where users will type*/
 .task-content input {
   padding: 5px;
   margin-top: 10px;
@@ -322,33 +352,38 @@ and there adn they were important features to the purpose of the website*/
 /* Infomation Popup   */
 /* ------------------ */
 
+/* 
+  This section is for the little info popup I made, giving users extra details when they need it. 
+This was also a place where I could store my attributions and just in generally giving some information about the page.
+I wanted to make it super casual hence the language choice. (Using gen z terms)
+*/
+
+/*copied from the other popup and tweaked it a bit*/
 .information-popup {
   position: fixed;
-  top: 35%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  color: black;
-  padding: 2rem;
-  border-radius: 10px;
-  z-index: 1;
-  max-width: 700px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/*this content creates the box around the text*/
 .information-popup-content {
   background-color: white;
-
+  padding: 30px;
   border-radius: 12px;
   text-align: center;
   font-family: "Lexend", sans-serif;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .information-popup h1 {
   margin-bottom: 20px;
-
   font-size: 2rem;
 }
 
@@ -357,12 +392,14 @@ and there adn they were important features to the purpose of the website*/
   font-size: small;
 }
 
-#close-btn {
+/*this was just a generic styling for the close button*/
+#close-btn,
+#close-info-btn {
   background-color: #4682a9;
   color: white;
   border-radius: 50%;
-  height: 2.5em;
-  width: 2.5em;
+  height: 40px;
+  width: 40px;
   text-align: center;
   font-size: 1rem;
   padding: 0;
@@ -370,11 +407,13 @@ and there adn they were important features to the purpose of the website*/
   box-shadow: none;
 }
 
+/*creating this since I wanted to put it at the top right hand of the popup*/
 #close-btn-container {
   display: flex;
   justify-content: flex-end;
   margin-top: -10px;
 }
+
 #closing-tag {
   color: #183b4e;
 }
@@ -383,28 +422,33 @@ and there adn they were important features to the purpose of the website*/
 /* Theme Popup        */
 /* ------------------ */
 
+/* 
+  This is the styling for the theme selection popup. This was for allowing users to change the background and the music.
+  This was just to create more options for the user.*/
+
+/*copied from the other popup and tweaked it a bit*/
 .theme-popup {
   position: fixed;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  color: black;
-  padding: 2rem;
-  border-radius: 10px;
-  z-index: 1;
-  max-width: 700px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .theme-popup-content {
   background-color: white;
-
+  padding: 20px;
   border-radius: 12px;
   text-align: center;
   font-family: "Lexend", sans-serif;
+  /*ensure that it does it not take up the entire browser width*/
+  margin: 3%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .theme-popup h1 {
@@ -419,28 +463,6 @@ and there adn they were important features to the purpose of the website*/
 
 #theme-popup button {
   margin: 10px;
-}
-
-#close-btn {
-  background-color: #4682a9;
-  color: white;
-  border-radius: 50%;
-  height: 2.5em;
-  width: 2.5em;
-  text-align: center;
-  font-size: 1rem;
-  padding: 0;
-  margin-top: 10px;
-  box-shadow: none;
-}
-
-#close-btn-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: -10px;
-}
-#closing-tag {
-  color: #183b4e;
 }
 
 #close-btn_2 {
@@ -466,28 +488,30 @@ and there adn they were important features to the purpose of the website*/
 /* Timer Done Popup   */
 /* ------------------ */
 
+/* 
+  This is the styling for the theme selection popup. This was for allowing users to change the background and the music.
+  This was just to create more options for the user.*/
+
 .timer-done-popup {
   position: fixed;
-  top: 35%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  color: black;
-  padding: 2rem;
-  border-radius: 10px;
-  z-index: 1;
-  max-width: 700px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer-done-popup-content {
   background-color: white;
-
+  padding: 30px;
   border-radius: 12px;
   text-align: center;
   font-family: "Lexend", sans-serif;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .timer-done-popup h1 {
@@ -525,4 +549,19 @@ h1 {
   font-weight: bold;
   font-family: "Lexend", sans-serif;
   color: #183b4e;
+}
+
+#attribution-header {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+#attribution {
+  color: black;
+  font-size: 8px;
+}
+
+#attribution a {
+  color: black;
+  text-decoration: none;
 }

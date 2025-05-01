@@ -11,13 +11,11 @@ console.log(tasklistBtn);
 const tasklistPopUp = document.querySelector(".task-list-group");
 console.log(tasklistPopUp);
 
-// defining the function
-function toggleTasklistVisibility() {
+// adding an action to when the button is clicked the popup will close
+// didnt use another line of function since this was a single action and the function will not be used again
+tasklistBtn.addEventListener("click", function () {
   tasklistPopUp.classList.toggle("hidden");
-}
-
-// adding an action to when the button is clicked
-tasklistBtn.addEventListener("click", toggleTasklistVisibility);
+});
 
 //--------------------------------------------------------------------
 // Timer Popup
@@ -32,13 +30,10 @@ console.log(timerBtn);
 const timerPopUp = document.querySelector(".timer-group");
 console.log(timerPopUp);
 
-// defining the function
-function toggleTimerVisibility() {
+// adding an action to when the button is clicked the popup will close
+timerBtn.addEventListener("click", function () {
   timerPopUp.classList.toggle("hidden");
-}
-
-// adding an action to when the button is clicked
-timerBtn.addEventListener("click", toggleTimerVisibility);
+});
 
 //--------------------------------------------------------------------
 // Timer
@@ -65,6 +60,8 @@ let timer; // holds the setInterval reference
 let timeLeft = 30 * 60; // default 30 minutes
 let isRunning = false;
 
+//reference chatgpt for this section
+
 // Helper to format seconds into MM:SS
 function formatTime(seconds) {
   //Making the minutes
@@ -78,7 +75,7 @@ function formatTime(seconds) {
   return (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
 }
 
-// Update display
+// Update display to make it back to the defult
 function updateDisplay() {
   countdownDisplay.textContent = formatTime(timeLeft);
 }
@@ -88,47 +85,56 @@ function startTimer() {
   // meaning that if the timer is running
   if (isRunning) {
     //stop the countdown
+    //used 'clear interval' as it is used to stop the excustion of the timer
     clearInterval(timer);
-    // updates the code saying 'now the timer is not running'
+    // updates the state saying 'now the timer is not running'
     isRunning = false;
     // Update button label
     startBtn.textContent = "Start";
   } else {
     // If timer is not running, start it
-    // updates the code saying 'now the timer is running'
+    // updates the state saying 'now the timer is running'
     isRunning = true;
     //Updating the label
     startBtn.textContent = "Pause";
 
     // To continue the timer
-    let timer = setInterval(() => {
-      // if the timer is not at 0, it will continue the timer
-      if (timeLeft > 0) {
-        // This mean timeleft-1, this is to make the timer continue
-        timeLeft--;
-        // Update the countdown display
-        updateDisplay();
-      } else {
-        // Stop timer when countdown if the timeleft<0
-        clearInterval(timer);
-        // updates the code saying 'now the timer is not running'
-        isRunning = false;
-        // Run what happens after timer ends
-        timerDone();
-      }
-    }, 1000); // Interval is 1 second
+    // Start the countdown using setInterval, which runs the function every 1 second
+    let timer = setInterval(
+      () => {
+        // if the timer is not at 0, it will continue the timer
+        if (timeLeft > 0) {
+          // This mean to minus 1 from the remaing time
+          timeLeft--;
+          // Update the countdown display
+          updateDisplay();
+        } else {
+          // Stop timer when countdown if the timeleft<0
+          clearInterval(timer);
+          // updates the state saying 'now the timer is not running'
+          isRunning = false;
+          // Run what happens after timer ends
+          timerDone();
+        }
+      },
+      // Repeat every 1000 milliseconds (1 second)
+      1000
+    );
   }
 }
 
 // Reset timer
 function resetTimer() {
-  // this clears the stop a timer if it running and sets a new one
+  // this stop the timer if it running and sets a new one
   clearInterval(timer);
-  // telling the program that 'the timer isnt running' so the user has to press start
+  // Changing the state to 'the timer isnt running' so the user has to press start
   isRunning = false;
-  //this is to set the timer for the pomodoro study method which is a 25 minute study time before a break
+  //this is to set the timer for the defult timer set which is 30 sec
   timeLeft = 30 * 60;
+  // changine the text on the button
   startBtn.textContent = "Start";
+
+  // updating the timer
   updateDisplay();
 }
 
@@ -156,32 +162,42 @@ updateDisplay();
 // Timer Done Popup
 //--------------------------------------------------------------------
 
+//linking the html to the js
 const timerDonePopUp = document.querySelector("#timer-done-popup");
 console.log(timerDonePopUp);
 
-const timerDonePopUpClose = document.querySelectorAll("#close-timer-btn");
+const timerDonePopUpClose = document.querySelector("#close-timer-btn");
 console.log(timerDonePopUpClose);
 
 const timerDoneSound = document.querySelector("#timer-done-sound");
 console.log(timerDoneSound);
 
+// used for when the timer is done to have the popup and play an alert sound
 function timerDone() {
+  // Since ! is used as a negative and isRunning was defined as negative, the used of ! will create it to be a
+  // postivie hence making it state that the timer is running.
   if (!isRunning) {
+    // removing the hidden from the html file making it so that it will appear on screen
     timerDonePopUp.classList.remove("hidden");
-    timerDoneSound.play(); // Play the sound when the timer ends
+    // Play the sound when the timer ends
+    timerDoneSound.play();
   } else {
+    // if the timer is in used, the pop up will remain hidden
     timerDonePopUp.classList.add("hidden");
   }
 }
 
-timerDonePopUp.addEventListener("click", function () {
+// To ensure the close button will hide the PopUp
+timerDonePopUpClose.addEventListener("click", function () {
   timerDonePopUp.classList.add("hidden");
 });
+
 //--------------------------------------------------------------------
 // Timer Popup for Custom Time
 //--------------------------------------------------------------------
 
 // For the popup for the custom time
+//linking the html to the js
 const customPopup = document.querySelector("#custom-popup");
 console.log(customPopup);
 
@@ -194,7 +210,7 @@ console.log(setCustomBtn);
 const cancelCustomBtn = document.querySelector("#cancel-custom");
 console.log(cancelCustomBtn);
 
-// Show popup when "Custom" is clicked
+// Show popup when "Custom btn" is clicked
 customBtn.addEventListener("click", function () {
   customPopup.classList.remove("hidden");
 });
@@ -205,21 +221,24 @@ cancelCustomBtn.addEventListener("click", function () {
 });
 
 // Set timer from custom input
-// for this i had to research a bit and use chatgpt since I didn't know how to create a timer
+// for this i had to research a bit and use chatgpt since I didn't know how to convert an input into the timer
 
 setCustomBtn.addEventListener("click", function () {
   //it will take the value that user type into the minute box into a whole number
+  // used 'parseInt' to achieve this
   const customMinutes = parseInt(customMinutesInput.value);
 
   // checking whether the number is a real value and also greater than 0
+  // isNaN is used to check if the number is a number
+  // && is used to ensure that both conditions are true
   if (!isNaN(customMinutes) && customMinutes > 0) {
     // this clears the stop a timer if it running and sets a new one
     clearInterval(timer);
 
-    // telling the program that 'the timer isnt running' so the user has to press start
+    // Changing the state to 'the timer isnt running' so the user has to press start
     isRunning = false;
 
-    // this converts the minutes to seconds since the countdown runs in seconds
+    // this converts the numbers into seconds since the countdown timer code runs in seconds
     timeLeft = customMinutes * 60;
 
     //updates the display
@@ -270,8 +289,9 @@ const maxTask = 4;
 // Show popup when "add task" is clicked
 addTaskBtn.addEventListener("click", function () {
   addTaskPopup.classList.remove("hidden");
-  // clear old input
+  // Used so that if there was another value written inside it will be removed
   addTaskInput.value = "";
+  // used so that the user can immediately start writting without having to use the cursor to hit the text box
   addTaskInput.focus();
 });
 
@@ -287,28 +307,51 @@ addTasklistBtn.addEventListener("click", function () {
 
   // converting the word users key in into li elemts
   if (taskText.trim()) {
+    // ensuring that the number of task does not exceed the number of allow task which is 4
     if (taskItems.children.length < maxTask) {
+      // creating a li element on the html
       const li = document.createElement("li");
 
       //making it that the text they write are the task shown
       li.textContent = taskText;
 
+      // this is used for the hover animation
+      const originalText = taskText;
+
+      // to show when a text when the task is hovered over
+      // This was done so the uses know to click to remove the task
+      li.addEventListener("mouseenter", function () {
+        li.textContent = "Remove?";
+        li.style.textAlign = "center";
+        li.style.fontStyle = "bold";
+      });
+
+      // Unhover: restore original task
+      li.addEventListener("mouseleave", function () {
+        li.textContent = originalText;
+        // reset to default
+        li.style.textAlign = "";
+        li.style.fontWeight = "";
+      });
+
       // Click to remove the li
       li.addEventListener("click", function () {
         li.remove();
+        // playing the sound when the task is completed
         taskDoneSound.play();
       });
 
       // adding it to the html using appendChild which will add it to the end of the li in the html
       taskItems.appendChild(li);
 
-      // after task is added it will become hidden
+      // after task is added the popup  will become hidden
       addTaskPopup.classList.add("hidden");
     } else {
       // If the task limit is reached, show an alert
       alert("You have reached the maximum number of tasks.");
     }
   } else {
+    // of there is nothing written in the text box
     alert("Please enter a task.");
   }
 });
@@ -317,9 +360,11 @@ addTasklistBtn.addEventListener("click", function () {
 // Focus
 //--------------------------------------------------------------------
 
+//linking the html to the js
 const focusBtn = document.querySelector("#focus-btn");
 console.log(focusBtn);
 
+// had to used qureySelectorAll since there is multiple items i want to hide in the code
 const focusModeHideElements = document.querySelectorAll(".focus-mood-hide");
 console.log(focusModeHideElements);
 
@@ -346,7 +391,7 @@ focusBtn.addEventListener("click", function () {
   if (focusMode) {
     // since there is multiple things i want to hide in the script i need to use a 'foreach' to make sure it looks for all the 'focus-mood-hide'
     // Turn ON focus mode
-    focusModeHideElements.forEach((el) => el.classList.add("hidden"));
+    focusModeHideElements.forEach((element) => element.classList.add("hidden"));
 
     // I needed to delete the elements instead of just hiding it since I wanted the box to be adjusted to the size of the timer
     // Learnt to use .remove()
@@ -375,10 +420,11 @@ focusBtn.addEventListener("click", function () {
 // Infomation Popup
 //--------------------------------------------------------------------
 
+//linking the html to the js
 const infoPopup = document.querySelector("#information-popup");
 console.log(infoPopup);
 
-const closeBtn = document.querySelector("#close-btn");
+const closeBtn = document.querySelector("#close-info-btn");
 console.log(closeBtn);
 
 const infoBtn = document.querySelector("#info-btn");
@@ -392,10 +438,18 @@ closeBtn.addEventListener("click", function () {
   infoPopup.classList.add("hidden");
 });
 
+//so that the window can be closed whenever the user clicks
+// outside the popup just in case users doesnt use the close button
+window.addEventListener("click", function (e) {
+  if (e.target === infoPopup) {
+    infoPopup.classList.add("hidden");
+  }
+});
+
 //--------------------------------------------------------------------
 // Sound
 //--------------------------------------------------------------------
-
+//linking the html to the js
 //here is my logic for playing the sound
 // first I am detching the right play button
 const muteButton = document.querySelector("#mute-music");
@@ -430,6 +484,7 @@ function toggleAudio() {
 // Play Video
 //--------------------------------------------------------------------
 
+//linking the html to the js
 const myVideo = document.querySelector("#bg-video");
 console.log(myVideo);
 
@@ -454,6 +509,7 @@ playButton.addEventListener("click", function () {
 // Theme Popup
 //--------------------------------------------------------------------
 
+//linking the html to the js
 const themePopup = document.querySelector("#theme-popup");
 console.log(themePopup);
 

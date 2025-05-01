@@ -54,7 +54,7 @@
             /></a>
             <a class="menu-btn" id="play-pause-music"
               ><img
-                src="Play.svg"
+                src="play.svg"
                 alt="play-pause-btn"
                 id="play-pause-btn"
                 style="height: 40px"
@@ -78,7 +78,7 @@
 
           <button class="plus-btn" id="add-task-btn">+</button>
         </div>
-        <ul id="task-items" class="textchange"></ul>
+        <ul id="task-items"></ul>
       </div>
 
       <div class="timer-group hidden">
@@ -129,7 +129,7 @@
     <div class="information-popup" id="information-popup">
       <div class="information-popup-content">
         <div id="close-btn-container">
-          <button id="close-btn">x</button>
+          <button id="close-info-btn">x</button>
         </div>
         <h1>Welcome to Stay Focus!</h1>
         <p>
@@ -143,6 +143,36 @@
 
         <p id="name">
           Created by <span style="font-style: italic">Jannalyn Tan</span>.
+        </p>
+
+        <br />
+
+        <p id="attribution">
+          <span id="attribution-header"> Attribution:</span>
+          <br />
+          <a
+            href="https://freesound.org/people/ZHR%C3%98/sounds/703713/"
+            target="_blank"
+            >chill background music #2.wav</a
+          >
+          by <a href="https://freesound.org/people/ZHR%C3%98/">ZHRØ</a> |
+          <br />
+          License:
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+            >Attribution 4.0</a
+          >
+          Music by
+          <a
+            href="https://pixabay.com/users/lofidreams99-25132446/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=332746"
+            target="_blank"
+            >kaveesha Senanayake</a
+          >
+          from
+          <a
+            href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=332746"
+            target="_blank"
+            >Pixabay</a
+          >
         </p>
       </div>
     </div>
@@ -172,7 +202,9 @@
               src="Gradient_Img.png"
               alt="grad-img"
               style="height: 100px; margin-bottom: 10px"
-            />Gradient
+            />
+            <!--changed the name to wave since i thought it fit better compared to gradient-->
+            Wave
           </button>
           <button id="dots-btn">
             <img
@@ -197,6 +229,22 @@
       src="erokia_ambient-wave-56-msfxp7-78.mp3"
       controls
       id="gradient-sound"
+      loop
+    ></audio>
+
+    <audio
+      hidden
+      src="rainy-lofi-city-lofi-music-332746.mp3"
+      controls
+      id="dots-sound"
+      loop
+    ></audio>
+
+    <audio
+      hidden
+      src="703713__zhr__chill-background-music-2.wav"
+      controls
+      id="circles-sound"
       loop
     ></audio>
 
