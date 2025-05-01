@@ -449,34 +449,61 @@ window.addEventListener("click", function (e) {
 //--------------------------------------------------------------------
 // Sound
 //--------------------------------------------------------------------
-//linking the html to the js
-//here is my logic for playing the sound
-// first I am detching the right play button
+
+// linking the HTML to the JS
 const muteButton = document.querySelector("#mute-music");
 console.log(muteButton);
 
-const gradsound = document.querySelector("#gradient-sound");
-console.log(gradsound);
+const dotsSound = document.querySelector("#dots-sound");
+console.log(dotsSound);
+
+const circlesSound = document.querySelector("#circles-sound");
+console.log(circlesSound);
+
+const gradSound = document.querySelector("#gradient-sound");
+console.log(gradSound);
 
 const muteImg = muteButton.querySelector("#sound-off-btn");
 
-// to loop the audio
-gradsound.loop = true;
+let currentSound = gradSound; // Default sound is gradSound
 
-//pausing with click
+// Tracking the music state (muted/unmuted)
+let musicMuted = false;
+
+// Pausing or playing the audio when clicked
 muteButton.addEventListener("click", toggleAudio);
 
-//my pauce logic
+// Toggle mute/unmute functionality
 function toggleAudio() {
-  if (gradsound.paused || gradsound.ended) {
-    gradsound.play();
-    // changing the icon based on whether the video is playing or pausing
-    muteImg.src = "sound-on.svg";
-    timerDoneSound.muted = false;
+  if (currentSound.paused || currentSound.ended) {
+    currentSound.play();
+    // Change to sound-on icon
+    muteImg.src = "img/sound-on.svg";
+    musicMuted = false;
   } else {
-    gradsound.pause();
-    muteImg.src = "sound-off.svg";
-    timerDoneSound.muted = true;
+    currentSound.pause();
+    // Change to sound-off icon
+    muteImg.src = "img/sound-off.svg";
+    musicMuted = true;
+  }
+}
+
+// Function to switch theme sound
+function switchThemeSound(newSound) {
+  currentSound.pause();
+  // Reset the sound to the beginning
+  currentSound.currentTime = 0;
+
+  currentSound = newSound;
+  // to loop the current sound
+  currentSound.loop = true;
+  // Keep the mute state consistent
+  // if musicMuted is true the sound will mute, but if musicMuted is false the sound will play normally
+  currentSound.muted = musicMuted;
+
+  if (!musicMuted) {
+    // Play the sound if it is unmuted
+    currentSound.play();
   }
 }
 
@@ -484,7 +511,7 @@ function toggleAudio() {
 // Play Video
 //--------------------------------------------------------------------
 
-//linking the html to the js
+// Linking the HTML to the JS
 const myVideo = document.querySelector("#bg-video");
 console.log(myVideo);
 
@@ -497,11 +524,12 @@ console.log(playpauseImg);
 playButton.addEventListener("click", function () {
   if (myVideo.paused) {
     myVideo.play();
-    // changing the icon based on whether the video is playing or pausing
-    playpauseImg.src = "Play.svg";
+    // Change icon to pause
+    playpauseImg.src = "img/pause.svg";
   } else {
     myVideo.pause();
-    playpauseImg.src = "Pause.svg";
+    // Change icon to play
+    playpauseImg.src = "img/play.svg";
   }
 });
 
@@ -509,7 +537,7 @@ playButton.addEventListener("click", function () {
 // Theme Popup
 //--------------------------------------------------------------------
 
-//linking the html to the js
+// Linking the HTML to the JS
 const themePopup = document.querySelector("#theme-popup");
 console.log(themePopup);
 
@@ -531,26 +559,38 @@ console.log(circleTheme);
 const myVideoSource = myVideo.querySelector("source");
 
 themeBtn.addEventListener("click", function () {
+  // Show the theme popup
   themePopup.classList.remove("hidden");
 });
 
 closeBtn2.addEventListener("click", function () {
+  // Hide the theme popup
   themePopup.classList.add("hidden");
 });
 
+// Function to change video source
 function changeThemeVideo(newVideoSrc) {
-  myVideoSource.src = newVideoSrc; // Set a new video file
-  myVideo.load(); // Reload the video with the new source
+  // Set new video source
+  myVideoSource.src = newVideoSrc;
+  // Reload the video with the new source
+  myVideo.load();
 }
 
+// Handle theme selection
 gradTheme.addEventListener("click", function () {
   changeThemeVideo("video/Gradient.mp4");
+  // Change to Gradient sound
+  switchThemeSound(gradSound);
 });
 
 dotsTheme.addEventListener("click", function () {
   changeThemeVideo("video/Dots.mp4");
+  // Change to Dots sound
+  switchThemeSound(dotsSound);
 });
 
 circleTheme.addEventListener("click", function () {
   changeThemeVideo("video/Circles_final.mp4");
+  // Change to Circles sound
+  switchThemeSound(circlesSound);
 });
