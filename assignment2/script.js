@@ -450,7 +450,11 @@ window.addEventListener("click", function (e) {
 // Sound
 //--------------------------------------------------------------------
 
-// linking the HTML to the JS
+//--------------------------------------------------------------------
+// Sound
+//--------------------------------------------------------------------
+
+// Linking the HTML to the JS
 const muteButton = document.querySelector("#mute-music");
 console.log(muteButton);
 
@@ -468,7 +472,10 @@ const muteImg = muteButton.querySelector("#sound-off-btn");
 let currentSound = gradSound; // Default sound is gradSound
 
 // Tracking the music state (muted/unmuted)
-let musicMuted = false;
+let musicMuted = true; // Ensure it starts muted
+
+// Initially mute the sound when the page loads
+currentSound.muted = musicMuted; // Mute the sound on load
 
 // Pausing or playing the audio when clicked
 muteButton.addEventListener("click", toggleAudio);
@@ -480,11 +487,13 @@ function toggleAudio() {
     // Change to sound-on icon
     muteImg.src = "img/sound-on.svg";
     musicMuted = false;
+    currentSound.muted = false; // Unmute the sound
   } else {
     currentSound.pause();
     // Change to sound-off icon
     muteImg.src = "img/sound-off.svg";
     musicMuted = true;
+    currentSound.muted = true; // Mute the sound
   }
 }
 
@@ -497,12 +506,12 @@ function switchThemeSound(newSound) {
   currentSound = newSound;
   // to loop the current sound
   currentSound.loop = true;
-  // Keep the mute state consistent
-  // if musicMuted is true the sound will mute, but if musicMuted is false the sound will play normally
+
+  // Set the mute state for the new sound
   currentSound.muted = musicMuted;
 
+  // Only play the sound if it's not muted
   if (!musicMuted) {
-    // Play the sound if it is unmuted
     currentSound.play();
   }
 }

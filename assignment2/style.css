@@ -488,10 +488,10 @@ I wanted to make it super casual hence the language choice. (Using gen z terms)
 /* Timer Done Popup   */
 /* ------------------ */
 
-/* 
-  This is the styling for the theme selection popup. This was for allowing users to change the background and the music.
-  This was just to create more options for the user.*/
+/* This is the styling for the timer popup. 
+  This was when the timer finishes there will be a popup alerting the user.*/
 
+/*copied from the other popup and tweaked it a bit*/
 .timer-done-popup {
   position: fixed;
   top: 0;
@@ -538,6 +538,7 @@ I wanted to make it super casual hence the language choice. (Using gen z terms)
 /* Others             */
 /* ------------------ */
 
+/* T.*/
 .hidden {
   visibility: hidden;
   opacity: 0;
