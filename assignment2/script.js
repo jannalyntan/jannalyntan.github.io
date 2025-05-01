@@ -599,7 +599,7 @@ dotsTheme.addEventListener("click", function () {
 });
 
 circleTheme.addEventListener("click", function () {
-  changeThemeVideo("video/Circles_final.mp4");
+  changeThemeVideo("video/Circles.mp4");
   // Change to Circles sound
   switchThemeSound(circlesSound);
 });
