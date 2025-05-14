@@ -18,9 +18,18 @@ dropBox.addEventListener("dragover", function (e) {
 dropBox.addEventListener("drop", function () {
   const clone = draggedCard;
 
-  //const clone =draggedCard.cloneNode(true);
+  //This is to create a clone after it is dropped
 
+  //const clone = draggedCard.cloneNode(true);
   // dropBox.innerHTML = draggedCard;
-  dropBox.appendChild(draggedCard);
+
+  dropBox.appendChild(clone);
+  
+  clone.addEventListener("click", function () {
+    card.classList.toggle("flip");
+  });
+
   draggedCard = null;
 });
+
+
