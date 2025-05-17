@@ -1,8 +1,120 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .header {
   display: flex;
+  justify-content: end;
+  padding: 20px;
 }
 
 #infoBtn {
-  justify-content: end;
   width: 50px;
+  height: auto;
+}
+
+.machine-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  gap: 40px; /* Adds space between sign and machine */
+}
+
+.machine-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.machine-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red; /* red, semi-transparent for testing */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#button1 {
+  top: 155px;
+  left: 77px;
+}
+
+#button2 {
+  top: 155px;
+  left: 157px;
+}
+
+#button3 {
+  top: 155px;
+  left: 238px;
+}
+
+#button4 {
+  top: 155px;
+  left: 324px;
+}
+
+#button5 {
+  top: 264px;
+  left: 77px;
+}
+
+#button6 {
+  top: 264px;
+  left: 157px;
+}
+
+#button7 {
+  top: 264px;
+  left: 238px;
+}
+
+#button8 {
+  top: 373px;
+  left: 77px;
+}
+
+#button9 {
+  top: 373px;
+  left: 157px;
+}
+
+#button10 {
+  top: 373px;
+  left: 238px;
+}
+
+#can {
+  position: absolute;
+  top: 450px; /* Adjust to align with a machine slot */
+  left: 200px; /* Adjust to center under slot */
+  width: 50px;
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+#can.animate {
+  animation: dropCan 1.2s ease-out forwards;
+  opacity: 1;
+}
+
+@keyframes dropCan {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(70px) rotate(90deg); /* how far down it drops */
+    opacity: 1;
+  }
 }
