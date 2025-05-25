@@ -122,12 +122,12 @@ body {
 
 /* Can centered state */
 #can.centered {
-  top: 50%;
-  left: 20%;
+  top: 53%;
+  left: 7%;
   transform: translate(-50%, -50%) rotate(0deg);
-  width: 200px;
+  width: 250px;
   opacity: 1;
-  z-index: 9999; /* ensure it's on top */
+  z-index: 10; /* ensure it's on top */
   transition: all 0.5s ease;
   pointer-events: auto; /* clickable */
 }
@@ -208,12 +208,19 @@ body {
   top: 50%;
   left: 50%;
   width: 300px;
-  height: 400px;
+  height: 405px;
   transform-style: preserve-3d;
   transform-origin: center center;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  z-index: 9999;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  /* Ensure it's ready for fade in */
+}
+
+.card-container.visible {
+  opacity: 1;
 }
 
 .card {
@@ -235,7 +242,6 @@ body {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 12px;
-  overflow: hidden;
   top: 0;
   left: 0;
 }
@@ -266,4 +272,20 @@ body {
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+.close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #555;
 }

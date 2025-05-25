@@ -11,6 +11,10 @@ const card = document.querySelector("#card");
 console.log(card);
 const cardContainer = document.querySelector(".card-container");
 console.log(cardContainer);
+const frontImg = document.querySelector("#card-face-front");
+console.log(frontImg);
+const backImg = document.querySelector("#card-face-back");
+console.log(backImg);
 
 const canImages = {
   button1: "can/canPink.svg",
@@ -57,6 +61,24 @@ machine.addEventListener("animationend", () => {
   machine.classList.remove("machineShake");
 });
 
+//Randomise the Cards
+
+function randomiseCard() {
+  // Step 1: Randomly pick one of the front types
+  const types = ["Blue", "Pink", "Yellow"];
+  const selectedType = types[Math.floor(Math.random() * types.length)];
+
+  // Step 2: Pick a back image index (1–10)
+  const backIndex = Math.floor(Math.random() * 8) + 1;
+
+  // Step 3: Set front and back image paths
+  frontImg.src = `card/frontPage${selectedType}.png`; // e.g. card/cardBlue.svg
+  backImg.src = `card/card${selectedType}${backIndex}.png`; // e.g. card/cardBlue5.svg
+
+  console.log(`Front: card${selectedType}.png`);
+  console.log(`Back: card${selectedType}${backIndex}.png`);
+}
+
 can.addEventListener("click", () => {
   if (!canReady) return;
 
@@ -68,19 +90,48 @@ can.addEventListener("click", () => {
     overlay.classList.add("active");
     clickStage = 1;
   } else if (clickStage === 1) {
-    // 2nd click: fade out can
-    can.style.transition = "opacity 0.4s ease";
-    can.style.opacity = 0;
+    // 2nd click: shake, then fade out
 
-    // after fade out, fade in card container
-    can.classList.add("hidden"); // hide the can completely after fade
-    cardContainer.classList.remove("hidden");
-      cardContainer.classList.add("visible");
-    cardContainer.style.transition = "opacity 0.4s ease";
+    can.classList.add("shake");
+
+    // After 3 seconds of shaking, fade out
+    setTimeout(() => {
+      can.classList.remove("shake");
+      can.style.transition = "opacity 0.2s ease";
+      can.style.opacity = 0;
+
+      setTimeout(() => {
+        can.classList.add("hidden");
+        randomiseCard();
+        cardContainer.classList.remove("hidden");
+        cardContainer.classList.add("visible");
+        cardContainer.style.transition = "opacity 0.1s ease";
+      }, 250);
+    }, 1000); // 3 sec shake
   }
 });
 
 card.addEventListener("click", () => {
   console.log("Card clicked");
   card.classList.toggle("flipped");
+});
+
+const closeBtn = document.getElementById("close-btn");
+
+closeBtn.addEventListener("click", () => {
+  // Hide card container
+  cardContainer.classList.remove("visible");
+  cardContainer.classList.add("hidden");
+  cardContainer.style.opacity = 0;
+
+  // Reset can and overlay
+  overlay.classList.remove("active");
+  overlay.classList.add("hidden");
+
+  canReady = false;
+  clickStage = 0;
+
+  // Optionally show the can again (reset visuals)
+  can.classList.remove("hidden", "centered");
+  can.style.opacity = 1;
 });
