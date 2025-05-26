@@ -19,12 +19,18 @@
     <section class="header">
       <img src="img/infoBtn.png" alt="infoBtn" id="infoBtn" />
     </section>
+
     <section class="machine_full">
+      <div class="background-overlay"></div>
       <div class="machine-container">
-        <img src="img/sign.png" alt="sign" style="height: 30vh" />
+        <img
+          src="img/signFull.png"
+          alt="sign"
+          style="height: 30vh; margin-bottom: -23px"
+        />
         <div class="machine-wrapper">
           <img
-            src="img/machine_full.png"
+            src="img/vendingMachineFull.png"
             alt="machine"
             style="height: 70vh"
             id="machine"
@@ -59,6 +65,12 @@
         </div>
         <button id="close-btn" class="close-button">Retry</button>
       </div>
+
+      <img
+        src="img/floor.png"
+        alt="floor"
+        style="height: 0px; margin-top: -30px"
+      />
     </section>
 
     <div id="overlay" class="hidden"></div>
@@ -69,7 +81,7 @@
       </div>
     </div>
 
-    <section class="information-popup" id="information-popup">
+    <section class="information-popup hidden" id="information-popup">
       <div class="information-popup-content">
         <div id="close-btn-container">
           <button id="close-info-btn">x</button>

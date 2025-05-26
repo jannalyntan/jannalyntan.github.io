@@ -10,6 +10,13 @@ body {
   height: 100%;
 }
 
+body {
+  background-image: url("img/background.png");
+  background-size: cover; /* Fill screen */
+  background-position: center; /* Center image */
+  background-repeat: no-repeat; /* Don't tile */
+}
+
 .header {
   display: flex;
   justify-content: end;
@@ -32,6 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-top: 120px;
   padding: 20px;
   gap: 40px; /* space between sign and machine */
 }
@@ -55,43 +63,43 @@ body {
 
 #button1 {
   top: 153px;
-  left: 77px;
+  left: 128px;
 }
 #button2 {
   top: 153px;
-  left: 158px;
+  left: 209px;
 }
 #button3 {
   top: 153px;
-  left: 238px;
+  left: 290px;
 }
 #button4 {
   top: 153px;
-  left: 324px;
+  left: 376px;
 }
 #button5 {
   top: 262px;
-  left: 77px;
+  left: 128px;
 }
 #button6 {
   top: 262px;
-  left: 158px;
+  left: 209px;
 }
 #button7 {
   top: 262px;
-  left: 240px;
+  left: 290px;
 }
 #button8 {
   top: 371px;
-  left: 77px;
+  left: 128px;
 }
 #button9 {
   top: 371px;
-  left: 158px;
+  left: 209px;
 }
 #button10 {
   top: 371px;
-  left: 240px;
+  left: 290px;
 }
 
 /*--------------------------------*/
@@ -100,7 +108,7 @@ body {
 #can {
   position: absolute;
   top: 450px; /* initial position */
-  left: 200px; /* initial position */
+  left: 250px; /* initial position */
   width: 50px;
   opacity: 0;
   transform: translateY(0);
@@ -131,16 +139,15 @@ body {
     opacity: 1;
   }
 }
-
 #can.centered {
-  top: 53%;
-  left: 7%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
   width: 250px;
   opacity: 1;
-  z-index: 10; /* ensure it's on top */
+  z-index: 10;
   transition: all 0.5s ease;
-  pointer-events: auto; /* clickable */
+  pointer-events: auto;
 }
 
 /* Optional clickable cursor */
@@ -157,7 +164,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 1;
   opacity: 0;
   pointer-events: none;
