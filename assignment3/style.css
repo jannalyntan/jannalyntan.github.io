@@ -26,14 +26,18 @@ body {
 /*--------------------------------*/
 /* Header buttons                 */
 /*--------------------------------*/
-#infoBtn {
-  width: 50px;
-  height: auto;
+.header{
+  gap: 20px;
 }
 
-#soundOn {
+#info-btn {
   width: 50px;
-  height: auto;
+  height: 50px;
+}
+
+#sound-on {
+  width: 50px;
+  height: 50px;
 }
 /*--------------------------------*/
 /* Machine                        */
@@ -336,7 +340,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-image:url("img/background1.png") ;
   color: white;
   font-size: 2rem;
   display: flex;
@@ -346,7 +350,8 @@ body {
 }
 
 #screen-warning.hidden {
-  display: none;
+
+  opacity: 0%;
 }
 #screen-warning p {
   text-align: center;
