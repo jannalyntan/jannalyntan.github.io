@@ -24,13 +24,17 @@ body {
 }
 
 /*--------------------------------*/
-/* Infomation button              */
+/* Header buttons                 */
 /*--------------------------------*/
 #infoBtn {
   width: 50px;
   height: auto;
 }
 
+#soundOn {
+  width: 50px;
+  height: auto;
+}
 /*--------------------------------*/
 /* Machine                        */
 /*--------------------------------*/
@@ -140,8 +144,8 @@ body {
   }
 }
 #can.centered {
-  top: 50%;
-  left: 50%;
+  top: 37%;
+  left: 20%;
   transform: translate(-50%, -50%) rotate(0deg);
   width: 250px;
   opacity: 1;
@@ -368,12 +372,13 @@ body {
 /*this content creates the box around the text*/
 .information-popup-content {
   position: relative;
-  background-color: white;
+  background-color: #f29188;
   padding: 70px;
   border-radius: 12px;
   text-align: center;
   max-width: 700px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: bacl;
 }
 
 .information-popup h1 {
@@ -420,6 +425,8 @@ body {
 #attribution {
   color: black;
   font-size: 8px;
+  width: 450px;
+  margin-bottom: -20px;
 }
 
 #attribution a {
