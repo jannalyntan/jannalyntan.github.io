@@ -1,4 +1,8 @@
-/* Reset */
+/* 
+Font Family
+font-family: "Caveat Brush", cursive; 
+*/
+
 html,
 body {
   margin: 0;
@@ -6,19 +10,24 @@ body {
   height: 100%;
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: end;
   padding: 20px;
 }
 
+/*--------------------------------*/
+/* Infomation button              */
+/*--------------------------------*/
 #infoBtn {
   width: 50px;
   height: auto;
 }
 
-/* Machine container and wrapper */
+/*--------------------------------*/
+/* Machine                        */
+/*--------------------------------*/
+
 .machine-container {
   display: flex;
   justify-content: center;
@@ -37,54 +46,57 @@ body {
   position: absolute;
   width: 30px;
   height: 30px;
-  background-color: red; /* testing */
+  background-color: none; /* testing */
+  opacity: 0%;
   border: none;
   border-radius: 50%;
   cursor: pointer;
 }
 
 #button1 {
-  top: 150px;
-  left: 75px;
+  top: 153px;
+  left: 77px;
 }
 #button2 {
-  top: 150px;
-  left: 153px;
+  top: 153px;
+  left: 158px;
 }
 #button3 {
-  top: 150px;
-  left: 232px;
+  top: 153px;
+  left: 238px;
 }
 #button4 {
-  top: 150px;
-  left: 316px;
+  top: 153px;
+  left: 324px;
 }
 #button5 {
-  top: 255px;
-  left: 75px;
+  top: 262px;
+  left: 77px;
 }
 #button6 {
-  top: 255px;
-  left: 153px;
+  top: 262px;
+  left: 158px;
 }
 #button7 {
-  top: 255px;
-  left: 233px;
+  top: 262px;
+  left: 240px;
 }
 #button8 {
-  top: 362px;
-  left: 75px;
+  top: 371px;
+  left: 77px;
 }
 #button9 {
-  top: 362px;
-  left: 153px;
+  top: 371px;
+  left: 158px;
 }
 #button10 {
-  top: 362px;
-  left: 233px;
+  top: 371px;
+  left: 240px;
 }
 
-/* Can styles */
+/*--------------------------------*/
+/* Can Animation                  */
+/*--------------------------------*/
 #can {
   position: absolute;
   top: 450px; /* initial position */
@@ -115,12 +127,11 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(60px) rotate(90deg);
+    transform: translateY(72px) rotate(90deg);
     opacity: 1;
   }
 }
 
-/* Can centered state */
 #can.centered {
   top: 53%;
   left: 7%;
@@ -137,7 +148,9 @@ body {
   cursor: pointer;
 }
 
-/* Overlay styles */
+/*--------------------------------*/
+/* Overlay                        */
+/*--------------------------------*/
 #overlay {
   position: fixed;
   top: 0;
@@ -156,12 +169,10 @@ body {
   pointer-events: auto;
 }
 
-/* Utility classes */
-.hidden {
-  display: none;
-}
+/*--------------------------------*/
+/* Shake Animtion                 */
+/*--------------------------------*/
 
-/* Shake animations */
 @keyframes shake {
   0%,
   100% {
@@ -199,9 +210,9 @@ body {
 .machineShake {
   animation: machineShake 0.4s ease-in-out;
 }
-
-/* Card Flip */
-
+/*--------------------------------*/
+/* Card                           */
+/*--------------------------------*/
 .card-container {
   perspective: 1000px;
   position: fixed;
@@ -231,11 +242,9 @@ body {
   position: relative;
 }
 
-.flipped {
-  transform: rotateY(180deg);
-}
-
-/* Faces unchanged */
+/*--------------------------------*/
+/* Card Animation                 */
+/*--------------------------------*/
 .card-face {
   position: absolute;
   width: 100%;
@@ -274,18 +283,150 @@ body {
   transform: rotateY(180deg);
 }
 
+/*--------------------------------*/
+/* Retry Button                   */
+/*--------------------------------*/
+
 .close-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #222;
+  font-family: "Caveat Brush", "cursive";
+  margin-top: 10px;
+  margin-left: 80px;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  background-color: #13121f;
   color: white;
-  border: none;
-  border-radius: 8px;
+  border: 2px solid white;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+#close-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+#close-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .close-button:hover {
-  background-color: #555;
+  background-color: #a8a7b2;
+}
+
+/*--------------------------------*/
+/* Screen Warning                 */
+/*--------------------------------*/
+#screen-warning {
+  font-family: "Lexend", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+#screen-warning.hidden {
+  display: none;
+}
+#screen-warning p {
+  text-align: center;
+  max-width: 600px;
+  padding: 0 20px;
+}
+/*--------------------------------*/
+/* Information PopUp              */
+/*--------------------------------*/
+
+.information-popup {
+  font-family: "Lexend", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*this content creates the box around the text*/
+.information-popup-content {
+  position: relative;
+  background-color: white;
+  padding: 70px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.information-popup h1 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+#logo-name {
+  font-family: "Caveat Brush", cursive;
+  font-size: 2.5rem;
+}
+
+#name {
+  font-size: small;
+}
+
+#close-info-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  justify-content: right;
+  background-color: #26233e;
+  color: white;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#close-info-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease; /* Optional for smooth animation */
+}
+
+#attribution-header {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+#attribution {
+  color: black;
+  font-size: 8px;
+}
+
+#attribution a {
+  color: black;
+  text-decoration: none;
+}
+
+#infoBtn {
+  cursor: pointer;
+}
+
+/*--------------------------------*/
+/* Other                          */
+/*--------------------------------*/
+.hidden {
+  display: none;
 }

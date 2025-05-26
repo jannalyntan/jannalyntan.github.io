@@ -7,9 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Knewave&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -18,7 +19,6 @@
     <section class="header">
       <img src="img/infoBtn.png" alt="infoBtn" id="infoBtn" />
     </section>
-
     <section class="machine_full">
       <div class="machine-container">
         <img src="img/sign.png" alt="sign" style="height: 30vh" />
@@ -44,21 +44,73 @@
         </div>
       </div>
 
-<div class="card-container hidden">
-  <div class="card" id="card">
-    <div class="card-face front">
-      <img src="card/frontPageBlue.png" alt="Card Front" id="card-face-front" />
-    </div>
-    <div class="card-face back">
-      <img src="card/cardBlue1.png" alt="Card Back" id="card-face-back" />
-    </div>
-  </div>
-  <button id="close-btn" class="close-button">Close</button>
-</div>
-
+      <div class="card-container hidden">
+        <div class="card" id="card">
+          <div class="card-face front">
+            <img
+              src="card/frontPageBlue.png"
+              alt="Card Front"
+              id="card-face-front"
+            />
+          </div>
+          <div class="card-face back">
+            <img src="card/cardBlue1.png" alt="Card Back" id="card-face-back" />
+          </div>
+        </div>
+        <button id="close-btn" class="close-button">Retry</button>
+      </div>
     </section>
 
-</div>
     <div id="overlay" class="hidden"></div>
+
+    <div id="screen-warning">
+      <div class="warning-text">
+        <p>Please use a larger screen to view this experience.</p>
+      </div>
+    </div>
+
+    <section class="information-popup" id="information-popup">
+      <div class="information-popup-content">
+        <div id="close-btn-container">
+          <button id="close-info-btn">x</button>
+        </div>
+        <h1>Welcome to <span id="logo-name">Your Daily Advice!</span></h1>
+        <p>Press a button, your daily mystery advice awaits!</p>
+        <br />
+        <p id="name">
+          Created by <span style="font-style: italic">Jannalyn Tan</span>.
+        </p>
+
+        <br />
+
+        <p id="attribution">
+          <span id="attribution-header"> Attribution:</span>
+          <br />
+          <a
+            href="https://freesound.org/people/ZHR%C3%98/sounds/703713/"
+            target="_blank"
+            >chill background music #2.wav</a
+          >
+          by <a href="https://freesound.org/people/ZHR%C3%98/">ZHRØ</a> |
+          <br />
+          License:
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+            >Attribution 4.0</a
+          >
+          Music by
+          <a
+            href="https://pixabay.com/users/lofidreams99-25132446/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=332746"
+            target="_blank"
+            >kaveesha Senanayake</a
+          >
+          from
+          <a
+            href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=332746"
+            target="_blank"
+            >Pixabay</a
+          >
+        </p>
+      </div>
+    </section>
   </body>
 </html>
