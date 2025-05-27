@@ -258,20 +258,14 @@ window.addEventListener("resize", checkWindowSize);
 // Infomation Popup
 //---------------------------------------------
 
-const closeInfoBtn = document.querySelector("#close-info-btn");
-console.log(closeInfoBtn);
-
-const infoPopup = document.querySelector("#information-popup");
-console.log(infoPopup);
-
 const infoBtn = document.querySelector("#info-btn");
-console.log(infoBtn);
-
-closeInfoBtn.addEventListener("click", () => {
-  infoPopup.classList.add("hidden");
-  closeSound.play();
-});
+const infoPopup = document.querySelector("#information-popup");
+const closeInfoBtn = document.querySelector("#close-info-btn");
 
 infoBtn.addEventListener("click", () => {
   infoPopup.classList.remove("hidden");
+});
+
+closeInfoBtn.addEventListener("click", () => {
+  infoPopup.classList.add("hidden");
 });
