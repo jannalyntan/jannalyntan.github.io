@@ -131,7 +131,6 @@ buttons.forEach((button) => {
 
     setTimeout(() => {
       canReady = true;
-      can.classList.add("clickable");
     }, 500);
   });
 });
@@ -147,7 +146,7 @@ machine.addEventListener("animationend", () => {
 });
 
 //---------------------------------------------
-// Machine Shake
+// Can Dropping
 //---------------------------------------------
 
 const overlay = document.getElementById("overlay");
@@ -157,6 +156,7 @@ console.log(cardContainer);
 
 const frontImg = document.querySelector("#card-face-front");
 console.log(frontImg);
+
 const backImg = document.querySelector("#card-face-back");
 console.log(backImg);
 
@@ -265,7 +265,7 @@ closeBtn.addEventListener("click", () => {
 
 function checkWindowSize() {
   const warning = document.querySelector("#screen-warning");
-  const minWidth = 900;
+  const minWidth = 1300;
   const minHeight = 930;
 
   if (window.innerWidth < minWidth || window.innerHeight < minHeight) {
@@ -294,4 +294,21 @@ infoBtn.addEventListener("click", () => {
 
 closeInfoBtn.addEventListener("click", () => {
   infoPopup.classList.add("hidden");
+});
+
+//---------------------------------------------
+// Attribution Popup
+//---------------------------------------------
+
+const attriBtn = document.querySelector(".attribution-btn");
+console.log(attriBtn);
+const attriPopup = document.querySelector(".attribution-popup");
+const closeAttriBtn = document.querySelector("#close-attribution-btn");
+
+attriBtn.addEventListener("click", () => {
+  attriPopup.classList.remove("hidden");
+});
+
+closeAttriBtn.addEventListener("click", () => {
+  attriPopup.classList.add("hidden");
 });

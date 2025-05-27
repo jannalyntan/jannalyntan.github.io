@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Knewave&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="https://use.typekit.net/wnv3lsp.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -27,7 +27,7 @@
         <img
           src="img/signFull.png"
           alt="sign"
-          style="height: 30vh; margin-bottom: -23px"
+          style="height: 30vh; margin-bottom: 2px"
         />
         <div class="machine-wrapper">
           <img
@@ -49,6 +49,11 @@
 
           <img src="can/canPink.svg" alt="can-orange" id="can" />
         </div>
+        <img
+          src="img/stepGuides.png"
+          alt="sign"
+          style="height: 30vh; margin-bottom: 2px"
+        />
       </div>
 
       <div class="card-container hidden">
@@ -87,36 +92,42 @@
         <div id="close-btn-container">
           <button id="close-info-btn">x</button>
         </div>
-        <h1>Welcome to <span id="logo-name">Your Daily Advice!</span></h1>
+        <h1>Welcome to</h1>
+        <h1>
+          <span id="logo-name">Your Daily Advice!</span>
+        </h1>
         <p>Press a button, your daily mystery advice awaits!</p>
         <br />
         <p id="name">
           Created by <span style="font-style: italic">Jannalyn Tan</span>.
         </p>
-
         <br />
-
-        <p id="attribution">
-          <span id="attribution-header">Attribution:</span>
-          <br />
-          Sound Effect by Homemade_SFX from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a> | Sound
-          Effect by freesound_community from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
-          Effect by freesound_community from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
-          Effect by floraphonic from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
-          Effect by freesound_community from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
-          Effect by Universfield from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
-          Effect by Rusu Gabriel from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Music by
-          Piano_Music from
-          <a href="https://pixabay.com" target="_blank">Pixabay</a>|
-        </p>
+        <button class="attribution-btn">Attribution</button>
       </div>
+    </section>
+
+    <section class="attribution-popup hidden">
+      <p id="attribution-popup-content">
+        <span id="attribution-header">Attribution:</span>
+        <button id="close-attribution-btn">x</button>
+        <br />
+        Sound Effect by Homemade_SFX from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a> | Sound Effect
+        by freesound_community from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
+        by freesound_community from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
+        by floraphonic from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
+        by freesound_community from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
+        by Universfield from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
+        by Rusu Gabriel from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Music by
+        Piano_Music from
+        <a href="https://pixabay.com" target="_blank">Pixabay</a>|
+      </p>
     </section>
 
     <audio src="sound/equip-sound-272428.mp3" id="shake-sound"></audio>
