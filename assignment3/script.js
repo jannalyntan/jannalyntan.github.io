@@ -1,52 +1,28 @@
-let clickStage = 0; // Tracks click steps
-let canReady = false;
-
-const buttons = document.querySelectorAll(".machine-button");
-console.log(buttons);
-const can = document.querySelector("#can");
-console.log(can);
-const overlay = document.getElementById("overlay");
-const machine = document.querySelector("#machine");
-const card = document.querySelector("#card");
-console.log(card);
-const cardContainer = document.querySelector(".card-container");
-console.log(cardContainer);
-const frontImg = document.querySelector("#card-face-front");
-console.log(frontImg);
-const backImg = document.querySelector("#card-face-back");
-console.log(backImg);
-
-const canImages = {
-  button1: "can/canPink.svg",
-  button2: "can/canBlue.svg",
-  button3: "can/canOrange.svg",
-  button4: "can/canPink.svg",
-  button5: "can/canBlue.svg",
-  button6: "can/canPink.svg",
-  button7: "can/canBlue.svg",
-  button8: "can/canPink.svg",
-  button9: "can/canBlue.svg",
-  button10: "can/canOrange.svg",
-};
-
 //---------------------------------------------
 //Randomise the Cards
 //---------------------------------------------
 
+let lastCard = null;
+
 function randomiseCard() {
-  // Step 1: Randomly pick one of the front types
   const types = ["Blue", "Pink", "Yellow"];
-  const selectedType = types[Math.floor(Math.random() * types.length)];
+  let selectedType;
+  let backIndex;
+  let newCard;
 
-  // Step 2: Pick a back image index (1–10)
-  const backIndex = Math.floor(Math.random() * 8) + 1;
+  do {
+    selectedType = types[Math.floor(Math.random() * types.length)];
+    backIndex = Math.floor(Math.random() * 8) + 1;
+    newCard = selectedType + backIndex;
+  } while (newCard === lastCard);
 
-  // Step 3: Set front and back image paths
-  frontImg.src = `card/frontPage${selectedType}.png`; // e.g. card/cardBlue.svg
-  backImg.src = `card/card${selectedType}${backIndex}.png`; // e.g. card/cardBlue5.svg
+  lastCard = newCard;
 
-  console.log(`Front: card${selectedType}.png`);
-  console.log(`Back: card${selectedType}${backIndex}.png`);
+  frontImg.src = `card/frontPage${selectedType}.png`;
+  backImg.src = `card/card${selectedType}${backIndex}.png`;
+
+  console.log(`Front: card/frontPage${selectedType}.png`);
+  console.log(`Back: card/card${selectedType}${backIndex}.png`);
 }
 
 //---------------------------------------------
@@ -83,7 +59,7 @@ console.log(bgSound);
 const soundOn = document.querySelector("#sound-on");
 console.log(soundOn);
 
-// Wait for any user interaction
+//Wait for any user interaction
 window.addEventListener(
   "click",
   () => {
@@ -113,6 +89,25 @@ soundOn.addEventListener("click", playMusic);
 // On vending machine button click — drop can
 //---------------------------------------------
 
+const buttons = document.querySelectorAll(".machine-button");
+console.log(buttons);
+
+const can = document.querySelector("#can");
+console.log(can);
+
+const canImages = {
+  button1: "can/canPink.svg",
+  button2: "can/canBlue.svg",
+  button3: "can/canOrange.svg",
+  button4: "can/canPink.svg",
+  button5: "can/canBlue.svg",
+  button6: "can/canPink.svg",
+  button7: "can/canBlue.svg",
+  button8: "can/canPink.svg",
+  button9: "can/canBlue.svg",
+  button10: "can/canOrange.svg",
+};
+
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const btnId = button.id;
@@ -124,7 +119,7 @@ buttons.forEach((button) => {
     shakeSound.play();
 
     // Fully reset can visuals & state
-    can.classList.remove("animate", "centered", "shake", "hidden", "clickable");
+    can.classList.remove("centered", "shake", "hidden");
     can.style.transition = "";
     can.style.opacity = "1";
     clickStage = 0;
@@ -141,9 +136,32 @@ buttons.forEach((button) => {
   });
 });
 
+//---------------------------------------------
+// Machine Shake
+//---------------------------------------------
+
+const machine = document.querySelector("#machine");
+
 machine.addEventListener("animationend", () => {
   machine.classList.remove("machineShake");
 });
+
+//---------------------------------------------
+// Machine Shake
+//---------------------------------------------
+
+const overlay = document.getElementById("overlay");
+
+const cardContainer = document.querySelector(".card-container");
+console.log(cardContainer);
+
+const frontImg = document.querySelector("#card-face-front");
+console.log(frontImg);
+const backImg = document.querySelector("#card-face-back");
+console.log(backImg);
+
+let clickStage = 0; // Tracks click steps
+let canReady = false;
 
 can.addEventListener("click", () => {
   if (!canReady) return;
@@ -185,6 +203,15 @@ can.addEventListener("click", () => {
   }
 });
 
+//---------------------------------------------
+// Flipping card
+//---------------------------------------------
+
+const closeBtn = document.querySelector("#close-btn");
+
+const card = document.querySelector("#card");
+console.log(card);
+
 card.addEventListener("click", () => {
   console.log("Card clicked");
   card.classList.toggle("flipped");
@@ -207,11 +234,9 @@ card.addEventListener("click", () => {
 // Retry button
 //---------------------------------------------
 
-const closeBtn = document.querySelector("#close-btn");
-
 closeBtn.addEventListener("click", () => {
   // Hide card container smoothly
-  cardContainer.classList.remove("visible");
+  cardContainer.classList.remove("hidden");
   cardContainer.style.opacity = 0;
   retrySound.play();
 
@@ -219,17 +244,17 @@ closeBtn.addEventListener("click", () => {
   setTimeout(() => {
     cardContainer.classList.add("hidden");
     card.classList.remove("flipped"); // Reset flip state
-    closeBtn.classList.remove("visible"); // Hide close button
+    closeBtn.classList.remove("hidden"); // Hide close button
   }, 300);
 
   // Hide overlay and reset can
-  overlay.classList.remove("active");
+  overlay.classList.remove("hidden");
   overlay.classList.add("hidden");
 
   canReady = false;
   clickStage = 0;
 
-  can.classList.remove("centered", "shake", "clickable");
+  can.classList.remove("centered", "shake");
   can.classList.add("hidden");
   can.style.opacity = 1;
 });
@@ -245,7 +270,7 @@ function checkWindowSize() {
 
   if (window.innerWidth < minWidth || window.innerHeight < minHeight) {
     warning.classList.remove("hidden");
-    warning.style.transition = "opacity 0.5s ease";
+    warning.style.transition = "opacity 0.3s ease";
   } else {
     warning.classList.add("hidden");
   }
@@ -259,6 +284,7 @@ window.addEventListener("resize", checkWindowSize);
 //---------------------------------------------
 
 const infoBtn = document.querySelector("#info-btn");
+console.log(infoBtn);
 const infoPopup = document.querySelector("#information-popup");
 const closeInfoBtn = document.querySelector("#close-info-btn");
 
