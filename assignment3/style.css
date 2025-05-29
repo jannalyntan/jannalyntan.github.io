@@ -1,56 +1,93 @@
+/*
+  For this project, I wanted to create a playful and lighthearted experience, especially since we were given a lot of creative freedom with the concept. 
+  I was inspired by things like blind boxes and fortune cookies. Instead of figurines or fortunes, I thought it’d be fun to hand out random (and mostly useless)
+  pieces of advice. That’s when I hit a design block: how do I actually present and 'store' these advice boxes?
+
+  That’s when the idea of a vending machine came to mind. There’s basically a vending machine for anything nowadays, so it felt like the perfect interactive format for 
+  users to 'choose' their mystery box of advice. Plus, it naturally worked with the assignment’s requirement for a click interaction.
+
+  As for the overall style, I tried to reflect that chaotic-fun energy through a bold and playful visual direction. 
+  I used a bright colour palette, soft shadows, rounded corners, and oversized elements to make the interface feel friendly and approachable. 
+  As for the font choice, I went with something scribbly and handwritten, kind of like it was written with a permanent marker. 
+  Altogether, the design is meant to feel informal, fun, and not to be taken too seriously, just like the advice itself.
+*/
+
 /* 
 Font Family
 font-family: "Caveat Brush", cursive; 
 font-family: "chantal", sans-serif;
 
-colour
-Pink: #f29188
+Colour:
 Dull Purple: #514f65
+Light Blue: #79e6f2
+Yellow: #D5C56B
 Dark Blue: #13121f
+Light Pink: #F29188
+Dark Pink: #D96A88
 
 */
 
+/* 
+  Reset default margin and padding on html and body so the layout fills the entire viewport 
+  and no unexpected spacing around edges.
+*/
 html,
 body {
   margin: 0;
   padding: 0;
+  /* Make sure body takes full height for the background to cover */
   height: 100%;
 }
 
+/* 
+  Set a background image that covers the whole page without repeating, 
+  and keep it centered so it looks good on any screen size.
+*/
 body {
   background-image: url("img/background.png");
-  background-size: cover; /* Fill screen */
-  background-position: center; /* Center image */
-  background-repeat: no-repeat; /* Don't tile */
-}
-
-.header {
-  display: flex;
-  justify-content: end;
-  padding: 20px;
+  /* Makes sure the image fills the entire screen */
+  background-size: cover;
+  /* Keeps the image centered on the screen */
+  background-position: center;
+  /* Prevents the image from tiling */
+  background-repeat: no-repeat;
 }
 
 /*--------------------------------*/
 /* Header buttons                 */
 /*--------------------------------*/
+
+/* 
+  Using flexbox to push the images to the right side. 
+  Added padding and a gap to improve the layout.
+*/
+
 .header {
+  display: flex;
+  /* Align items to the right */
+  justify-content: end;
+  padding: 20px;
   gap: 20px;
 }
 
+/* Set fixed size for info button to keep layout consistent */
 #info-btn {
   width: 50px;
   height: 50px;
 }
 
+/* Slight shrink effect on hover for a subtle interactive feel */
 #info-btn:hover {
   transform: scale(0.9);
 }
 
+/* Set fixed size for sound button to match info button */
 #sound-on {
   width: 50px;
   height: 50px;
 }
 
+/* Same hover effect for consistency */
 #sound-on:hover {
   transform: scale(0.9);
 }
@@ -59,21 +96,30 @@ body {
 /* Machine                        */
 /*--------------------------------*/
 
+/* Container holding the vending machine and the sign.
+  Uses flexbox to space out the sign and machine evenly,
+  aligns them at the bottom to keep everything lined up nicely,
+  and adds top margin and padding for overall spacing.v*/
 .machine-container {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
   margin-top: 120px;
   padding: 20px;
-  gap: 50px; /* space between sign and machine */
+  /* space between sign and machine */
+  gap: 50px;
 }
 
+/* Wrapper around the vending machine image, positioned relative
+  to allow positioning of buttons inside it. This was done as there 
+  was elements that needed to be animated inside of the vending machine*/
 .machine-wrapper {
   position: relative;
   display: inline-block;
 }
 
-/* Machine buttons */
+/* Invisible clickable buttons placed over the machine image. For users to click for the interaction to take place.
+  They’re absolutely positioned to align with button spots on the machine. */
 .machine-button {
   position: absolute;
   width: 30px;
@@ -90,22 +136,31 @@ body {
   background-color: transparent;
 }
 
+/* On hover, button changes to give visual feedback, helping users 
+know where they can click.*/
 .machine-button:hover {
   opacity: 100%;
   transform: scale(1.2);
   background-color: none;
 }
 
+/* 
+  The hover button. Since it was an image I have to adjust the opactity this way, having it be
+  fully visible by default and smoothly fade out when hidden.
+  Pointer events disabled so they don't block button clicks.
+*/
 .hover-btn {
   opacity: 1;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* optional if you don't want image to interfere */
+  pointer-events: none;
 }
 
+/* Hide the hover button image by fading out */
 .hover-btn.hidden {
   opacity: 0;
 }
 
+/* Positioning of each button to align exactly on the vending machine image */
 #button1 {
   top: 153px;
   left: 128px;
@@ -150,13 +205,24 @@ body {
 /*--------------------------------*/
 /* Can Animation                  */
 /*--------------------------------*/
+
+/* This is animation for the can. Since it is a vending machine, 
+I needed to create the can dropping animation for when the can is dispensed. 
+For this I used keyframes to animate it, adjusting the position and rotate to 
+achieve the motion of the can dropping. Adding transition to ensure a smoother animation*/
+
 #can {
   position: absolute;
-  top: 450px; /* initial position */
-  left: 250px; /* initial position */
+  /* initial position */
+  top: 450px;
+  /* initial position */
+  left: 250px;
   width: 50px;
+
+  /* Having to start it as transparent as it needed to be hidden */
   opacity: 0;
   transform: translateY(0);
+  /* Ensures any rotation happens from the can's center, making motion feel more natural */
   transform-origin: center center;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -165,7 +231,8 @@ body {
   pointer-events: auto;
 }
 
-/* Can animation: drop */
+/* Using fowards to keep the object at the same spot as when it ends. 
+Otherwise it will go back to the initial position */
 #can.animate {
   animation: dropCan 0.5s ease-out forwards;
   opacity: 1;
@@ -184,10 +251,16 @@ body {
     opacity: 1;
   }
 }
+
+/* this was to move the can to the center of the screen for the reveal. Created this animation 
+as I needed a way to reveal the cards. Hence thinking of creating a 'move to center' animation 
+before having the cards be revealed. Again using the transition to make this animation */
+
 #can.centered {
   top: 36%;
   left: 46%;
   transform: translate(-50%, -50%) rotate(0deg);
+  /* Scale the can up to make it a focus element (like opening a blind box) */
   width: 250px;
   opacity: 1;
   z-index: 10;
@@ -198,6 +271,8 @@ body {
 /*--------------------------------*/
 /* Overlay                        */
 /*--------------------------------*/
+
+/* to create the overlay for when the  */
 #overlay {
   position: fixed;
   top: 0;
@@ -535,7 +610,6 @@ body {
 /* Attribution PopUp              */
 /*--------------------------------*/
 .attribution-popup {
-  font-family: "chantal", sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -548,21 +622,28 @@ body {
 
 /*this content creates the box around the text*/
 #attribution-popup-content {
+  font-family: "chantal", sans-serif;
   position: relative;
   background-color: white;
   padding: 60px;
   border-radius: 12px;
-  text-align: center;
   max-width: 500px;
   height: 320px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   color: black;
   font-weight: lighter;
   font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #attribution-header {
+  justify-content: center;
   font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
 }
 
 #close-attribution-btn {

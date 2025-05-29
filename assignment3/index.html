@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jannalyn's Assignment 3</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Used adobe font instead of google as i thought it was better that way since there was not similar font I could find that suited my project more in google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Knewave&family=Lexend:wght@100..900&display=swap"
       rel="stylesheet"
@@ -15,20 +14,39 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
+    <!--Header icons:
+  Just added the sound icon (to mute/unmute bg music) and the info button. 
+  Kept them at the top so users can easily find and use them right away.  -->
+
     <section class="header">
       <img src="img/soundOn.png" alt="sound-on" id="sound-on" />
       <img src="img/infoBtn.png" alt="info-btn" id="info-btn" />
     </section>
 
+    <!-- 
+  Main vending machine section, this is the main interactive part of the page.
+  Includes the vending machine image, all the clickable drink buttons, the can that drops, 
+  and step instructions for the user.-->
+
     <section class="machine_full">
+      <!-- Dark overlay to make things pop more visually when the can is being centered -->
       <div class="background-overlay"></div>
       <div class="machine-container">
+        <!-- There was an option of making the elements all through code however, i thought it is easier to do it in illustrator and export it to vsc. 
+         Created the design this way as I wanted a signage that gives a sneakpeak into the website. I also had this as to balance out the other image on 
+         the other side of the vending machine.-->
         <img
           src="img/signFull.png"
           alt="sign"
           style="height: 30vh; margin-bottom: 2px"
         />
+
+        <!-- Main vending machine graphic + all the button interactions
+         
+        Initially I wanted to hand put all the elements into vsc, however I realised it is a waste of time since I wasnt going to animate each and every element.
+        Therefore I chose to put all the element in which I will not animate together, having it in a single 'layer' simiplying the process-->
         <div class="machine-wrapper" id="machine-wrapper">
           <img
             src="img/vendingMachineFull.png"
@@ -37,6 +55,8 @@
             id="machine"
           />
 
+          <!-- To make it more like a vending machine, I had to put sepearate buttons for each button to 'dispense' a certain drink. Had the img there for the hover action, 
+      to create some feedback for the user. -->
           <button class="machine-button" id="button1">
             <img src="img/button.png" alt="button" class="hover-btn" />
           </button>
@@ -68,9 +88,13 @@
             <img src="img/button.png" alt="button" class="hover-btn" />
           </button>
 
+          <!-- This is for the can that dispensed from the vending machine at the end. -->
           <img src="can/canPink.svg" alt="can-pink" id="can" />
         </div>
 
+        <!-- Text guide for the user. Got this from a feedback in case it is the user first time on the website, 
+             having an instruction guide to help the user know what to do. Another thing is that this signage/instruction 
+             guide acted as a balance to the layout, balancing the signage at the beginning -->
         <div class="text-container">
           <section class="step-text">
             <h1>Step 1</h1>
@@ -83,6 +107,8 @@
           />
         </div>
 
+        <!-- This shows up as a guide after the can is animated to the center of the screen. 
+  Again as another guide for the users.-->
         <p class="click-can-text hidden">Click to open!</p>
       </div>
 
@@ -137,27 +163,29 @@
     </section>
 
     <section class="attribution-popup hidden">
-      <p id="attribution-popup-content">
-        <span id="attribution-header">Attribution:</span>
-        <button id="close-attribution-btn">x</button>
-        <br />
-        Sound Effect by Homemade_SFX from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a> | Sound Effect
-        by freesound_community from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
-        by freesound_community from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
-        by floraphonic from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
-        by freesound_community from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
-        by Universfield from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound Effect
-        by Rusu Gabriel from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>| Music by
-        Piano_Music from
-        <a href="https://pixabay.com" target="_blank">Pixabay</a>|
-      </p>
+      <div id="attribution-popup-content">
+        <p id="attribution-text">
+          <span id="attribution-header">Attribution:</span>
+          <button id="close-attribution-btn">x</button>
+          <br />
+          Sound Effect by Homemade_SFX from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a> | Sound
+          Effect by freesound_community from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
+          Effect by freesound_community from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
+          Effect by floraphonic from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
+          Effect by freesound_community from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
+          Effect by Universfield from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Sound
+          Effect by Rusu Gabriel from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>| Music by
+          Piano_Music from
+          <a href="https://pixabay.com" target="_blank">Pixabay</a>|
+        </p>
+      </div>
     </section>
 
     <audio src="sound/equip-sound-272428.mp3" id="shake-sound"></audio>
