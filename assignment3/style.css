@@ -72,12 +72,32 @@ body {
   position: absolute;
   width: 30px;
   height: 30px;
-  /* for testing to see where the buttons are placed and to adjust it when needed */
-  background-color: none;
   opacity: 0%;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  /*used for testing when i needed to place the buttons, 
+  I change the colour to be able to see them. However since 
+  I wanted to create some sort of state change to allow users 
+  to know where they can press, I had to use transparent so that 
+  the image replaced could be seen without any boarder */
+  background-color: transparent;
+}
+
+.machine-button:hover {
+  opacity: 100%;
+  transform: scale(1.2);
+  background-color: none;
+}
+
+.hover-btn {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* optional if you don't want image to interfere */
+}
+
+.hover-btn.hidden {
+  opacity: 0;
 }
 
 #button1 {
@@ -309,7 +329,7 @@ body {
 /* Retry Button                   */
 /*--------------------------------*/
 
-.close-button {
+#close-btn {
   font-family: "Caveat Brush", "cursive";
   margin-top: 10px;
   margin-left: 80px;
@@ -320,20 +340,20 @@ body {
   border: 2px solid white;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: opacity 0.4s ease, background-color 0.3s ease;
 }
 
-#close-btn {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease;
-}
-#close-btn.visible {
+.close-btn {
   opacity: 1;
   pointer-events: auto;
 }
 
-.close-button:hover {
+.close-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#close-btn:hover {
   background-color: #a8a7b2;
   cursor: pointer;
 }
@@ -348,15 +368,21 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("img/background1.png");
+  background-color: #13121f;
   color: white;
   font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 50;
-  pointer-events: none; /* allows clicks to pass through */
+  pointer-events: none;
+  opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+#screen-warning.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #screen-warning p {

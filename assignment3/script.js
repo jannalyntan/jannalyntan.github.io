@@ -2,18 +2,27 @@
 //Randomise the Cards
 //---------------------------------------------
 
+const canData = {
+  button1: { src: "can/canPink.svg", type: "Pink" },
+  button2: { src: "can/canBlue.svg", type: "Blue" },
+  button3: { src: "can/canOrange.svg", type: "Yellow" },
+  button4: { src: "can/canPink.svg", type: "Pink" },
+  button5: { src: "can/canBlue.svg", type: "Blue" },
+  button6: { src: "can/canPink.svg", type: "Pink" },
+  button7: { src: "can/canBlue.svg", type: "Blue" },
+  button8: { src: "can/canPink.svg", type: "Pink" },
+  button9: { src: "can/canBlue.svg", type: "Blue" },
+  button10: { src: "can/canOrange.svg", type: "Yellow" },
+};
 let lastCard = null;
 
-function randomiseCard() {
-  const types = ["Blue", "Pink", "Yellow"];
-  let selectedType;
+function randomiseCard(selectedType) {
   let backIndex;
   let newCard;
 
   do {
-    selectedType = types[Math.floor(Math.random() * types.length)];
-    backIndex = Math.floor(Math.random() * 8) + 1;
-    newCard = selectedType + backIndex;
+    backIndex = Math.floor(Math.random() * 8) + 1; // Random back card index 1-8
+    newCard = selectedType + backIndex; // e.g. Pink5
   } while (newCard === lastCard);
 
   lastCard = newCard;
@@ -28,6 +37,9 @@ function randomiseCard() {
 //---------------------------------------------
 // Sound
 //---------------------------------------------
+
+// Linking the sounds to from the html file to the js file
+
 const shakeSound = document.querySelector("#shake-sound");
 console.log(shakeSound);
 
@@ -52,6 +64,10 @@ console.log(flipSound);
 //---------------------------------------------
 // Bg sound
 //---------------------------------------------
+
+// Allowing background sound to be played. Since I thought it was a bit boring
+// using another music playing in the background. This was also to add on to
+// the mood of the game which was meant to be fun
 
 const bgSound = document.querySelector("#bg-sound");
 console.log(bgSound);
@@ -113,7 +129,11 @@ buttons.forEach((button) => {
     const btnId = button.id;
     const imageSrc = canImages[btnId] || "img/can-orange.svg";
 
-    can.src = imageSrc;
+    const canInfo = canData[btnId];
+    if (!canData) return;
+
+    can.src = canInfo.src;
+    currentCanType = canInfo.type; // SAVE the can's color/type
 
     machine.classList.add("machineShake");
     shakeSound.play();
@@ -139,7 +159,8 @@ buttons.forEach((button) => {
 // Machine Shake
 //---------------------------------------------
 
-const machine = document.querySelector("#machine");
+const machine = document.querySelector("#machine-wrapper");
+console.log(machine);
 
 machine.addEventListener("animationend", () => {
   machine.classList.remove("machineShake");
@@ -187,7 +208,7 @@ can.addEventListener("click", () => {
 
       setTimeout(() => {
         can.classList.add("hidden");
-        randomiseCard();
+        randomiseCard(currentCanType);
         revealSound.play();
 
         // Reset cardContainer before showing
@@ -208,6 +229,7 @@ can.addEventListener("click", () => {
 //---------------------------------------------
 
 const closeBtn = document.querySelector("#close-btn");
+console.log(closeBtn);
 
 const card = document.querySelector("#card");
 console.log(card);
@@ -221,12 +243,12 @@ card.addEventListener("click", () => {
   if (card.classList.contains("flipped")) {
     // Wait for flip animation (adjust delay if needed)
     setTimeout(() => {
-      closeBtn.classList.add("visible");
+      closeBtn.classList.remove("hidden");
       flipSound.play();
     }, 1000); // Match your flip duration
   } else {
     // Hide if flipped back
-    closeBtn.classList.remove("visible");
+    closeBtn.classList.add("hidden");
   }
 });
 
@@ -244,7 +266,7 @@ closeBtn.addEventListener("click", () => {
   setTimeout(() => {
     cardContainer.classList.add("hidden");
     card.classList.remove("flipped"); // Reset flip state
-    closeBtn.classList.remove("hidden"); // Hide close button
+    closeBtn.classList.add("hidden"); // Hide close button
   }, 300);
 
   // Hide overlay and reset can
@@ -269,10 +291,9 @@ function checkWindowSize() {
   const minHeight = 930;
 
   if (window.innerWidth < minWidth || window.innerHeight < minHeight) {
-    warning.classList.remove("hidden");
-    warning.style.transition = "opacity 0.3s ease";
+    warning.classList.add("visible");
   } else {
-    warning.classList.add("hidden");
+    warning.classList.remove("visible");
   }
 }
 
