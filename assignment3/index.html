@@ -31,8 +31,6 @@
   and step instructions for the user.-->
 
     <section class="machine_full">
-      <!-- Dark overlay to make things pop more visually when the can is being centered -->
-      <div class="background-overlay"></div>
       <div class="machine-container">
         <!-- There was an option of making the elements all through code however, i thought it is easier to do it in illustrator and export it to vsc. 
          Created the design this way as I wanted a signage that gives a sneakpeak into the website. I also had this as to balance out the other image on 
@@ -108,12 +106,14 @@
         </div>
 
         <!-- This shows up as a guide after the can is animated to the center of the screen. 
-  Again as another guide for the users.-->
+        Again as another guide for the users.-->
         <p class="click-can-text hidden">Click to open!</p>
       </div>
 
+      <!-- Card flip animation appears after can is clicked -->
       <div class="card-container hidden">
         <div class="card" id="card">
+          <!-- Since I had muliple front page for the card, I created a div section for it -->
           <div class="card-face front">
             <img
               src="card/frontPageBlue.png"
@@ -121,13 +121,19 @@
               id="card-face-front"
             />
           </div>
+
+          <!-- Since I had muliple back page for the card, I created a div section for it -->
           <div class="card-face back">
             <img src="card/cardBlue1.png" alt="Card Back" id="card-face-back" />
           </div>
         </div>
-        <button id="close-btn" class="close-btn hidden">Retry</button>
+
+        <!--Allowing users to restart the process after readind the advice -->
+        <button id="retry-btn" class="retry-btn hidden">Retry</button>
       </div>
 
+      <!-- Just the floor image at the bottom of the screen to kind of ground the elements 
+         since i was simulating an actual vending machine, I didnt want my machiine to be floating.-->
       <img
         src="img/floor.png"
         alt="floor"
@@ -135,13 +141,25 @@
       />
     </section>
 
+    <!-- This was for the overlay when the can is being centered, 
+    since I wanted the can to stand out more, having this overlay 
+    helps to reduce the complexity of the background. Making it clearer 
+    and focused on the can and the card -->
     <div id="overlay" class="hidden"></div>
 
+    <!-- This section shows up as a screen warning message. 
+     I added it to make sure users don’t experience the site on a screen that’s too small, 
+     since a lot of the layout relies on precise visual placement and positioning.  -->
     <div id="screen-warning">
       <div class="warning-text">
         <p>Please use a larger screen to view this experience.</p>
       </div>
     </div>
+
+    <!-- This is the info popup that shows up when users first visit the site. 
+     I included it as a little welcome message to introduce them to the idea behind the website. Reason being it 
+     serves just as a welcome 'page' in a way. Giving context and information about the website.
+      It also gives a quick explanation of what to do (press a button!) and also includes credit for the project. -->
 
     <section class="information-popup" id="information-popup">
       <div class="information-popup-content">
@@ -162,6 +180,11 @@
       </div>
     </section>
 
+    <!-- This is the attribution popup. 
+ Initally, I had my attribution together with the information poopup.
+ After getting feedback, I decided to move it to another popup, so that 
+ it is only shown if users want to see it. Reducing the clutter on the 
+ information popup.  -->
     <section class="attribution-popup hidden">
       <div id="attribution-popup-content">
         <p id="attribution-text">
@@ -188,6 +211,7 @@
       </div>
     </section>
 
+    <!-- This is my sound section, where I placed all the sound effects I am going to use and also the music.  -->
     <audio src="sound/equip-sound-272428.mp3" id="shake-sound"></audio>
 
     <audio
