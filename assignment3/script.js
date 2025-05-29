@@ -127,7 +127,7 @@ const canImages = {
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const btnId = button.id;
-    const imageSrc = canImages[btnId] || "img/can-orange.svg";
+    const imageSrc = canImages[btnId] || "can/canPink.svg";
 
     const canInfo = canData[btnId];
     if (!canData) return;
@@ -181,6 +181,9 @@ console.log(frontImg);
 const backImg = document.querySelector("#card-face-back");
 console.log(backImg);
 
+const clickText = document.querySelector(".click-can-text");
+console.log(clickText);
+
 let clickStage = 0; // Tracks click steps
 let canReady = false;
 
@@ -194,6 +197,7 @@ can.addEventListener("click", () => {
     overlay.classList.remove("hidden");
     overlay.classList.add("active");
     zoominSound.play();
+    clickText.classList.remove("hidden");
     clickStage = 1;
   } else if (clickStage === 1) {
     // 2nd click: shake, then fade out
