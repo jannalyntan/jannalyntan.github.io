@@ -255,7 +255,6 @@ Otherwise it will go back to the initial position */
 /* this was to move the can to the center of the screen for the reveal. Created this animation 
 as I needed a way to reveal the cards. Hence thinking of creating a 'move to center' animation 
 before having the cards be revealed. Again using the transition to make this animation */
-
 #can.centered {
   top: 36%;
   left: 46%;
@@ -272,7 +271,7 @@ before having the cards be revealed. Again using the transition to make this ani
 /* Overlay                        */
 /*--------------------------------*/
 
-/* to create the overlay for when the  */
+/* this is for the  full-screen semi-transparent dark layer used to focus user attention on the can.*/
 #overlay {
   position: fixed;
   top: 0;
@@ -281,20 +280,25 @@ before having the cards be revealed. Again using the transition to make this ani
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 1;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-#overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 /*--------------------------------*/
-/* Shake Animtion                 */
+/* Shake Animations                 */
 /*--------------------------------*/
 
+/* I added these shake animations to add some playful feedback 
+  when something happens. Like when the can or machine 'shakes' a bit. 
+  It makes the interaction feel more alive and fun, instead of static.
+  These subtle shakes mimic real-world jitteriness and it is have the website be a little more playful*/
+
+/* 
+  The 'shake' keyframes make an element rotate back and forth around its center.
+  I kept the translate(-50%, -50%) here to keep the element centered during the shake,
+  and the rotate values go between -5deg and 5deg for a quick, small shaking effect.
+*/
 @keyframes shake {
   0%,
   100% {
@@ -310,9 +314,16 @@ before having the cards be revealed. Again using the transition to make this ani
   }
 }
 
+/* Applying the shake animation to any element with the 'shake' class.
+  The animation lasts 0.5 seconds with ease-in-out timing for smooth motion.*/
 .shake {
   animation: shake 0.5s ease-in-out;
 }
+
+/* 'machineShake' keyframes are for shaking the vending machine left and right.
+  I chose a horizontal shake (translateX) for this to simulate the machine trembling 
+  slightly when dispensing a can, simulate a vending machine in real life, where sometimes
+  it shakes before dispensing a drink */
 
 @keyframes machineShake {
   0%,
@@ -329,17 +340,22 @@ before having the cards be revealed. Again using the transition to make this ani
   }
 }
 
+/* The 'machineShake' class applies this side-to-side shaking effect.*/
 .machineShake {
   animation: machineShake 0.4s ease-in-out;
 }
 
 /*--------------------------------*/
-/* Steps Text                */
+/* Steps Text                     */
 /*--------------------------------*/
 
+/* This was to help users know what to do next. Since I had an image that i used as a background for this step instruction menu thing
+I needed to place the text right in front of it, giving the illusion of a instruction board.*/
+
+/* Container for the step instructions */
 .step-text {
   position: fixed;
-  top: 73%; /* Adjust to place nicely near the can */
+  top: 73%;
   left: 83.5%;
   max-width: 200px;
   transform: translateX(-50%);
@@ -352,10 +368,12 @@ before having the cards be revealed. Again using the transition to make this ani
   text-align: center;
 }
 
+/* Paragraph inside step text: make the instructions stand out */
 .step-text p {
   font-weight: bolder;
 }
 
+/* Heading inside step text: smaller and lighter for less emphasis */
 .step-text h1 {
   font-weight: lighter;
   font-size: 1.2rem;
@@ -364,10 +382,14 @@ before having the cards be revealed. Again using the transition to make this ani
 /*--------------------------------*/
 /* Text "Click Me"                */
 /*--------------------------------*/
+/* this was made for the users to easily know what step to take next. 
+Just in case it wasnt clear enough on the intruction board. Did this 
+only for this part of the animations as after some feedback, it was suggest 
+that I do that just to make this instruction extra clear */
 
 .click-can-text {
   position: absolute;
-  top: 47%; /* Adjust to place nicely near the can */
+  top: 47%;
   left: 50%;
   transform: translateX(-50%);
   font-family: "chantal", sans-serif;
@@ -376,19 +398,21 @@ before having the cards be revealed. Again using the transition to make this ani
   color: white;
   opacity: 1;
   transition: opacity 1.5s ease;
-  pointer-events: none; /* so it doesn’t block clicks */
+
+  /* so it doesn’t block clicks */
+  pointer-events: none;
   z-index: 20;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.click-can-text.hidden {
-  opacity: 0;
-  pointer-events: auto;
 }
 
 /*--------------------------------*/
 /* Card                           */
 /*--------------------------------*/
+
+/* this container was made to hold the card that appears at the end of the animation. 
+I needed it to be centered on the screen so that i could transition from can to card.
+ */
+
 .card-container {
   perspective: 1000px;
   position: fixed;
@@ -403,9 +427,10 @@ before having the cards be revealed. Again using the transition to make this ani
   z-index: 20;
   opacity: 0;
   transition: opacity 0.6s ease;
-  /* Ensure it's ready for fade in */
 }
 
+/* Since there was going to be a flip animation to reveal the card, 
+i needed to use preserve-3d to create a more realistic animation  */
 .card {
   width: 100%;
   height: 100%;
@@ -417,6 +442,11 @@ before having the cards be revealed. Again using the transition to make this ani
 /*--------------------------------*/
 /* Card Animation                 */
 /*--------------------------------*/
+
+/* these are the front and back faces of the card used for the flipping
+ animation. I referenced the flipping animation we did during class as a 
+ guide for the animation here*/
+
 .card-face {
   position: absolute;
   width: 100%;
@@ -427,9 +457,15 @@ before having the cards be revealed. Again using the transition to make this ani
   left: 0;
 }
 
+/* this is the back side of the card, rotated 180 degrees so it's ready to be flipped into view. 
+without this, both sides would just stack and you'd never see the back on flip. */
+
 .card-face.back {
   transform: rotateY(180deg);
 }
+
+/* added this tiny scale down on hover to give the user feedback that it's clickable. 
+just to make it feel a bit more interactive. */
 
 .card:hover {
   scale: 0.98;
@@ -444,12 +480,18 @@ before having the cards be revealed. Again using the transition to make this ani
   overflow: hidden;
 }
 
+/* this is just making sure the image on each card face fills the whole space properly 
+without stretching weirdly. using object-fit: cover to maintain aspect ratio while filling. */
+
 .card-face img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
+/* when I add the "flipped" class to the card, it rotates 180 degrees to show the back. 
+this is how the flip effect is actually triggered when needed. */
 
 .flipped {
   transform: rotateY(180deg);
@@ -459,7 +501,10 @@ before having the cards be revealed. Again using the transition to make this ani
 /* Retry Button                   */
 /*--------------------------------*/
 
-#close-btn {
+/* this is the retry  button that shows up at the end. For this I just tried
+ to keep in mind the previous styling that i used to give it the consistency */
+
+#retry-btn {
   font-family: "chantal", sans-serif;
   margin-top: 10px;
   margin-left: 80px;
@@ -473,17 +518,15 @@ before having the cards be revealed. Again using the transition to make this ani
   transition: opacity 0.4s ease, background-color 0.3s ease;
 }
 
-.close-btn {
+.retry-btn {
   opacity: 1;
   pointer-events: auto;
 }
 
-.close-btn.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+/* hover effect used to create some interaction,
+helping users feel like the button is responding to them. */
 
-#close-btn:hover {
+#retry-btn:hover {
   background-color: #514f65;
   cursor: pointer;
 }
@@ -491,6 +534,12 @@ before having the cards be revealed. Again using the transition to make this ani
 /*--------------------------------*/
 /* Screen Warning                 */
 /*--------------------------------*/
+
+/* This overlay is for warning users when their screen size isn’t ideal for the experience.
+   I wanted it to cover the whole screen, be centered, and feel consistent with the aesthetic.
+  Since majority of my code relied on the exact position of the buttons, I had to find a way to
+   have the screen be blocked if the screen was not in an ideal size*/
+
 #screen-warning {
   font-family: "chantal", sans-serif;
   position: fixed;
@@ -510,11 +559,16 @@ before having the cards be revealed. Again using the transition to make this ani
   transition: opacity 0.3s ease;
 }
 
+/* Created a new class as with visible it help to make the fade in and
+ out smoother since the orginal state is no opacity.
+*/
+
 #screen-warning.visible {
   opacity: 1;
   pointer-events: auto;
 }
 
+/* Just some styling for the text inside, so it’s centered and doesn’t run off the screen. */
 #screen-warning p {
   text-align: center;
   max-width: 600px;
@@ -523,6 +577,10 @@ before having the cards be revealed. Again using the transition to make this ani
 /*--------------------------------*/
 /* Information PopUp              */
 /*--------------------------------*/
+
+/* I made this popup to give users a short intro and credit section before they start.
+   It appears on top of everything when the site loads and gives a clear "close" option. 
+   While designing it i just remember to keep in mind the colour palette, making it match the website. */
 
 .information-popup {
   font-family: "chantal", sans-serif;
@@ -548,6 +606,7 @@ before having the cards be revealed. Again using the transition to make this ani
   color: bacl;
 }
 
+/* title inside the popup, making it a bit bolder to give hierarchy */
 .information-popup h1 {
   margin-bottom: 5px;
   font-size: 1.5rem;
@@ -563,6 +622,7 @@ before having the cards be revealed. Again using the transition to make this ani
   font-size: small;
 }
 
+/* close (X) button */
 #close-info-btn {
   position: absolute;
   top: 20px;
@@ -589,6 +649,8 @@ before having the cards be revealed. Again using the transition to make this ani
   border: none;
 }
 
+/* button at the bottom of popup to show attribution or more info
+   this was made so people could access credits creating another popup as i didnt want to overcrowd the information popup */
 .attribution-btn {
   padding: 10px 20px;
   border-radius: 10px;
@@ -600,6 +662,7 @@ before having the cards be revealed. Again using the transition to make this ani
   margin-bottom: -100px;
 }
 
+/* hover effect to reinforce it's clickable */
 .attribution-btn:hover {
   background-color: #13121f;
   color: white;
@@ -609,6 +672,8 @@ before having the cards be revealed. Again using the transition to make this ani
 /*--------------------------------*/
 /* Attribution PopUp              */
 /*--------------------------------*/
+/* This is just like the info popup, but used specifically to show attribution.*/
+
 .attribution-popup {
   position: fixed;
   top: 0;
@@ -646,6 +711,7 @@ before having the cards be revealed. Again using the transition to make this ani
   margin-bottom: 40px;
 }
 
+/* this is the close (X) button in the same style as the other popups for consistency */
 #close-attribution-btn {
   position: absolute;
   top: 20px;
@@ -674,10 +740,17 @@ before having the cards be revealed. Again using the transition to make this ani
 /*--------------------------------*/
 /* Other                          */
 /*--------------------------------*/
+
+/* I made this reusable hidden class to hide any element with a fade-out feel.
+   Couldn’t just use "display: none" because I wanted smooth transitions and to
+   still let things fade in/out with pointer control (and maybe animate if needed).
+   Reused across a bunch of popups. */
+
 .hidden {
   opacity: 0;
   pointer-events: none;
-  pointer-events: none; /* prevents clicks */
+  /* prevents clicks */
+  pointer-events: none;
   visibility: hidden;
-  position: fixed; /* or whatever positioning */
+  position: fixed;
 }
