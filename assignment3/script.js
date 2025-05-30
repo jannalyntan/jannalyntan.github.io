@@ -204,9 +204,11 @@ buttons.forEach((button) => {
 // Machine Shake
 //---------------------------------------------
 
+// Linking html items to the js
 const machine = document.querySelector("#machine-wrapper");
 console.log(machine);
 
+// creating the machine shake when the animation end so that it can be played again
 machine.addEventListener("animationend", () => {
   machine.classList.remove("machineShake");
 });
@@ -215,7 +217,9 @@ machine.addEventListener("animationend", () => {
 // Can Dropping
 //---------------------------------------------
 
-const overlay = document.getElementById("overlay");
+// Linking html items to the js
+const overlay = document.querySelector("#overlay");
+console.log(overlay);
 
 const cardContainer = document.querySelector(".card-container");
 console.log(cardContainer);
@@ -229,12 +233,12 @@ console.log(backImg);
 const clickText = document.querySelector(".click-can-text");
 console.log(clickText);
 
-let clickStage = 0; // Tracks click steps
+// Tracks click steps, this is because there is mulitple click interactions , therefore needing to track the steps just so that the code is update where the user is at
+// I realised without this it was there was a lot of error
+let clickStage = 0;
 let canReady = false;
 
 can.addEventListener("click", () => {
-  if (!canReady) return;
-
   if (clickStage === 0) {
     // 1st click: center the can and show overlay
     can.classList.remove("animate", "shake", "hidden");
@@ -242,35 +246,49 @@ can.addEventListener("click", () => {
     overlay.classList.remove("hidden");
     zoominSound.play();
     clickText.classList.remove("hidden");
+
     updateStep(3, "Open the can");
+
     clickStage = 1;
   } else if (clickStage === 1) {
     // 2nd click: shake, then fade out
     clickText.classList.add("hidden");
     can.classList.add("shake");
     canopenSound.play();
-    // After 3 seconds of shaking, fade out
+
+    // This is to give some time before running this code. This is
+    // to allow the shake animation to run, before removing it.
     setTimeout(() => {
       can.classList.remove("shake");
       can.style.transition = "opacity 0.2s ease";
       can.style.opacity = 0;
 
+      // Again waiting for the fade out to happpen before bringing in the card.
       setTimeout(() => {
         can.classList.add("hidden");
+
+        // Since we stored the can type just now, we are now retrieving it to
+        //  show the correct type of card.
         randomiseCard(currentCanType);
         revealSound.play();
         updateStep(4, "Flip the card");
+        retryBtn.classList.add("hidden");
 
         // Reset cardContainer before showing
         cardContainer.classList.remove("hidden");
         cardContainer.style.opacity = 0;
-        cardContainer.offsetHeight; // force reflow
+        //Accessing .offsetHeight forces a reflow, which restarts the animation process.
+        // It ensures the browser properly registers the opacity change that happens next.
+        cardContainer.offsetHeight;
 
+        // start the animation
         cardContainer.classList.add("visible");
         cardContainer.style.transition = "opacity 1s ease";
         cardContainer.style.opacity = 1;
       }, 250);
-    }, 1000); // 3 sec shake
+
+      // 1 second shake before fading
+    }, 1000);
   }
 });
 
@@ -278,28 +296,33 @@ can.addEventListener("click", () => {
 // Flipping card- error when second card appear the retry is there
 //---------------------------------------------
 
+// Linking html items to the js
 const retryBtn = document.querySelector("#retry-btn");
 console.log(retryBtn);
 
 const card = document.querySelector("#card");
 console.log(card);
 
+// When the card is clicked, flip it and update the interface
 card.addEventListener("click", () => {
   console.log("Card clicked");
+
+  // Toggle the 'flipped' class to rotate the card
   card.classList.toggle("flipped");
   flipSound.play();
   updateStep(5, "See your advice");
 
-  // Show close button only after flip
+  // Check if the card is now flipped to the back
   if (card.classList.contains("flipped")) {
-    // Wait for flip animation (adjust delay if needed)
+    // Wait for the flip animation to finish before showing the retry button
     setTimeout(() => {
       retryBtn.classList.remove("hidden");
       flipSound.play();
-    }, 600); // Match your flip duration
+
+      // Delayed the retry button appearing as I wanted the user to read the card before being able to retry.
+    }, 600);
   } else {
-    // Hide if flipped back
-    retryBtn.classList.add("hidden");
+    // If the card is flipped back to front, hide the retry button again
     updateStep(4, "Flip the card");
   }
 });
@@ -308,27 +331,30 @@ card.addEventListener("click", () => {
 // Retry button
 //---------------------------------------------
 
+// Listen for click on the retry button
 retryBtn.addEventListener("click", () => {
-  // Hide card container smoothly
+  // Start fading out the card container visually
   cardContainer.classList.remove("hidden");
   cardContainer.style.opacity = 0;
   retrySound.play();
   updateStep(1, "Select a can");
 
-  // After fade out completes, fully reset
+  // After the fade-out completes (300ms), fully reset states
   setTimeout(() => {
     cardContainer.classList.add("hidden");
     card.classList.remove("flipped"); // Reset flip state
     closeBtn.classList.add("hidden"); // Hide close button
   }, 300);
 
-  // Hide overlay and reset can
+  // Reset the overlay visibility
   overlay.classList.remove("hidden");
   overlay.classList.add("hidden");
 
+  // Reset the click stage and interaction readiness
   canReady = false;
   clickStage = 0;
 
+  // Reset the can’s appearance and hide it again to prep it for the next animation
   can.classList.remove("centered", "shake");
   can.classList.add("hidden");
   can.style.opacity = 1;
@@ -338,11 +364,17 @@ retryBtn.addEventListener("click", () => {
 // Window Size
 //---------------------------------------------
 
+// Function to check if the current window size is too small.
+//Becasue my interactions relied a lot of the exact positioning
+// I had to include this to make sure that the buttons dont move
+//  where I dont want them to be at
+
 function checkWindowSize() {
   const warning = document.querySelector("#screen-warning");
   const minWidth = 1700;
   const minHeight = 930;
 
+  // If window is smaller than required in either dimension, show warning
   if (window.innerWidth < minWidth || window.innerHeight < minHeight) {
     warning.classList.add("visible");
   } else {
@@ -350,22 +382,32 @@ function checkWindowSize() {
   }
 }
 
+// Run the check when the page first loads
 window.addEventListener("load", checkWindowSize);
+
+// Also run the check every time the window is resized
 window.addEventListener("resize", checkWindowSize);
 
 //---------------------------------------------
 // Infomation Popup
 //---------------------------------------------
 
+// Linking html items to the js
 const infoBtn = document.querySelector("#info-btn");
 console.log(infoBtn);
-const infoPopup = document.querySelector("#information-popup");
-const closeInfoBtn = document.querySelector("#close-info-btn");
 
+const infoPopup = document.querySelector("#information-popup");
+console.log(infoPopup);
+
+const closeInfoBtn = document.querySelector("#close-info-btn");
+console.log(closeInfoBtn);
+
+// When the info btn is clicked the pop up is shown
 infoBtn.addEventListener("click", () => {
   infoPopup.classList.remove("hidden");
 });
 
+// When the close btn is clicked, popup is closed
 closeInfoBtn.addEventListener("click", () => {
   infoPopup.classList.add("hidden");
 });
@@ -374,15 +416,22 @@ closeInfoBtn.addEventListener("click", () => {
 // Attribution Popup
 //---------------------------------------------
 
+// Linking html items to the js
 const attriBtn = document.querySelector(".attribution-btn");
 console.log(attriBtn);
-const attriPopup = document.querySelector(".attribution-popup");
-const closeAttriBtn = document.querySelector("#close-attribution-btn");
 
+const attriPopup = document.querySelector(".attribution-popup");
+console.log(attriPopup);
+
+const closeAttriBtn = document.querySelector("#close-attribution-btn");
+console.log(closeAttriBtn);
+
+// When the attri btn is clicked the pop up is shown
 attriBtn.addEventListener("click", () => {
   attriPopup.classList.remove("hidden");
 });
 
+// When the close btn is clicked, popup is closed
 closeAttriBtn.addEventListener("click", () => {
   attriPopup.classList.add("hidden");
 });
